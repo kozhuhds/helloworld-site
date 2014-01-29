@@ -8,7 +8,7 @@ html{
 }
 body{background: #ca3535;}
 .mainpage-wrapper{
-	padding: 3.90625%;
+	padding: 80px;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -25,11 +25,11 @@ body{background: #ca3535;}
 
 .mainpage-wrapper  footer{	
 	position: absolute; 
-	bottom: 9%;
 	right: 0;
 	left: 0;
+	bottom: 0;
 	height: 153px;
-	padding-left: 3.90625%;
+	padding: 0 80px 80px 80px;
 }
 
 .mainpage-wrapper footer nav, .mainpage-wrapper  footer .logo{
@@ -40,7 +40,7 @@ body{background: #ca3535;}
 .mainpage-wrapper footer nav ul li{
 	display: inline-block;
 	font-size: 2rem;
-	margin-right: 7%;
+	margin-left: 7%;
 }
 .mainpage-wrapper footer nav ul{text-align: right;}
 	
