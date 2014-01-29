@@ -1,0 +1,38 @@
+/*Structure
+*******************************************************************************************************************************/
+@font-face {
+    font-family: 'apercu_proregular';
+    src: url('fonts/apercupro-regular-webfont.eot');
+    src: url('fonts/apercupro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercupro-regular-webfont.ttf') format('truetype'),
+         url('fonts/apercupro-regular-webfont.woff') format('woff'),
+         url('fonts/apercupro-regular-webfont.svg#apercu_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'apercu_probold';
+    src: url('fonts/apercupro-bold-webfont.eot');
+    src: url('fonts/apercupro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercupro-bold-webfont.woff') format('woff'),
+         url('fonts/apercupro-bold-webfont.ttf') format('truetype'),
+         url('fonts/apercupro-bold-webfont.svg#apercu_probold') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'apercu_proitalic';
+    src: url('fonts/apercupro-ltalic-webfont.eot');
+    src: url('fonts/apercupro-ltalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercupro-ltalic-webfont.woff') format('woff'),
+         url('fonts/apercupro-ltalic-webfont.ttf') format('truetype'),
+         url('fonts/apercupro-ltalic-webfont.svg#apercu_proitalic') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+.apercu-regular{font-family: 'apercu_proregular'; font-weight: normal !important;}
+.apercu-bold{font-family: 'apercu_probold'; font-weight: normal !important;}
+.apercu-italic{font-family: 'apercu_proitalic'; font-weight: normal !important;}
