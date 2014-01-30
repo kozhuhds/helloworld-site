@@ -1,15 +1,25 @@
 .page-wrapper{max-width: 1280px; padding: 3.90625%; margin: 0 auto;}
 .inner-page header nav{width: 100%; text-align: right;}
+.inner-page header{margin-bottom: 5.2%;}
 .inner-page header nav ul li{display: inline-block;margin-right: 4%;height: 60px;}
 .inner-page header nav ul{border-bottom: 1px solid #e3e3e3; height: 60px;}
 .inner-page header nav ul li a{color: #ca3535; font-size: 2rem;}
 .inner-page header nav ul li:hover{border-bottom: 1px solid black; cursor: pointer;}
 .inner-page header nav ul li:hover a{color:black;}
-.content-promo{padding: 5.2% 10.2% 5.9% 24.7% } 
-.content-promo h1{font-size: 4.8rem} 
+.content-promo{padding: 0 10.2% 5.9% 24.7% } 
+.content-promo h1{font-size: 4.8rem;line-height: 6rem;} 
 .promo-items{margin-bottom: 6%;}
-.promo-items .promo-item p{margin: 3% 21.2% 3% 24.7%; font-size: 2rem;}
+.promo-items .promo-item p{line-height: 3rem;margin: 3% 21.2% 3% 24.7%; font-size: 2rem; font-family: 'apercu_prolight';}
 .promo-items .promo-item h2{font-size: 7.2rem}
 .inner-page footer{border-top: 1px solid #e3e3e3; padding:5.678% 29.66% 6.6% 24.7%;}
 .inner-page footer h2{font-size: 4.3rem;}
 .inner-page footer a{font-size: 7rem; color: #ca3535;margin-top: 4%; display: block;}
+.left-column{width: 34.9%; padding-right: 16%;display: inline-block;vertical-align: top;}
+.left-column h1{font-size: 7.2rem;}
+.content-column{display: inline-block;}
+.project-item *{font-family:'apercu_prolight';}
+.project-item {margin-bottom: 9%; padding-left: 3.3%;}
+.project-item a{font-size: 2.4rem; color: black;}
+.project-item p{font-size: 1.8rem; color: #b2b2b2;margin-top: 2%;}
+.project-item figure img{margin-left: -3.3%;}
+.project-item figure figcaption{border-left: 1px solid #ca3535;margin-left: -3.3%;padding-left: 3.3%;}

@@ -23,19 +23,19 @@
 }
 
 @font-face {
-    font-family: 'apercu_proitalic';
-    src: url('fonts/apercupro-ltalic-webfont.eot');
-    src: url('fonts/apercupro-ltalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/apercupro-ltalic-webfont.woff') format('woff'),
-         url('fonts/apercupro-ltalic-webfont.ttf') format('truetype'),
-         url('fonts/apercupro-ltalic-webfont.svg#apercu_proitalic') format('svg');
+    font-family: 'apercu_prolight';
+    src: url('fonts/apercupro-light-webfont.eot');
+    src: url('fonts/apercupro-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/apercupro-light-webfont.woff') format('woff'),
+         url('fonts/apercupro-light-webfont.ttf') format('truetype'),
+         url('fonts/apercupro-light-webfont.svg#apercu_prolight') format('svg');
     font-weight: normal;
     font-style: normal
 }
 
 .apercu-regular{font-family: 'apercu_proregular'; font-weight: normal !important;}
 .apercu-bold{font-family: 'apercu_probold'; font-weight: normal !important;}
-.apercu-italic{font-family: 'apercu_proitalic'; font-weight: normal !important;}
+.apercu-light{font-family: 'apercu_prolight'; font-weight: normal !important;}
 html{
     font-size: 10px;
     -webkit-transition: font-size .3s ease-in;
