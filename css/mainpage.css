@@ -1,11 +1,3 @@
-html{
-	font-size: 10px;
-	-webkit-transition: font-size .3s ease-in;
-	-moz-transition: font-size .3s ease-in;
-	-ms-transition: font-size .3s ease-in;
-	-o-transition: font-size .3s ease-in;
-	transition: font-size .3s ease-in;
-}
 body{background: #ca3535;}
 .mainpage-wrapper{
 	padding: 80px;
@@ -44,4 +36,4 @@ body{background: #ca3535;}
 }
 .mainpage-wrapper footer nav ul{text-align: right;}
 	
-.mainpage-wrapper footer nav ul li a{color: #ffa8a8; text-decoration: none;}
+.mainpage-wrapper footer nav ul li a{color: #ffa8a8;}
