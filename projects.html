@@ -13,11 +13,7 @@
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/inner.css">
         <link rel="stylesheet" href="css/media-queries.css">
-        <script type="text/javascript">
-            window.onload = function (){
-                RetinaImages.init('image-src');
-            }
-        </script>
+
     </head>
     <body class="inner-page">
         <!--[if lt IE 7]>
@@ -32,7 +28,7 @@
                 <span class='st_fblike_hcount' displayText='Facebook Like'></span>
                 <nav>
                     <ul>
-                        <li><a href="#">КОМПАНИЯ</a></li>
+                        <li class="first"><a href="#">КОМПАНИЯ</a></li>
                         <li><a href="#">ПРОЕКТЫ</a></li>
                         <li><a href="#">КОНТАКТНАЯ ИНФОРМАЦИЯ</a></li>
                     </ul>
@@ -91,6 +87,11 @@
 
         <script src="js/lib/jquery.min.js"></script>
         <script src="js/retina-images.js"></script>
+        <script type="text/javascript">
+            window.onload = function (){
+                RetinaImages.init('image-src');
+            }
+        </script>
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
