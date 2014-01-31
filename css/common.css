@@ -49,3 +49,4 @@ a{text-decoration: none;}
 mark{background: none; color: #ca3535;}
 h1,h2,h3{font-weight: normal!important;}
 .plus-icon{font-size: 9rem; color: #ca3535; font-style: normal; margin-left: 22.88%; line-height: 8%;}
+img{max-width: 100%;}

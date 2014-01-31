@@ -24,6 +24,7 @@
 .project-item figure img{margin-left: -2.7%; max-width: 100%;}
 .project-item figure figcaption{border-left: 1px solid #ca3535;margin-left: -2.7%;padding-left: 2.7%;}
 .content-column footer{border: 0; padding: 0;}
+.info-items{margin-bottom: 5.9%;}
 .info-items .info-item{ display: inline-block;vertical-align: top; width: 25.66%; margin-left:4.2373%; }
 .info-items .info-item h1{ color: #797979; font-size: 2.3rem; }
 .info-items .info-item p{font-size: 3.4rem; font-family: 'apercu_prolight';line-height: 4rem;}
@@ -33,3 +34,4 @@
 .social-b{background: url(../images/fb-tw-icons.png) no-repeat 0 0; display: inline-block;height: 39px;width: 39px;}
 .twitter{background-position: 0 -39px;margin-left: 8%}
 .info-item.social-item{width: 12.7%; float: right;text-align: right;margin-left: 0;}
+.project-item figure img.retina-image{width: 84.827586%;}
