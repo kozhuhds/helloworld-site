@@ -3,6 +3,7 @@
 }
 @media screen and (max-width: 1024px) {
 	html{font-size: 7px;}
+	.mainpage-wrapper header h1{max-width: 100%;}
 }
 @media screen and (max-width: 768px) {
 	html{font-size: 6px;}
@@ -15,4 +16,12 @@
 }
 @media screen and (max-width: 320px) {
 	html{font-size: 3px;}
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (-moz-min-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2) {
+           .social-b{background: url(../images/fb-tw-icons@2x.png) no-repeat 0 8px; background-size: 39px;}
 }

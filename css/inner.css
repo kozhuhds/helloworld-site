@@ -30,8 +30,9 @@
 .info-items .info-item p{font-size: 3.4rem; font-family: 'apercu_prolight';line-height: 4rem;}
 .info-items .info-item a{color: #ca3535; word-wrap:break-word;}
 .info-items .info-item p strong{font-family: 'apercu_proregular'}
+.info-item.phone-item{width: 28%; margin-left: 2%;}
 .first{margin-left: 0 !important;}
-.social-b{background: url(../images/fb-tw-icons.png) no-repeat 0 0; display: inline-block;height: 39px;width: 39px;}
-.twitter{background-position: 0 -39px;margin-left: 8%}
+.social-b{-webkit-border-radius: 99px;-moz-border-radius: 99px;border-radius: 99px; display: inline-block;height: 39px;width: 39px; border: 3px solid black; background: url(../images/fb-tw-icons.png) no-repeat 0 8px;}
+.twitter{background-position: 0 -21px;margin-left: 8%}
 .info-item.social-item{width: 12.7%; float: right;text-align: right;margin-left: 0;}
 .project-item figure img.retina-image{width: 84.827586%;}
