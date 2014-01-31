@@ -13,8 +13,11 @@
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/inner.css">
         <link rel="stylesheet" href="css/media-queries.css">
-        <!--<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-        <script type="text/javascript">stLight.options({publisher: "1af3a253-f828-450c-b546-b1732ccadb68", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>-->
+        <script type="text/javascript">
+            window.onload = function (){
+                RetinaImages.init('image-src');
+            }
+        </script>
     </head>
     <body class="inner-page">
         <!--[if lt IE 7]>
@@ -23,7 +26,7 @@
         <div class="page-wrapper">
             <header>
                 <a href="#" class="logo">
-                    <object type="image/svg+xml" data="images/logo-black.svg">Your browser does not support SVG</object>
+                    <object type="image/svg+xml" data="images/logo-black.svg"><image xlink:href="image/logo-black.png" width="290"/></object>
                 </a>
                 <span class='st_twitter_hcount' displayText='Tweet'></span>
                 <span class='st_fblike_hcount' displayText='Facebook Like'></span>
@@ -35,56 +38,59 @@
                     </ul>
                 </nav>
             </header>
-            <aside class="left-column">
-                <h1 class="apercu-regular">За четыре года <mark>более 60 проектов</mark></h1>
-            </aside>
-            <section class="content-column">
-                <div class="project-item">
-                    <a href="#">Сайт для компании Loyalbill</a>
-                    <p>Верстка</p>
-                </div>
-                <div class="project-item">
-                    <figure>
-                        <img src="images/photodom@2x.png" width="492"/>
-                        <figcaption>
-                            <a href="#">Проект ФОТОДОМ.BY</a>
-                            <p>Верстка и программирование</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="project-item">
-                    <a href="#">Студия анимации VIPLine</a>
-                    <p>Верстка и программирование</p>
-                </div>
-                <div class="project-item">
-                    <a href="#">Сервис быстрых объявлений Ymp.la</a>
-                    <p>Программирование</p>
-                </div>
-                <div class="project-item">
-                    <figure>
-                        <img src="images/evroset@2x.png" width="498"/>
-                        <figcaption>
-                            <a href="#">Интернет-магазин «Евросеть»</a>
-                            <p>Верстка</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="project-item">
-                    <a href="#">Новогодний проект для «Азбуки Вкуса»</a>
-                    <p>Верстка и программирование</p>
-                </div>
-                <div class="project-item">
-                    <a href="#">Проект «Туры» для «Евросети»</a>
-                    <p>Программирование</p>
-                </div>
-            </section>
-<!--             <footer>
-                <h2>Мы открыты для любых идей и предложений</h2>
-                <a href="mailto:say@helloworld.by">say@helloworld.by</a>
-            </footer> -->
+            <div class="page-body">
+                <aside class="left-column">
+                    <h1 class="apercu-regular">За четыре года <mark>более 60 проектов</mark></h1>
+                </aside>
+                <section class="content-column">
+                    <div class="project-item">
+                        <a href="#">Сайт для компании Loyalbill</a>
+                        <p>Верстка</p>
+                    </div>
+                    <div class="project-item">
+                        <figure>
+                            <img image-src="images/photodom.png" />
+                            <figcaption>
+                                <a href="#">Проект ФОТОДОМ.BY</a>
+                                <p>Верстка и программирование</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="project-item">
+                        <a href="#">Студия анимации VIPLine</a>
+                        <p>Верстка и программирование</p>
+                    </div>
+                    <div class="project-item">
+                        <a href="#">Сервис быстрых объявлений Ymp.la</a>
+                        <p>Программирование</p>
+                    </div>
+                    <div class="project-item">
+                        <figure>
+                            <img image-src="images/evroset.png"/>
+                            <figcaption>
+                                <a href="#">Интернет-магазин «Евросеть»</a>
+                                <p>Верстка</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="project-item">
+                        <a href="#">Новогодний проект для «Азбуки Вкуса»</a>
+                        <p>Верстка и программирование</p>
+                    </div>
+                    <div class="project-item">
+                        <a href="#">Проект «Туры» для «Евросети»</a>
+                        <p>Программирование</p>
+                    </div>
+                    <footer>
+                        <h2>Мы открыты для любых идей и предложений</h2>
+                        <a href="mailto:say@helloworld.by">say@helloworld.by</a>
+                    </footer>
+                </section>
+            </div>
         </div>
 
         <script src="js/lib/jquery.min.js"></script>
+        <script src="js/retina-images.js"></script>
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
