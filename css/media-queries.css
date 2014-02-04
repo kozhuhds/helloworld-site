@@ -1,21 +1,63 @@
 @media screen and (max-width: 1280px) {
 	html{font-size: 8px;}
+	.logo{
+		-moz-transform: scale(0.8); /* Для Firefox */
+	    -ms-transform: scale(0.8); /* Для IE */
+	    -webkit-transform: scale(0.8); /* Для Safari, Chrome, iOS */
+	    -o-transform: scale(0.8); /* Для Opera */
+	    transform: scale(0.8);
+	}
 }
 @media screen and (max-width: 1024px) {
 	html{font-size: 7px;}
 	.mainpage-wrapper header h1{max-width: 100%;}
+	.logo{
+		-moz-transform: scale(0.7); /* Для Firefox */
+	    -ms-transform: scale(0.7); /* Для IE */
+	    -webkit-transform: scale(0.7); /* Для Safari, Chrome, iOS */
+	    -o-transform: scale(0.7); /* Для Opera */
+	    transform: scale(0.7);
+	}
 }
 @media screen and (max-width: 768px) {
 	html{font-size: 6px;}
+	.logo{
+		-moz-transform: scale(0.6); /* Для Firefox */
+	    -ms-transform: scale(0.6); /* Для IE */
+	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
+	    -o-transform: scale(0.6); /* Для Opera */
+	    transform: scale(0.6);
+	}
 }
 @media screen and (max-width: 600px) {
 	html{font-size: 5px;}
+	.logo{
+		-moz-transform: scale(0.6); /* Для Firefox */
+	    -ms-transform: scale(0.6); /* Для IE */
+	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
+	    -o-transform: scale(0.6); /* Для Opera */
+	    transform: scale(0.6);
+	}
 }
 @media screen and (max-width: 480px) {
 	html{font-size: 4px;}
+	.logo{
+		-moz-transform: scale(0.6); /* Для Firefox */
+	    -ms-transform: scale(0.6); /* Для IE */
+	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
+	    -o-transform: scale(0.6); /* Для Opera */
+	    transform: scale(0.6);
+	}
 }
 @media screen and (max-width: 320px) {
 	html{font-size: 3px;}
+	.logo{
+		-moz-transform: scale(0.6); /* Для Firefox */
+	    -ms-transform: scale(0.6); /* Для IE */
+	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
+	    -o-transform: scale(0.6); /* Для Opera */
+	    transform: scale(0.6);
+	}
 }
 
 

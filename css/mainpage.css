@@ -1,12 +1,11 @@
-body{background: #ca3535;}
 .mainpage-wrapper{
-	padding: 4%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
+	padding: 0 4%;
 	min-height: 636px;
+	background: #ca3535;
+}
+.mainpage-wrapper header{
+	margin: 0;
+	padding-top: 3%;
 }
 .mainpage-wrapper header h1{
 	color: white;
@@ -30,9 +29,10 @@ body{background: #ca3535;}
 .mainpage-wrapper  footer .logo{width: 19%;}
 .mainpage-wrapper footer nav ul li{
 	display: inline-block;
-	font-size: 2rem;
 	margin-left: 7%;
 }
+.mainpage-wrapper footer a{font-size: 2rem}
 .mainpage-wrapper footer nav ul{text-align: right;}
 	
 .mainpage-wrapper footer nav ul li a{color: #ffa8a8;}
+.mainpage-wrapper footer{border-top: 0;}

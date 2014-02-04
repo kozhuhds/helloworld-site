@@ -1,11 +1,13 @@
-.page-wrapper{max-width: 1180px; padding: 3.90625%; margin: 0 auto;}
-.inner-page header nav{width: 100%; margin-top: -20px;}
-.inner-page header{margin-bottom: 5.2%;}
-.inner-page header nav ul li{display: inline-block;margin-left: 7%;height: 60px;}
-.inner-page header nav ul{padding-left: 47.457627%;border-bottom: 1px solid #e3e3e3; height: 60px;font-size: 0;}
-.inner-page header nav ul li a{color: #ca3535; font-size: 2rem;}
-.inner-page header nav ul li:hover{border-bottom: 1px solid black; cursor: pointer;}
-.inner-page header nav ul li:hover a{color:black;}
+.inner-page-header .logo{display: inline-block;width: 0%;}
+.top-header{position: absolute; width: 100%;}
+.page-wrapper{max-width: 1180px; padding: 3.90625%; margin: 0 auto;padding-top: 270px; z-index: 1}
+.inner-page-header nav{width: 100%; margin-top: -20px;}
+.inner-page-header{margin-bottom: 5.2%; max-width: 1180px; margin: 0 auto; padding: 3.90625% 3.90625% 0 3.90625%; }
+.inner-page-header nav ul li{display: inline-block;margin-left: 7%;height: 60px;}
+.inner-page-header nav ul{padding-left: 47.457627%;border-bottom: 1px solid #e3e3e3; height: 60px;font-size: 0;}
+.inner-page-header nav ul li a{color: #ca3535; font-size: 2rem;}
+.inner-page-header nav ul li:hover, .inner-page-header nav ul li.active{border-bottom: 1px solid black; cursor: pointer;}
+.inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{color:black;}
 .content-promo{padding: 0 10.2% 5.9% 24.7% } 
 .content-promo h1{font-size: 4.8rem;line-height: 6rem;} 
 .promo-items{margin-bottom: 6%;}
@@ -36,3 +38,4 @@
 .twitter{background-position: 0 -21px;margin-left: 8%}
 .info-item.social-item{width: 12.7%; float: right;text-align: right;margin-left: 0;}
 .project-item figure img.retina-image{width: 84.827586%;}
+#maparea{height: 694px;}

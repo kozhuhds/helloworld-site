@@ -38,11 +38,11 @@
 .apercu-light{font-family: 'apercu_prolight'; font-weight: normal !important;}
 html{
     font-size: 10px;
-    -webkit-transition: font-size .3s ease-in;
-    -moz-transition: font-size .3s ease-in;
-    -ms-transition: font-size .3s ease-in;
-    -o-transition: font-size .3s ease-in;
-    transition: font-size .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;
     font-family: 'apercu_proregular';
 }
 a{text-decoration: none;}
@@ -50,3 +50,18 @@ mark{background: none; color: #ca3535;}
 h1,h2,h3{font-weight: normal!important;}
 .plus-icon{font-size: 9rem; color: #ca3535; font-style: normal; margin-left: 22.88%; line-height: 8%;}
 img{max-width: 100%;}
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > section {
+  float:left;
+  width:100%;
+  position: relative;
+}
+html, body, .swipe, .swipe-wrap, .mainpage-item.page-item, .page-item .mainpage-wrapper {height: 100%}
