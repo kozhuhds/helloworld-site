@@ -5,7 +5,7 @@
 .inner-page-header{margin-bottom: 5.2%; max-width: 1180px; margin: 0 auto; padding: 3.90625% 3.90625% 0 3.90625%; }
 .inner-page-header nav ul li{display: inline-block;margin-left: 7%;height: 60px;}
 .inner-page-header nav ul{padding-left: 47.457627%;border-bottom: 1px solid #e3e3e3; height: 60px;font-size: 0;}
-.inner-page-header nav ul li a{color: #ca3535; font-size: 2rem;}
+.inner-page-header nav ul li a{color: #ca3535; font-size: 2rem;padding-bottom: 37px;}
 .inner-page-header nav ul li:hover, .inner-page-header nav ul li.active{border-bottom: 1px solid black; cursor: pointer;}
 .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{color:black;}
 .content-promo{padding: 0 10.2% 5.9% 24.7% } 
