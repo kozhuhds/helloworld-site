@@ -11,8 +11,6 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/inner.css">
-        <link rel="stylesheet" href="css/mainpage.css">
         <link rel="stylesheet" href="css/media-queries.css">
         
         <!--[if lt IE 7]>
@@ -24,31 +22,31 @@
         <![endif]-->
     </head>
     <body>
-        <header class="top-header">
+        <div class="header top-header">
             <div class="inner-page-header">
-                <a href="#" class="logo">
-                    <object type="image/svg+xml" data="images/logo-black.svg"><image xlink:href="image/logo-black.png" width="290"/></object>
+                <a href="/index" class="logo">
+                    <img src="images/logo-black.svg" onerror="this.onerror=null; this.src='images/logo-black.png'"/>
                 </a>
                 <nav>
                     <ul>
-                        <li class="first"><a href="/company">КОМПАНИЯ</a></li>
+                        <li><a href="/company">КОМПАНИЯ</a></li>
                         <li><a href="/projects">ПРОЕКТЫ</a></li>
                         <li><a href="/contacts">КОНТАКТНАЯ ИНФОРМАЦИЯ</a></li>
                     </ul>
                 </nav>
             </div>
-        </header>
+        </div>
          <article id="slider" class="swipe inner-page">
             <div class="swipe-wrap">
                 <section class="page-item mainpage-item">
                     <div class="mainpage-wrapper">
-                        <header>
-                            <h1 class="apercu-regular">Разработка и поддержка
+                        <div class="header">
+                            <h1>Разработка и поддержка
                             больших и сложных проектов</h1>
-                        </header>
-                        <footer>
-                            <a href="#" class="logo">
-                                <object type="image/svg+xml" data="images/logo-white.svg"><image xlink:href="image/logo-white.png" width="290"/></object>
+                        </div>
+                        <div class="footer">
+                            <a href="/index" class="logo">
+                                <img src="images/logo-white.svg" onerror="this.onerror=null; this.src='images/logo-white.png'"/>
                             </a>
                             <nav>
                                 <ul class="apercu-regular">
@@ -57,36 +55,36 @@
                                     <li><a href="/contacts">КОНТАКТНАЯ ИНФОРМАЦИЯ</a></li>
                                 </ul>
                             </nav>
-                        </footer>
+                        </div>
                     </div>
                 </section>  
                 <section class="page-item">
                     <div class="page-wrapper">
                         <div class="page-body">
                             <section class="content-promo">
-                                <h1 class="apercu-regular"><mark>Более четырёх лет</mark> мы занимаемся решением технических задач при создании интернет-проектов, не размениваясь на дизайн, юзабилити и информационную архитектуру.</h1>
+                                <h1><mark>Более четырёх лет</mark> мы занимаемся решением технических задач при создании интернет-проектов, не размениваясь на дизайн, юзабилити и информационную архитектуру.</h1>
                             </section>
                             <section class="promo-items">
                                 <article class="promo-item">
                                     <h2>Фронт-энд</h2>
                                     <p>К нам обращаются, потому что хотят, чтобы их проекты сверстали профессионалы. Профессионалы предусмотрительны и аккуратны, используют HTML5, разбираются в адаптивной верстке и обожают модные штуки вроде SASS и Retina-дисплеев.</p>
-                                    <i class="plus-icon">+</i>
+                                    <span class="sign">+</span>
                                 </article>
                                 <article class="promo-item">
                                     <h2>Программирование</h2>
                                     <p>Мы программируем на PHP5. В зависимости от масштабов, жизненного цикла проекта и имплементированных бизнес-процессов мы используем Symfony, «Битрикс» или свою систему управления.</p>
-                                    <i class="plus-icon">+</i>
+                                    <span class="sign">+</span>
                                 </article>
                                 <article class="promo-item">
                                     <h2>Поддержка</h2>
                                     <p>Многие из разработанных нами проектов постоянно развиваются и эволюционируют. Поддержка таких проектов включает в себя не только полное техническое сопровождение, но и их поэтапное развитие.</p>
-                                    <i clasa="plus-icon"></i>
+                                    <span class="sign">+</span>
                                 </article>
                             </section>
-                            <footer>
+                            <div class="footer">
                                 <h2>Мы открыты для любых идей и предложений</h2>
                                 <a href="mailto:say@helloworld.by">say@helloworld.by</a>
-                            </footer>
+                            </div>
                         </div>
                     </div>
                 </section> 
@@ -136,10 +134,10 @@
                                     <a href="#">Проект «Туры» для «Евросети»</a>
                                     <p>Программирование</p>
                                 </div>
-                                <footer>
+                                <div class="footer">
                                     <h2>Мы открыты для любых идей и предложений</h2>
                                     <a href="mailto:say@helloworld.by">say@helloworld.by</a>
-                                </footer>
+                                </div>
                             </section>
                         </div>
                     </div>
@@ -148,16 +146,16 @@
                     <div class="page-wrapper">
                         <div class="page-body">
                             <section class="info-items">
-                                <div class="info-item first">
-                                    <h1>Пишите:</h1>
+                                <div class="info-item">
+                                    <p class="accent">Пишите:</p>
                                     <p><a href="mailto:say@helloworld.by">say@helloworld.by</a></p>
                                 </div>
                                 <div class="info-item phone-item">
-                                    <h1>Звоните:</h1>
+                                    <p class="accent">Звоните:</p>
                                     <p>+375 (29) <strong>144-50-90</strong></p>
                                 </div>
                                 <div class="info-item">
-                                    <h1>Адрес:</h1>
+                                    <p class="accent">Адрес:</p>
                                     <p>ул. К. Крапивы, 34 Минск, Беларусь</p>
                                 </div>
                                 <div class="info-item social-item">

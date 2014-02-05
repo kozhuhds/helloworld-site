@@ -14,8 +14,10 @@ var RetinaImages = (function (){
 			}
 		}else{
 			for(var i=0; i < images.length; i++){
-				images[i].src = images[i].getAttribute(attr);
-				images[i].removeAttribute(attr);
+				if(images[i].getAttribute(attr)){
+					images[i].src = images[i].getAttribute(attr);
+					images[i].removeAttribute(attr);
+				}
 			}
 		}
 	};
@@ -27,7 +29,7 @@ var RetinaImages = (function (){
 	};
 
 	return {
-		init: function (attr){
+		init: function (attr, elem){
 			Init.loadImages();
 			setSrc(attr);
 		}

@@ -5,7 +5,7 @@ var HelloWorld = (function (){
 
 	var Init = {
 		events: function (){
-			$('.logo').on('click', function(){alert(1)});
+			$('a.logo').on('click', navigateToUrl);
 			$('nav a').on('click', navigateToUrl);
 
 			window.onpopstate = function (e){
@@ -83,16 +83,25 @@ var HelloWorld = (function (){
 		$('.inner-page-header nav ul li').eq(item).addClass('active');
 	};
 	var navigateToUrl = function (e, url){
-		var toURL = e.target.getAttribute('href').split('/').pop();
+		var toURL;
+		if (!e.target.getAttribute('href')){
+			toURL = e.target.parentNode.getAttribute('href').split('/').pop();
+		}else{
+			toURL = e.target.getAttribute('href').split('/').pop();
+		}
+		console.log(toURL == 'index');
 		highlightMenuItem(pages.indexOf(toURL)-1);
 		$('body').css('overflow-y','scroll');
+		prevUrl = history.state.url;
 		if (toURL == 'index') {
-			$('top-header').removeAttr('style');
+			$('.top-header').removeAttr('style');
 			$('html').removeAttr('style');
 			$('body').removeAttr('style');
-		};
-		prevUrl = history.state.url;
-		window.history.pushState({url: toURL},null, "/"+toURL);
+			window.history.pushState({url: toURL},null, "/");
+		}else{
+			window.history.pushState({url: toURL},null, "/"+toURL);
+		}
+		
 		hwSwipe.slide(pages.indexOf(toURL));
 		e.preventDefault();
 	};
