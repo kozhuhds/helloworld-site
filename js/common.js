@@ -1,6 +1,5 @@
 var HelloWorld = (function (){
 	var hwSwipe = null,
-		prevUrl = 'index',
 		pages = ["index","company","projects","contacts"];
 
 	var Init = {
@@ -12,7 +11,7 @@ var HelloWorld = (function (){
 				if (history.state.url == 'index') {
 					$('.top-header').removeAttr('style');
 					$('html').removeAttr('style');
-					$('body').removeAttr('style');
+					setTimeout(function(){$('body').removeAttr('style');}, 200);
 				}else{
 					highlightMenuItem(pages.indexOf(history.state.url)-1);
 					$('body').css('overflow-y','scroll');
@@ -26,12 +25,14 @@ var HelloWorld = (function (){
 					hwSwipe.prev();
 					if (pages[pageNum-1] == 'index') {
 						$('.top-header').removeAttr('style');
-						$('body').removeAttr('style');
+						setTimeout(function(){$('body').removeAttr('style');}, 200);
 						$('html').removeAttr('style');
 						window.history.pushState({url: pages[pageNum-1]},null, "/");
 					}else{
 						window.history.pushState({url: pages[pageNum-1]},null, "/"+pages[pageNum-1]);
 						highlightMenuItem(pages.indexOf(history.state.url)-1);
+						$('.top-header').css('z-index',3);
+						$('html').css('height', 'auto');
 					}
 				}
 				else if(e.keyCode == 39 && pageNum < pages.length-1){
@@ -45,12 +46,14 @@ var HelloWorld = (function (){
 		},
 		initSwipe: function (el){
 			hwSwipe = new Swipe(document.getElementById(el), {
-				speed: 1000,
+				speed: 400,
 				disableScroll: true,
 				stopPropagation: false,
 				callback: function(index, elem) {},
 				transitionEnd: function(index, elem) {
-					if(prevUrl == 'index' && history.state.url != 'index'){
+					$(elem).parent().find('.active').removeClass('active');
+					$(elem).addClass('active');
+					if(history.state.url != 'index'){
 						$('.top-header').css('z-index',3);
 						$('html').css('height', 'auto');
 					}
@@ -89,14 +92,12 @@ var HelloWorld = (function (){
 		}else{
 			toURL = e.target.getAttribute('href').split('/').pop();
 		}
-		console.log(toURL == 'index');
 		highlightMenuItem(pages.indexOf(toURL)-1);
 		$('body').css('overflow-y','scroll');
-		prevUrl = history.state.url;
 		if (toURL == 'index') {
 			$('.top-header').removeAttr('style');
 			$('html').removeAttr('style');
-			$('body').removeAttr('style');
+			setTimeout(function(){$('body').removeAttr('style');}, 200);
 			window.history.pushState({url: toURL},null, "/");
 		}else{
 			window.history.pushState({url: toURL},null, "/"+toURL);
@@ -107,6 +108,7 @@ var HelloWorld = (function (){
 	};
 	return {
 		init: function (){
+			$('.top-header').addClass('show');
 			window.history.pushState({url:"index"},null, "/");
 			Init.events();
 			Init.initSwipe('slider');
