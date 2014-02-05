@@ -19,6 +19,21 @@
 	    transform: scale(0.7);
 	}
 }
+@media screen and (max-width: 800px) {
+	.mainpage-wrapper div.footer nav ul {text-align: left;}
+	.mainpage-wrapper div.footer nav ul li {display: block;margin-left: 4%;}
+	.mainpage-wrapper div.footer nav {position: absolute;left: 0;top: -200px;width: 100%;}
+	.info-items .info-item {margin-bottom: 7%;margin-left:0;display: block;width: 100%;text-align: center;}
+	.page-wrapper{padding-top: 334px;}
+	.left-column{width: 100%;text-align: center;padding: 0;word-wrap: break-word;}
+	.content-column{width: 100%;text-align: center;margin-top: 10%}
+	.inner-page-header nav{margin-top: 0;}
+	.inner-page-header nav ul {padding-left: 0; height: auto;}
+	.inner-page-header nav ul li{height: auto;margin-bottom: 4%;padding-bottom: 0;margin-left: 0; display: block;}
+	.inner-page-header nav ul li a{display: inline-block;padding-bottom: 0;font-size: 2.5rem;border-bottom: 1px solid transparent}
+	.content-promo, .inner-page div.footer{padding-left: 0;padding-right: 0;}
+	.promo-items .promo-item p{margin-left: 0;margin-right: 0;}
+}
 @media screen and (max-width: 768px) {
 	html{font-size: 6px;}
 	.logo a{
@@ -30,6 +45,8 @@
 	}
 }
 @media screen and (max-width: 600px) {
+	
+	.page-wrapper {padding-top: 290px;}
 	html{font-size: 5px;}
 	.logo a{
 		-moz-transform: scale(0.6); /* Для Firefox */
@@ -40,7 +57,7 @@
 	}
 }
 @media screen and (max-width: 480px) {
-	html{font-size: 4px;}
+	.inner-page div.footer a {font-size: 3rem}
 	.logo a{
 		-moz-transform: scale(0.6); /* Для Firefox */
 	    -ms-transform: scale(0.6); /* Для IE */
@@ -48,9 +65,10 @@
 	    -o-transform: scale(0.6); /* Для Opera */
 	    transform: scale(0.6);
 	}
+	.page-wrapper {padding-top: 250px;}
+	.promo-items .promo-item h2 {font-size: 5.2rem;}
 }
 @media screen and (max-width: 320px) {
-	html{font-size: 3px;}
 	.logo a{
 		-moz-transform: scale(0.6); /* Для Firefox */
 	    -ms-transform: scale(0.6); /* Для IE */

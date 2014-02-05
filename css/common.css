@@ -53,7 +53,7 @@ h1{font-family: 'apercu_proregular';}
 img{max-width: 100%;}
 .logo a img{max-width: none !important;}
 
-.swipe {overflow: hidden;visibility: hidden;position: relative;}
+.swipe {overflow: hidden;visibility: hidden;position: relative; min-height: 550px;}
 .swipe-wrap {overflow: hidden;position: relative;}
 .swipe-wrap > section {float:left;width:100%;position: relative;}
 html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {height: 100%}
@@ -66,8 +66,8 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
     .inner-page-header nav{width: 100%; margin-top: -20px;}
       .inner-page-header nav ul{padding-left: 47.457627%;border-bottom: 1px solid #e3e3e3; height: 60px;font-size: 0;}
         .inner-page-header nav ul li{display: inline-block;margin-left: 7%;height: 60px;}
-        .inner-page-header nav ul li:hover, .inner-page-header nav ul li.active{border-bottom: 1px solid black; cursor: pointer;}
-          .inner-page-header nav ul li a{color: #ca3535; font-size: 2rem;padding-bottom: 37px;text-transform: uppercase;}
+        .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{border-bottom: 1px solid black; cursor: pointer;}
+          .inner-page-header nav ul li a{color: #ca3535; font-size: 2rem;padding-bottom: 40px;text-transform: uppercase;display: block;height: 20px;}
           .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{color:black;}
 .page-wrapper{max-width: 1180px; padding: 3.90625%; margin: 0 auto;padding-top: 270px; z-index: 1}
   .content-promo{padding: 0 10.2% 5.9% 24.7% } 
