@@ -51,7 +51,7 @@ h1,h2,h3{font-weight: normal!important;}
 h1{font-family: 'apercu_proregular';}
 .sign{font-size: 9rem; color: #ca3535; margin-left: 22.88%; line-height: 8%;}
 img{max-width: 100%;}
-.logo img{max-width: none !important;}
+.logo a img{max-width: none !important;}
 
 .swipe {overflow: hidden;visibility: hidden;position: relative;}
 .swipe-wrap {overflow: hidden;position: relative;}
@@ -59,7 +59,7 @@ img{max-width: 100%;}
 html, body, .swipe, .swipe-wrap, .mainpage-item.page-item, .page-item .mainpage-wrapper {height: 100%}
 .top-header{position: absolute; width: 100%;}
   .inner-page-header{margin-bottom: 5.2%; max-width: 1180px; margin: 0 auto; padding: 3.90625% 3.90625% 0 3.90625%; }
-    .inner-page-header .logo{display: inline-block;width: 0%;}
+    .inner-page-header .logo a{display: inline-block;width: 0%;}
     .inner-page-header nav{width: 100%; margin-top: -20px;}
       .inner-page-header nav ul{padding-left: 47.457627%;border-bottom: 1px solid #e3e3e3; height: 60px;font-size: 0;}
         .inner-page-header nav ul li{display: inline-block;margin-left: 7%;height: 60px;}

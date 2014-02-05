@@ -5,7 +5,7 @@ var HelloWorld = (function (){
 
 	var Init = {
 		events: function (){
-			$('a.logo').on('click', navigateToUrl);
+			$('.logo a').on('click', navigateToUrl);
 			$('nav a').on('click', navigateToUrl);
 
 			window.onpopstate = function (e){
@@ -111,7 +111,7 @@ var HelloWorld = (function (){
 			Init.events();
 			Init.initSwipe('slider');
 			RetinaImages.init('image-src');
-			//Init.initYandexMaps('maparea');
+			Init.initYandexMaps('maparea');
 		}
 	}
 })();

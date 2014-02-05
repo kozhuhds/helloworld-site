@@ -1,6 +1,6 @@
 @media screen and (max-width: 1280px) {
 	html{font-size: 8px;}
-	.logo{
+	.logo a{
 		-moz-transform: scale(0.8); /* Для Firefox */
 	    -ms-transform: scale(0.8); /* Для IE */
 	    -webkit-transform: scale(0.8); /* Для Safari, Chrome, iOS */
@@ -11,7 +11,7 @@
 @media screen and (max-width: 1024px) {
 	html{font-size: 7px;}
 	.mainpage-wrapper div.header h1{max-width: 100%;}
-	.logo{
+	.logo a{
 		-moz-transform: scale(0.7); /* Для Firefox */
 	    -ms-transform: scale(0.7); /* Для IE */
 	    -webkit-transform: scale(0.7); /* Для Safari, Chrome, iOS */
@@ -21,7 +21,7 @@
 }
 @media screen and (max-width: 768px) {
 	html{font-size: 6px;}
-	.logo{
+	.logo a{
 		-moz-transform: scale(0.6); /* Для Firefox */
 	    -ms-transform: scale(0.6); /* Для IE */
 	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
@@ -31,7 +31,7 @@
 }
 @media screen and (max-width: 600px) {
 	html{font-size: 5px;}
-	.logo{
+	.logo a{
 		-moz-transform: scale(0.6); /* Для Firefox */
 	    -ms-transform: scale(0.6); /* Для IE */
 	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
@@ -41,7 +41,7 @@
 }
 @media screen and (max-width: 480px) {
 	html{font-size: 4px;}
-	.logo{
+	.logo a{
 		-moz-transform: scale(0.6); /* Для Firefox */
 	    -ms-transform: scale(0.6); /* Для IE */
 	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
@@ -51,7 +51,7 @@
 }
 @media screen and (max-width: 320px) {
 	html{font-size: 3px;}
-	.logo{
+	.logo a{
 		-moz-transform: scale(0.6); /* Для Firefox */
 	    -ms-transform: scale(0.6); /* Для IE */
 	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
