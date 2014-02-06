@@ -31,7 +31,6 @@ var HelloWorld = (function (){
 					}else{
 						window.history.pushState({url: pages[pageNum-1]},null, "/"+pages[pageNum-1]);
 						highlightMenuItem(pages.indexOf(history.state.url)-1);
-						$('.top-header').css('z-index',3);
 						$('html').css('height', 'auto');
 					}
 				}
@@ -41,22 +40,28 @@ var HelloWorld = (function (){
 					hwSwipe.next();
 					highlightMenuItem(pages.indexOf(history.state.url)-1);
 				}
-
 			});
 		},
 		initSwipe: function (el){
 			hwSwipe = new Swipe(document.getElementById(el), {
 				speed: 400,
-				disableScroll: true,
 				stopPropagation: false,
-				callback: function(index, elem) {},
+				callback: function(index, elem) {
+					if (index) {
+						$('.swipe-wrap').height($(elem).height());
+					}else{
+						$('.swipe-wrap').height('100%');
+						$('#slider').css('height', '100%');
+					}
+				},
 				transitionEnd: function(index, elem) {
-					$(elem).parent().find('.active').removeClass('active');
-					$(elem).addClass('active');
 					if(history.state.url != 'index'){
 						$('.top-header').css('z-index',3);
-						$('html').css('height', 'auto');
+						$('#slider').css('height', 'auto');
 					}
+				},
+				touchend: function (){
+					alert(1);
 				}
 			});
 		},
@@ -92,20 +97,22 @@ var HelloWorld = (function (){
 		}else{
 			toURL = e.target.getAttribute('href').split('/').pop();
 		}
-		highlightMenuItem(pages.indexOf(toURL)-1);
+
 		$('body').css('overflow-y','scroll');
 		if (toURL == 'index') {
 			$('.top-header').removeAttr('style');
 			$('html').removeAttr('style');
-			setTimeout(function(){$('body').removeAttr('style');}, 200);
+			setTimeout(function(){$('body').removeAttr('style');}, 300);
 			window.history.pushState({url: toURL},null, "/");
 		}else{
 			window.history.pushState({url: toURL},null, "/"+toURL);
+			highlightMenuItem(pages.indexOf(toURL)-1);
 		}
 		
 		hwSwipe.slide(pages.indexOf(toURL));
 		e.preventDefault();
 	};
+
 	return {
 		init: function (){
 			$('.top-header').addClass('show');
@@ -113,7 +120,7 @@ var HelloWorld = (function (){
 			Init.events();
 			Init.initSwipe('slider');
 			RetinaImages.init('image-src');
-			Init.initYandexMaps('maparea');
+			//Init.initYandexMaps('maparea');
 		}
 	}
 })();

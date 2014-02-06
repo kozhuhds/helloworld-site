@@ -53,12 +53,11 @@ h1{font-family: 'apercu_proregular';}
 img{max-width: 100%;}
 .logo a img{max-width: none !important;}
 
-.swipe {overflow: hidden;visibility: hidden;position: relative; min-height: 550px;}
+.swipe {overflow: hidden;visibility: hidden;position: relative; min-height: 320px;}
 .swipe-wrap {overflow: hidden;position: relative;}
 .swipe-wrap > section {float:left;width:100%;position: relative;}
 html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {height: 100%}
-.page-item{height: 1px;}
-.page-item.active{height: auto;}
+.mainpage-item.page-item{background: #ca3535;}
 .top-header{position: absolute; width: 100%; display: none;}
 .top-header.show{display: block;}
   .inner-page-header{margin-bottom: 5.2%; max-width: 1180px; margin: 0 auto; padding: 3.90625% 3.90625% 0 3.90625%; }

@@ -20,9 +20,11 @@
 	}
 }
 @media screen and (max-width: 800px) {
+	.project-item figure img {margin-left: 0}
+	.mainpage-wrapper div.header h1 {font-size: 5rem;line-height: 6rem;}
 	.mainpage-wrapper div.footer nav ul {text-align: left;}
 	.mainpage-wrapper div.footer nav ul li {display: block;margin-left: 4%;}
-	.mainpage-wrapper div.footer nav {position: absolute;left: 0;top: -200px;width: 100%;}
+	.mainpage-wrapper div.footer nav {position: absolute;left: 0;top: -160px;width: 100%;}
 	.info-items .info-item {margin-bottom: 7%;margin-left:0;display: block;width: 100%;text-align: center;}
 	.page-wrapper{padding-top: 334px;}
 	.left-column{width: 100%;text-align: center;padding: 0;word-wrap: break-word;}
@@ -45,7 +47,6 @@
 	}
 }
 @media screen and (max-width: 600px) {
-	
 	.page-wrapper {padding-top: 290px;}
 	html{font-size: 5px;}
 	.logo a{
@@ -57,6 +58,7 @@
 	}
 }
 @media screen and (max-width: 480px) {
+	.mainpage-wrapper div.footer nav {top: -94px;}
 	.inner-page div.footer a {font-size: 3rem}
 	.logo a{
 		-moz-transform: scale(0.6); /* Для Firefox */
