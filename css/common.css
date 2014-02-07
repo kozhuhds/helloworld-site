@@ -8,7 +8,7 @@
          url('fonts/apercupro-regular-webfont.woff') format('woff'),
          url('fonts/apercupro-regular-webfont.svg#apercu_proregular') format('svg');
     font-weight: normal;
-    font-style: normal
+    font-style: normal;
 }
 
 @font-face {
@@ -38,11 +38,6 @@
 .apercu-light{font-family: 'apercu_prolight'; font-weight: normal !important;}
 html{
     font-size: 10px;
-    -webkit-transition: all .3s ease-in;
-    -moz-transition: all .3s ease-in;
-    -ms-transition: all .3s ease-in;
-    -o-transition: all .3s ease-in;
-    transition: all .3s ease-in;
     font-family: 'apercu_proregular';
 }
 a{text-decoration: none;}
@@ -59,6 +54,7 @@ img{max-width: 100%;}
 html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {height: 100%}
 .mainpage-item.page-item{background: #ca3535;}
 .top-header{position: absolute; width: 100%; display: none;}
+.top-header.mobile{position: static;}
 .top-header.show{display: block;}
   .inner-page-header{margin-bottom: 5.2%; max-width: 1180px; margin: 0 auto; padding: 3.90625% 3.90625% 0 3.90625%; }
     .inner-page-header .logo a{display: inline-block;width: 0%;}
@@ -66,6 +62,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
       .inner-page-header nav ul{padding-left: 47.457627%;border-bottom: 1px solid #e3e3e3; height: 60px;font-size: 0;}
         .inner-page-header nav ul li{display: inline-block;margin-left: 7%;height: 60px;}
         .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{border-bottom: 1px solid black; cursor: pointer;}
+        .mobile .inner-page-header nav ul li.active a{border-bottom: 0 !important;}
           .inner-page-header nav ul li a{color: #ca3535; font-size: 2rem;padding-bottom: 40px;text-transform: uppercase;display: block;height: 20px;}
           .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{color:black;}
 .page-wrapper{max-width: 1180px; padding: 3.90625%; margin: 0 auto;padding-top: 270px; z-index: 1}
@@ -96,7 +93,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
     .info-item.phone-item{width: 28%; margin-left: 2%;}
 .inner-page-header nav ul li:first-child, .info-items .info-item:first-child{margin-left: 0 !important;}
   .social-b{-webkit-border-radius: 99px;-moz-border-radius: 99px;border-radius: 99px; display: inline-block;height: 39px;width: 39px; border: 3px solid black; background: url(images/fb-tw-icons.png) no-repeat 0 8px;}
-  .twitter{background-position: 0 -21px;margin-left: 8%}
+  .twitter{background-position: 0 -21px !important;margin-left: 8%}
   .info-item.social-item{width: 12.7%; float: right;text-align: right;margin-left: 0;}
 .project-item figure img.retina-image{width: 84.827586%;}
 #maparea{height: 694px;}
@@ -108,10 +105,12 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 .mainpage-wrapper  div.footer{position: absolute; right: 0;left: 0;bottom: 0;padding: 0 4% 4% 4%;}
 .mainpage-wrapper div.footer{border-top: 0;}
   .mainpage-wrapper div.footer nav, .mainpage-wrapper  div.footer .logo{display: inline-block; vertical-align: bottom;}
-  .mainpage-wrapper div.footer nav{width: 80%;} 
-    .mainpage-wrapper  div.footer .logo{width: 19%;}
+  .mainpage-wrapper div.footer nav{width: 76%;} 
+    .mainpage-wrapper  div.footer .logo{width: 19%; margin-left: 4%;}
     .mainpage-wrapper div.footer a{font-size: 2rem}
     .mainpage-wrapper div.footer nav ul{text-align: right;}
       .mainpage-wrapper div.footer nav ul li{display: inline-block;margin-left: 7%;}
         .mainpage-wrapper div.footer nav ul li a{color: #ffa8a8;}
+
+.page-wrapper.mobile{padding-top: 20px !important;}
 

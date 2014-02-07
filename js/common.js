@@ -1,6 +1,9 @@
 var HelloWorld = (function (){
 	var hwSwipe = null,
-		pages = ["index","company","projects","contacts"];
+		pages = ["index","company","projects","contacts"],
+		isMobile = jQuery.browser.mobile,
+		$slider,
+		callFromPopState;
 
 	var Init = {
 		events: function (){
@@ -8,6 +11,7 @@ var HelloWorld = (function (){
 			$('nav a').on('click', navigateToUrl);
 
 			window.onpopstate = function (e){
+				callFromPopState = history.state.isFirstRender?false:true;
 				if (history.state.url == 'index') {
 					$('.top-header').removeAttr('style');
 					$('html').removeAttr('style');
@@ -19,6 +23,11 @@ var HelloWorld = (function (){
 				hwSwipe.slide(pages.indexOf(history.state.url));
 			};
 
+			$(window).on('resize', function (e){
+				if(isMobile)
+					setTimeout(function(){changePageHeight($slider.find('.page-item').eq(pages.indexOf(history.state.url)));},100);
+			});
+
 			$(document).on('keydown', function(e) {
 				var pageNum = pages.indexOf(history.state.url);
 				if(e.keyCode == 37 && pageNum != 0){
@@ -27,44 +36,47 @@ var HelloWorld = (function (){
 						$('.top-header').removeAttr('style');
 						setTimeout(function(){$('body').removeAttr('style');}, 200);
 						$('html').removeAttr('style');
-						window.history.pushState({url: pages[pageNum-1]},null, "/");
 					}else{
-						window.history.pushState({url: pages[pageNum-1]},null, "/"+pages[pageNum-1]);
 						highlightMenuItem(pages.indexOf(history.state.url)-1);
 						$('html').css('height', 'auto');
 					}
 				}
 				else if(e.keyCode == 39 && pageNum < pages.length-1){
 					$('body').css('overflow-y','scroll');
-					window.history.pushState({url: pages[pageNum+1]},null, "/"+pages[pageNum+1]);
 					hwSwipe.next();
 					highlightMenuItem(pages.indexOf(history.state.url)-1);
 				}
 			});
 		},
-		initSwipe: function (el){
-			hwSwipe = new Swipe(document.getElementById(el), {
+		initSwipe: function (id){
+			$slider = $(id);
+			hwSwipe = new Swipe($slider[0], {
 				speed: 400,
 				stopPropagation: false,
 				callback: function(index, elem) {
 					if (index) {
-						$('.swipe-wrap').height($(elem).height());
+						changePageHeight(elem);
+						if (!callFromPopState) {
+							window.history.pushState({url: pages[index]},null, "/"+pages[index]);
+						}
 					}else{
+						if (!callFromPopState) {
+							window.history.pushState({url: pages[index]},null, "/");
+						}
 						$('.swipe-wrap').height('100%');
-						$('#slider').css('height', '100%');
+						$slider.css('height', '100%');
 					}
+					callFromPopState = false;
 				},
 				transitionEnd: function(index, elem) {
-					if(history.state.url != 'index'){
+					if(index){
 						$('.top-header').css('z-index',3);
-						$('#slider').css('height', 'auto');
+						$slider.css('height', 'auto');
 					}
-				},
-				touchend: function (){
-					alert(1);
 				}
 			});
 		},
+
 		initYandexMaps: function (id){
 			var yaMapsScript = document.createElement('script');
  			yaMapsScript.type = 'text/javascript';
@@ -84,11 +96,30 @@ var HelloWorld = (function (){
 				});
  			}, false);
  			yaMapsScript.src = "https://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU";
+		},
+		renderForMobile: function ($header){
+			$header.addClass('mobile');
+			$.each($slider.find('.page-item'), function (key, el){
+				if(!$(el).hasClass('mainpage-item')){
+					$header.clone()
+						.insertBefore($(el).find('.page-wrapper'))
+						.find('div nav ul li').eq(key-1).addClass('active');
+				}
+			});
+			$('.page-wrapper').addClass('mobile');
+			$header.remove();
+		}
+	};
+	var changePageHeight = function (page){
+		if(!$(page).hasClass('mainpage-item')){
+			$('.swipe-wrap').height($(page).height());
 		}
 	};
 	var highlightMenuItem = function (item){
-		$('.inner-page-header nav ul').find('.active').removeClass('active');
-		$('.inner-page-header nav ul li').eq(item).addClass('active');
+		if (!isMobile) {
+			$('.inner-page-header nav ul').find('.active').removeClass('active');
+			$('.inner-page-header nav ul li').eq(item).addClass('active');
+		}
 	};
 	var navigateToUrl = function (e, url){
 		var toURL;
@@ -103,12 +134,9 @@ var HelloWorld = (function (){
 			$('.top-header').removeAttr('style');
 			$('html').removeAttr('style');
 			setTimeout(function(){$('body').removeAttr('style');}, 300);
-			window.history.pushState({url: toURL},null, "/");
 		}else{
-			window.history.pushState({url: toURL},null, "/"+toURL);
 			highlightMenuItem(pages.indexOf(toURL)-1);
 		}
-		
 		hwSwipe.slide(pages.indexOf(toURL));
 		e.preventDefault();
 	};
@@ -116,10 +144,14 @@ var HelloWorld = (function (){
 	return {
 		init: function (){
 			$('.top-header').addClass('show');
-			window.history.pushState({url:"index"},null, "/");
-			Init.events();
-			Init.initSwipe('slider');
+			window.history.pushState({url:"index", isFirstRender: true},null, "/");
+			Init.initSwipe('#slider');
 			RetinaImages.init('image-src');
+			if (isMobile) {
+				Init.renderForMobile($('#main-header'));
+			}
+			Init.events();
+
 			//Init.initYandexMaps('maparea');
 		}
 	}
