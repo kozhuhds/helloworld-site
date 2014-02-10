@@ -11,25 +11,24 @@ var HelloWorld = (function (){
 			$('nav a').on('click', navigateToUrl);
 
 			window.onpopstate = function (e){
-				callFromPopState = history.state.isFirstRender?false:true;
-				if (history.state.url == 'index') {
+				callFromPopState = window.history.state.isFirstRender?false:true;
+				if (window.history.state.url == 'index') {
 					$('.top-header').removeAttr('style');
 					$('html').removeAttr('style');
 					setTimeout(function(){$('body').removeAttr('style');}, 200);
 				}else{
-					highlightMenuItem(pages.indexOf(history.state.url)-1);
-					$('body').css('overflow-y','scroll');
+					highlightMenuItem(pages.indexOf(window.history.state.url)-1);
 				}
-				hwSwipe.slide(pages.indexOf(history.state.url));
+				hwSwipe.slide(pages.indexOf(window.history.state.url));
 			};
 
 			$(window).on('resize', function (e){
 				if(isMobile)
-					setTimeout(function(){changePageHeight($slider.find('.page-item').eq(pages.indexOf(history.state.url)));},100);
+					setTimeout(function(){changePageHeight($slider.find('.page-item').eq(pages.indexOf(window.history.state.url)));},100);
 			});
 
 			$(document).on('keydown', function(e) {
-				var pageNum = pages.indexOf(history.state.url);
+				var pageNum = pages.indexOf(window.history.state.url);
 				if(e.keyCode == 37 && pageNum != 0){
 					hwSwipe.prev();
 					if (pages[pageNum-1] == 'index') {
@@ -37,14 +36,13 @@ var HelloWorld = (function (){
 						setTimeout(function(){$('body').removeAttr('style');}, 200);
 						$('html').removeAttr('style');
 					}else{
-						highlightMenuItem(pages.indexOf(history.state.url)-1);
+						highlightMenuItem(pages.indexOf(window.history.state.url)-1);
 						$('html').css('height', 'auto');
 					}
 				}
 				else if(e.keyCode == 39 && pageNum < pages.length-1){
-					$('body').css('overflow-y','scroll');
 					hwSwipe.next();
-					highlightMenuItem(pages.indexOf(history.state.url)-1);
+					highlightMenuItem(pages.indexOf(window.history.state.url)-1);
 				}
 			});
 		},
@@ -53,12 +51,14 @@ var HelloWorld = (function (){
 			hwSwipe = new Swipe($slider[0], {
 				speed: 400,
 				stopPropagation: false,
+				continuous: false,
 				callback: function(index, elem) {
 					if (index) {
 						changePageHeight(elem);
 						if (!callFromPopState) {
 							window.history.pushState({url: pages[index]},null, "/"+pages[index]);
 						}
+						$('body').css('overflow-y','scroll');
 					}else{
 						if (!callFromPopState) {
 							window.history.pushState({url: pages[index]},null, "/");
@@ -108,6 +108,14 @@ var HelloWorld = (function (){
 			});
 			$('.page-wrapper').addClass('mobile');
 			$header.remove();
+		},
+		initUrl: function (){
+			// var curURL = window.location.href.toString().split(window.location.host)[1];
+			// if(curURL == '/'){
+				window.history.pushState({url:"index", isFirstRender: true},null, "/");
+			// }else{
+			// 	navigateToUrl(curURL);
+			// }
 		}
 	};
 	var changePageHeight = function (page){
@@ -123,13 +131,16 @@ var HelloWorld = (function (){
 	};
 	var navigateToUrl = function (e, url){
 		var toURL;
-		if (!e.target.getAttribute('href')){
-			toURL = e.target.parentNode.getAttribute('href').split('/').pop();
+		if (url) {
+			toURL = url.split('/').pop();
 		}else{
-			toURL = e.target.getAttribute('href').split('/').pop();
+			if (!e.target.getAttribute('href')){
+				toURL = e.target.parentNode.getAttribute('href').split('/').pop();
+			}else{
+				toURL = e.target.getAttribute('href').split('/').pop();
+			}
 		}
 
-		$('body').css('overflow-y','scroll');
 		if (toURL == 'index') {
 			$('.top-header').removeAttr('style');
 			$('html').removeAttr('style');
@@ -144,7 +155,7 @@ var HelloWorld = (function (){
 	return {
 		init: function (){
 			$('.top-header').addClass('show');
-			window.history.pushState({url:"index", isFirstRender: true},null, "/");
+			Init.initUrl();
 			Init.initSwipe('#slider');
 			RetinaImages.init('image-src');
 			if (isMobile) {
@@ -152,7 +163,7 @@ var HelloWorld = (function (){
 			}
 			Init.events();
 
-			//Init.initYandexMaps('maparea');
+			Init.initYandexMaps('maparea');
 		}
 	}
 })();

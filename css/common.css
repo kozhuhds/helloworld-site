@@ -36,17 +36,14 @@
 .apercu-regular{font-family: 'apercu_proregular'; font-weight: normal !important;}
 .apercu-bold{font-family: 'apercu_probold'; font-weight: normal !important;}
 .apercu-light{font-family: 'apercu_prolight'; font-weight: normal !important;}
-html{
-    font-size: 10px;
-    font-family: 'apercu_proregular';
-}
+html{font-size: 10px;font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif;}
 a{text-decoration: none;}
+a:hover{text-decoration: underline;}
 mark{background: none; color: #ca3535;}
 h1,h2,h3{font-weight: normal!important;}
 h1{font-family: 'apercu_proregular';}
 .sign{font-size: 9rem; color: #ca3535; margin-left: 22.88%; line-height: 8%;}
-img{max-width: 100%;}
-.logo a img{max-width: none !important;}
+.logo a img{max-width: 100%;}
 
 .swipe {overflow: hidden;visibility: hidden;position: relative; min-height: 320px;}
 .swipe-wrap {overflow: hidden;position: relative;}
@@ -57,11 +54,11 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 .top-header.mobile{position: static;}
 .top-header.show{display: block;}
   .inner-page-header{margin-bottom: 5.2%; max-width: 1180px; margin: 0 auto; padding: 3.90625% 3.90625% 0 3.90625%; }
-    .inner-page-header .logo a{display: inline-block;width: 0%;}
+    .inner-page-header .logo a{display: inline-block;}
     .inner-page-header nav{width: 100%; margin-top: -20px;}
       .inner-page-header nav ul{padding-left: 47.457627%;border-bottom: 1px solid #e3e3e3; height: 60px;font-size: 0;}
         .inner-page-header nav ul li{display: inline-block;margin-left: 7%;height: 60px;}
-        .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{border-bottom: 1px solid black; cursor: pointer;}
+        .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{border-bottom: 1px solid black; cursor: pointer;text-decoration: none !important;}
         .mobile .inner-page-header nav ul li.active a{border-bottom: 0 !important;}
           .inner-page-header nav ul li a{color: #ca3535; font-size: 2rem;padding-bottom: 40px;text-transform: uppercase;display: block;height: 20px;}
           .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{color:black;}
@@ -69,16 +66,16 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
   .content-promo{padding: 0 10.2% 5.9% 24.7% } 
     .content-promo h1{font-size: 4.8rem;line-height: 6rem;} 
   .promo-items{margin-bottom: 6%;}
-    .promo-items .promo-item p{line-height: 3rem;margin: 3% 21.2% 3% 24.7%; font-size: 2rem; font-family: 'apercu_prolight';}
+    .promo-items .promo-item p{line-height: 3rem;margin: 3% 21.2% 3% 24.7%; font-size: 2rem; font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;;}
     .promo-items .promo-item h2{font-size: 7.2rem}
-  .inner-page div.footer{border-top: 1px solid #e3e3e3; padding:5.678% 29.66% 6.6% 24.7%;font-family: 'apercu_prolight'}
+  .inner-page div.footer{border-top: 1px solid #e3e3e3; padding:5.678% 29.66% 6.6% 24.7%;font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;}
     .inner-page div.footer h2{font-size: 4.3rem;}
     .inner-page div.footer a{font-size: 7rem; color: #ca3535;margin-top: 4%; display: block;}
   .left-column{width: 37%; padding-right: 10.3%;display: inline-block;vertical-align: top;}
     .left-column h1{font-size: 7.2rem;}
     .content-column{display: inline-block;width: 50%; word-wrap:break-word;}
       .project-item {margin-bottom: 9%;}
-        .project-item *{font-family:'apercu_prolight';}
+        .project-item *{font-family:'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;;}
         .project-item a{font-size: 2.4rem; color: black;}
         .project-item p{font-size: 1.8rem; color: #b2b2b2;margin-top: 2%;}
           .project-item figure img{margin-left: -2.7%; max-width: 100%;}
@@ -87,9 +84,9 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 .info-items{margin-bottom: 5.9%;}
   .info-items .info-item{ display: inline-block;vertical-align: top; width: 25.66%; margin-left:4.2373%; }
     .info-items .info-item p.accent{ color: #797979; font-size: 2.3rem; }
-    .info-items .info-item p{font-size: 3.4rem; font-family: 'apercu_prolight';line-height: 4rem;}
+    .info-items .info-item p{font-size: 3.4rem; font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;line-height: 4rem;}
     .info-items .info-item a{color: #ca3535; word-wrap:break-word;}
-      .info-items .info-item p strong{font-family: 'apercu_proregular'}
+      .info-items .info-item p strong{font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif;}
     .info-item.phone-item{width: 28%; margin-left: 2%;}
 .inner-page-header nav ul li:first-child, .info-items .info-item:first-child{margin-left: 0 !important;}
   .social-b{-webkit-border-radius: 99px;-moz-border-radius: 99px;border-radius: 99px; display: inline-block;height: 39px;width: 39px; border: 3px solid black; background: url(images/fb-tw-icons.png) no-repeat 0 8px;}
@@ -106,7 +103,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 .mainpage-wrapper div.footer{border-top: 0;}
   .mainpage-wrapper div.footer nav, .mainpage-wrapper  div.footer .logo{display: inline-block; vertical-align: bottom;}
   .mainpage-wrapper div.footer nav{width: 76%;} 
-    .mainpage-wrapper  div.footer .logo{width: 19%; margin-left: 4%;}
+    .mainpage-wrapper  div.footer .logo{width: 19%;}
     .mainpage-wrapper div.footer a{font-size: 2rem}
     .mainpage-wrapper div.footer nav ul{text-align: right;}
       .mainpage-wrapper div.footer nav ul li{display: inline-block;margin-left: 7%;}

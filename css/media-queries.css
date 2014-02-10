@@ -1,23 +1,9 @@
 @media screen and (max-width: 1280px) {
 	html{font-size: 8px;}
-	.logo a{
-		-moz-transform: scale(0.8); /* Для Firefox */
-	    -ms-transform: scale(0.8); /* Для IE */
-	    -webkit-transform: scale(0.8); /* Для Safari, Chrome, iOS */
-	    -o-transform: scale(0.8); /* Для Opera */
-	    transform: scale(0.8);
-	}
 }
 @media screen and (max-width: 1024px) {
 	html{font-size: 7px;}
 	.mainpage-wrapper div.header h1{max-width: 100%;}
-	.logo a{
-		-moz-transform: scale(0.7); /* Для Firefox */
-	    -ms-transform: scale(0.7); /* Для IE */
-	    -webkit-transform: scale(0.7); /* Для Safari, Chrome, iOS */
-	    -o-transform: scale(0.7); /* Для Opera */
-	    transform: scale(0.7);
-	}
 }
 @media screen and (max-width: 800px) {
 	.promo-items .promo-item p, .project-item a{font-size: 3rem;line-height: 4rem;}
@@ -31,56 +17,29 @@
 	.page-wrapper{padding-top: 334px;}
 	.left-column{width: 100%;padding: 0;word-wrap: break-word;}
 	.content-column{width: 100%;margin-top: 10%}
-	.inner-page-header nav{margin-top: 0;}
+	.inner-page-header nav{margin-top: 20px;}
 	.inner-page-header nav ul {padding-left: 0; height: auto;}
 	.inner-page-header nav ul li{height: auto;margin-bottom: 4%;padding-bottom: 0;margin-left: 0; display: block;}
 	.inner-page-header nav ul li a{display: inline-block;padding-bottom: 0;font-size: 2.5rem;border-bottom: 1px solid transparent}
-	.content-promo, .inner-page div.footer{padding-left: 0;padding-right: 0;}
+	.content-promo{padding-right: 0; padding-left: 0}
 	.promo-items .promo-item p{margin-left: 0;margin-right: 0;}
 }
 @media screen and (max-width: 768px) {
 	html{font-size: 6px;}
-	.logo a{
-		-moz-transform: scale(0.6); /* Для Firefox */
-	    -ms-transform: scale(0.6); /* Для IE */
-	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
-	    -o-transform: scale(0.6); /* Для Opera */
-	    transform: scale(0.6);
-	}
 }
 @media screen and (max-width: 600px) {
 	.content-promo h1{font-size: 3rem;line-height: 4rem;}
 	.page-wrapper {padding-top: 290px;}
 	html{font-size: 5px;}
-	.logo a{
-		-moz-transform: scale(0.6); /* Для Firefox */
-	    -ms-transform: scale(0.6); /* Для IE */
-	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
-	    -o-transform: scale(0.6); /* Для Opera */
-	    transform: scale(0.6);
-	}
 }
 @media screen and (max-width: 480px) {
-	.mainpage-wrapper div.footer nav {top: -94px;}
-	.inner-page div.footer a {font-size: 3rem}
-	.logo a{
-		-moz-transform: scale(0.6); /* Для Firefox */
-	    -ms-transform: scale(0.6); /* Для IE */
-	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
-	    -o-transform: scale(0.6); /* Для Opera */
-	    transform: scale(0.6);
-	}
+	.mainpage-wrapper div.footer nav {top: -120px;}
+	.inner-page div.footer a {font-size: 2.5rem}
 	.page-wrapper {padding-top: 250px;}
 	.promo-items .promo-item h2 {font-size: 5.2rem;}
 }
 @media screen and (max-width: 320px) {
-	.logo a{
-		-moz-transform: scale(0.6); /* Для Firefox */
-	    -ms-transform: scale(0.6); /* Для IE */
-	    -webkit-transform: scale(0.6); /* Для Safari, Chrome, iOS */
-	    -o-transform: scale(0.6); /* Для Opera */
-	    transform: scale(0.6);
-	}
+
 }
 
 
