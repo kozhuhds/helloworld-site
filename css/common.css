@@ -32,7 +32,10 @@
     font-weight: normal;
     font-style: normal
 }
-
+body {
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: none;
+}
 .apercu-regular{font-family: 'apercu_proregular'; font-weight: normal !important;}
 .apercu-bold{font-family: 'apercu_probold'; font-weight: normal !important;}
 .apercu-light{font-family: 'apercu_prolight'; font-weight: normal !important;}
@@ -41,10 +44,9 @@ a{text-decoration: none;}
 a:hover{text-decoration: underline;}
 mark{background: none; color: #ca3535;}
 h1,h2,h3{font-weight: normal!important;}
-h1{font-family: 'apercu_proregular';}
-.sign{font-size: 9rem; color: #ca3535; margin-left: 22.88%; line-height: 8%;}
+h1{font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif;}
+.sign{font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;font-size: 9rem; color: #ca3535; margin-left: 21.88%; line-height: 15%;}
 .logo a img{max-width: 100%;}
-
 .swipe {overflow: hidden;visibility: hidden;position: relative; min-height: 320px;}
 .swipe-wrap {overflow: hidden;position: relative;}
 .swipe-wrap > section {float:left;width:100%;position: relative;}
@@ -56,17 +58,17 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
   .inner-page-header{margin-bottom: 5.2%; max-width: 1180px; margin: 0 auto; padding: 3.90625% 3.90625% 0 3.90625%; }
     .inner-page-header .logo a{display: inline-block;}
     .inner-page-header nav{width: 100%; margin-top: -20px;}
-      .inner-page-header nav ul{padding-left: 47.457627%;border-bottom: 1px solid #e3e3e3; height: 60px;font-size: 0;}
-        .inner-page-header nav ul li{display: inline-block;margin-left: 7%;height: 60px;}
+      .inner-page-header nav ul{text-align: right;border-bottom: 1px solid #e3e3e3; height: 74px;font-size: 0;}
+        .inner-page-header nav ul li{display: inline-block;margin-left: 5%;height: 60px;}
         .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{border-bottom: 1px solid black; cursor: pointer;text-decoration: none !important;}
         .mobile .inner-page-header nav ul li.active a{border-bottom: 0 !important;}
-          .inner-page-header nav ul li a{color: #ca3535; font-size: 2rem;padding-bottom: 40px;text-transform: uppercase;display: block;height: 20px;}
+          .inner-page-header nav ul li a{letter-spacing: 1px;color: #ca3535; font-size: 2rem;padding-bottom: 54px;text-transform: uppercase;display: block;height: 20px;}
           .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{color:black;}
-.page-wrapper{max-width: 1180px; padding: 3.90625%; margin: 0 auto;padding-top: 270px; z-index: 1}
-  .content-promo{padding: 0 10.2% 5.9% 24.7% } 
-    .content-promo h1{font-size: 4.8rem;line-height: 6rem;} 
-  .promo-items{margin-bottom: 6%;}
-    .promo-items .promo-item p{line-height: 3rem;margin: 3% 21.2% 3% 24.7%; font-size: 2rem; font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;;}
+.page-wrapper{max-width: 1180px; padding: 3.90625%; margin: 0 auto;padding-top: 284px; z-index: 1}
+  .content-promo{padding: 0 10.2% 3.64% 23.43%;} 
+    .content-promo h1{font-size: 4.8rem;line-height: 5.8rem;font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;} 
+  .promo-items{margin-bottom: 4.7%;}
+    .promo-items .promo-item p{line-height: 2.6rem; margin: 2.6% 21.2% 3% 23.7%; font-size: 2rem; font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;}
     .promo-items .promo-item h2{font-size: 7.2rem}
   .inner-page div.footer{border-top: 1px solid #e3e3e3; padding:5.678% 29.66% 6.6% 24.7%;font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;}
     .inner-page div.footer h2{font-size: 4.3rem;}
@@ -99,12 +101,20 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
   .mainpage-wrapper div.header{margin: 0;padding-top: 3%;}
     .mainpage-wrapper div.header h1{color: white;font-size: 8.5rem;max-width: 60%;line-height: 10.1rem;}
 
-.mainpage-wrapper  div.footer{position: absolute; right: 0;left: 0;bottom: 0;padding: 0 4% 4% 4%;}
+.mainpage-wrapper  div.footer{text-align: justify;position: absolute; right: 0;left: 0;bottom: 0;padding: 0 4% 4% 4%;}
+.mainpage-wrapper  div.footer:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    font-size:0;
+    line-height:0;
+}
 .mainpage-wrapper div.footer{border-top: 0;}
   .mainpage-wrapper div.footer nav, .mainpage-wrapper  div.footer .logo{display: inline-block; vertical-align: bottom;}
   .mainpage-wrapper div.footer nav{width: 76%;} 
     .mainpage-wrapper  div.footer .logo{width: 19%;}
-    .mainpage-wrapper div.footer a{font-size: 2rem}
+    .mainpage-wrapper div.footer a{font-size: 2rem;}
     .mainpage-wrapper div.footer nav ul{text-align: right;}
       .mainpage-wrapper div.footer nav ul li{display: inline-block;margin-left: 7%;}
         .mainpage-wrapper div.footer nav ul li a{color: #ffa8a8;}

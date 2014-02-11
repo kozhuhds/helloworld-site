@@ -3,7 +3,8 @@ var HelloWorld = (function (){
 		pages = ["index","company","projects","contacts"],
 		isMobile = jQuery.browser.mobile,
 		$slider,
-		callFromPopState;
+		callFromPopState,
+		map;
 
 	var Init = {
 		events: function (){
@@ -23,8 +24,11 @@ var HelloWorld = (function (){
 			};
 
 			$(window).on('resize', function (e){
-				if(isMobile)
-					setTimeout(function(){changePageHeight($slider.find('.page-item').eq(pages.indexOf(window.history.state.url)));},100);
+				if (window.history.state.url != 'index') 
+					setTimeout(function(){
+						changePageHeight($slider.find('.page-item').eq(pages.indexOf(window.history.state.url)));
+						map.container.fitToViewport();
+					},100);
 			});
 
 			$(document).on('keydown', function(e) {
@@ -83,7 +87,7 @@ var HelloWorld = (function (){
  			$('head').append(yaMapsScript);
  			yaMapsScript.addEventListener('load', function (e) {
  				ymaps.ready(function (){
-					var map = new ymaps.Map(id, {
+					map = new ymaps.Map(id, {
 		                center: [53.855727,27.451387], // Default city
 		                zoom: 16,
 		                behaviors: ['default', 'scrollZoom']
