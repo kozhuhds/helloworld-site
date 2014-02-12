@@ -63,12 +63,19 @@ var HelloWorld = (function (){
 							window.history.pushState({url: pages[index]},null, "/"+pages[index]);
 						}
 						$('body').css('overflow-y','scroll');
-					}else{
+						document.title = "HELLO WORLD - " + pages[index].charAt(0).toUpperCase() + pages[index].slice(1);
+					}else {
+						document.title = "HELLO WORLD";
+						if (isMobile) {
+							$('.swipe-wrap').height(662);
+						}else{
+							$('.swipe-wrap').height('100%');
+							$slider.height('100%');
+						}
 						if (!callFromPopState) {
 							window.history.pushState({url: pages[index]},null, "/");
 						}
-						$('.swipe-wrap').height('100%');
-						$slider.css('height', '100%');
+
 					}
 					callFromPopState = false;
 				},
@@ -112,6 +119,9 @@ var HelloWorld = (function (){
 			});
 			$('.page-wrapper').addClass('mobile');
 			$header.remove();
+			$('html').addClass('mobile-ver');
+			$('.swipe-wrap').height(662);
+
 		},
 		initUrl: function (){
 			// var curURL = window.location.href.toString().split(window.location.host)[1];
@@ -166,7 +176,6 @@ var HelloWorld = (function (){
 				Init.renderForMobile($('#main-header'));
 			}
 			Init.events();
-
 			Init.initYandexMaps('maparea');
 		}
 	}
