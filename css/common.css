@@ -65,7 +65,8 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
         .mobile .inner-page-header nav ul li.active a{border-bottom: 0 !important;}
           .inner-page-header nav ul li a{letter-spacing: 1px;color: #ca3535; font-size: 2rem;padding-bottom: 54px;text-transform: uppercase;display: block;height: 20px;}
           .inner-page-header nav ul li:hover a, .inner-page-header nav ul li.active a{color:black;}
-.page-wrapper{max-width: 1180px; padding: 3.90625%; margin: 0 auto;padding-top: 276px; z-index: 1}
+.page-wrapper{max-width: 1180px; padding: 3.90625%; margin: 0 auto;padding-top: 287px; z-index: 1}
+  .page-item.active{visibility: visible !important;}
   .content-promo{padding: 0 10.2% 3.64% 23.43%;} 
     .content-promo h1{font-size: 4.8rem;line-height: 5.8rem;font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;} 
   .promo-items{margin-bottom: 4.7%;}
