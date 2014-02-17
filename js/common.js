@@ -2,6 +2,7 @@ var HelloWorld = (function (){
 	var hwSwipe = null,
 		pages = ["index","company","projects","contacts"],
 		isMobile = jQuery.browser.mobile,
+		isIE = navigator.appVersion.indexOf('MSIE') != -1,
 		$slider,
 		callFromPopState,
 		map;
@@ -12,22 +13,28 @@ var HelloWorld = (function (){
 			$('nav a').on('click', navigateToUrl);
 
 			window.onpopstate = function (e){
-				callFromPopState = window.history.state.isFirstRender?false:true;
-				if (window.history.state.url == 'index') {
+				if (window.history.state) {
+					callFromPopState = window.history.state.isFirstRender?false:true;
+				};
+				if (getCurrentURL() == 'index') {
 					$('.top-header').removeAttr('style');
 					$('html').removeAttr('style');
 					setTimeout(function(){$('body').removeAttr('style');}, 200);
 				}else{
-					highlightMenuItem(pages.indexOf(window.history.state.url)-1);
+					highlightMenuItem(pages.indexOf(getCurrentURL())-1);
 				}
-				hwSwipe.slide(pages.indexOf(window.history.state.url));
+				hwSwipe.slide(pages.indexOf(getCurrentURL()));
 			};
-
+			if (isIE) {
+				window.onhashchange = function (){
+					navigateToUrl(null, getCurrentURL());
+				};
+			}
 			$(window).on('resize', function (e){
 				$slider.find('.page-item').css('visibility','hidden');
-				if (window.history.state.url != 'index'){ 
+				if (getCurrentURL() != 'index'){ 
 					setTimeout(function(){
-						changePageHeight($slider.find('.page-item').eq(pages.indexOf(window.history.state.url)));
+						changePageHeight($slider.find('.page-item').eq(pages.indexOf(getCurrentURL())));
 						map.container.fitToViewport();
 						$slider.find('.page-item').css('visibility','visible');
 						$('.top-header').show();
@@ -39,12 +46,10 @@ var HelloWorld = (function (){
 						$('.top-header').show();
 					}, 250)
 				}
-
-
 			});
 
 			$(document).on('keydown', function(e) {
-				var pageNum = pages.indexOf(window.history.state.url);
+				var pageNum = pages.indexOf(getCurrentURL());
 				if(e.keyCode == 37 && pageNum != 0){
 					hwSwipe.prev();
 					if (pages[pageNum-1] == 'index') {
@@ -52,13 +57,13 @@ var HelloWorld = (function (){
 						setTimeout(function(){$('body').removeAttr('style');}, 200);
 						$('html').removeAttr('style');
 					}else{
-						highlightMenuItem(pages.indexOf(window.history.state.url)-1);
+						highlightMenuItem(pages.indexOf(getCurrentURL())-1);
 						$('html').css('height', 'auto');
 					}
 				}
 				else if(e.keyCode == 39 && pageNum < pages.length-1){
 					hwSwipe.next();
-					highlightMenuItem(pages.indexOf(window.history.state.url)-1);
+					highlightMenuItem(pages.indexOf(getCurrentURL())-1);
 				}
 			});
 		},
@@ -69,13 +74,14 @@ var HelloWorld = (function (){
 				stopPropagation: false,
 				continuous: false,
 				callback: function(index, elem) {
-					
 					$slider.find('.page-item.active').removeClass('active');
 					$(elem).addClass('active');
 					if (index) {
 						changePageHeight(elem);
-						if (!callFromPopState) {
+						if (!callFromPopState && !isIE) {
 							window.history.pushState({url: pages[index]},null, "/"+pages[index]);
+						}else if(isIE){
+							window.location.href = "#" + pages[index];
 						}
 						$('body').css('overflow-y','scroll');
 						document.title = "HELLO WORLD - " + pages[index].charAt(0).toUpperCase() + pages[index].slice(1);
@@ -87,15 +93,16 @@ var HelloWorld = (function (){
 							$('.swipe-wrap').height('100%');
 							$slider.height('100%');
 						}
-						if (!callFromPopState) {
+						if (!callFromPopState && !isIE) {
 							window.history.pushState({url: pages[index]},null, "/");
+						}else if(isIE){
+							window.location.href = "#" + pages[index];
 						}
 
 					}
 					callFromPopState = false;
 				},
 				transitionEnd: function(index, elem) {
-					//$('.resize-plate').removeClass('disable');
 					if(index){
 						$('.top-header').css('z-index',3);
 						$slider.css('height', 'auto');
@@ -106,7 +113,6 @@ var HelloWorld = (function (){
 				}
 			});
 		},
-
 		initYandexMaps: function (id){
 			var yaMapsScript = document.createElement('script');
  			yaMapsScript.type = 'text/javascript';
@@ -143,13 +149,26 @@ var HelloWorld = (function (){
 
 		},
 		initUrl: function (){
-			// var curURL = window.location.href.toString().split(window.location.host)[1];
-			// if(curURL == '/'){
+			if (isIE && !getCurrentURL()){
+				window.location.href = '#';
+			}else if (isIE){
+			 	navigateToUrl(null, getCurrentURL());
+			}else if (getCurrentURL() == 'index'){
 				window.history.pushState({url:"index", isFirstRender: true},null, "/");
-			// }else{
-			// 	navigateToUrl(curURL);
-			// }
+			}else{
+				navigateToUrl(null, getCurrentURL());
+			}
 		}
+	};
+	var	getCurrentURL = function (){
+		var activeURL;
+		if (!window.history.state && !isIE) {
+			activeURL = 'index';
+		}else{
+			activeURL = isIE?window.location.href.toString().split(window.location.host)[1].split('#')[1]:window.history.state.url;
+		}
+		activeURL = activeURL == ''? 'index':activeURL;
+		return activeURL;
 	};
 	var changePageHeight = function (page){
 		if(!$(page).hasClass('mainpage-item')){
@@ -165,7 +184,7 @@ var HelloWorld = (function (){
 	var navigateToUrl = function (e, url){
 		var toURL;
 		if (url) {
-			toURL = url.split('/').pop();
+			toURL = !isIE ? url.split('/').pop():url;
 		}else{
 			if (!e.target.getAttribute('href')){
 				toURL = e.target.parentNode.getAttribute('href').split('/').pop();
@@ -182,14 +201,16 @@ var HelloWorld = (function (){
 			highlightMenuItem(pages.indexOf(toURL)-1);
 		}
 		hwSwipe.slide(pages.indexOf(toURL));
-		e.preventDefault();
+		if (e)
+			e.preventDefault();
+		
 	};
 
 	return {
 		init: function (){
 			$('.top-header').addClass('show');
-			Init.initUrl();
 			Init.initSwipe('#slider');
+			Init.initUrl();
 			RetinaImages.init('image-src');
 			if (isMobile) {
 				Init.renderForMobile($('#main-header'));
