@@ -1,11 +1,13 @@
 var HelloWorld = (function (){
 	var hwSwipe = null,
 		pages = ["index","company","projects","contacts"],
+		pagesNames = ["Главная", "Компания", "Проекты", "Контакты"],
 		isMobile = jQuery.browser.mobile,
 		isIE = navigator.appVersion.indexOf('MSIE') != -1,
 		$slider,
 		callFromPopState,
-		map;
+		map,
+		officePlacemark;
 
 	var Init = {
 		events: function (){
@@ -35,7 +37,7 @@ var HelloWorld = (function (){
 				if (getCurrentURL() != 'index'){ 
 					setTimeout(function(){
 						changePageHeight($slider.find('.page-item').eq(pages.indexOf(getCurrentURL())));
-						map.container.fitToViewport();
+						map&&map.container.fitToViewport();
 						$slider.find('.page-item').css('visibility','visible');
 						$('.top-header').show();
 					},250);
@@ -74,6 +76,7 @@ var HelloWorld = (function (){
 				stopPropagation: false,
 				continuous: false,
 				callback: function(index, elem) {
+					map && map.geoObjects.remove(officePlacemark);
 					$slider.find('.page-item.active').removeClass('active');
 					$(elem).addClass('active');
 					if (index) {
@@ -84,11 +87,11 @@ var HelloWorld = (function (){
 							window.location.href = "#" + pages[index];
 						}
 						$('body').css('overflow-y','scroll');
-						document.title = "HELLO WORLD - " + pages[index].charAt(0).toUpperCase() + pages[index].slice(1);
+						document.title = "HELLO WORLD - " + pagesNames[index];
 					}else {
 						document.title = "HELLO WORLD";
 						if (isMobile) {
-							$('.swipe-wrap').height(662);
+							$('.swipe-wrap').height(542);
 						}else{
 							$('.swipe-wrap').height('100%');
 							$slider.height('100%');
@@ -107,6 +110,7 @@ var HelloWorld = (function (){
 						$('.top-header').css('z-index',3);
 						$slider.css('height', 'auto');
 					}
+        			map&&map.geoObjects.add(officePlacemark);
 				},
 				beforeTransitionStart: function(index, elem){
 
@@ -114,24 +118,30 @@ var HelloWorld = (function (){
 			});
 		},
 		initYandexMaps: function (id){
-			var yaMapsScript = document.createElement('script');
- 			yaMapsScript.type = 'text/javascript';
- 			$('head').append(yaMapsScript);
- 			yaMapsScript.addEventListener('load', function (e) {
- 				ymaps.ready(function (){
-					map = new ymaps.Map(id, {
-		                center: [53.855727,27.451387], // Default city
-		                zoom: 16,
-		                behaviors: ['default', 'scrollZoom']
-		            });
-		            var office = new ymaps.Placemark([53.855727, 27.451387], { 
-            			hintContent: 'ул. К. Крапивы, 34', 
-            			balloonContent: 'офис HelloWorld' 
-        			});
-        			map.geoObjects.add(office);
-				});
- 			}, false);
- 			yaMapsScript.src = "https://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU";
+			if (!isMobile) {
+				var yaMapsScript = document.createElement('script');
+	 			yaMapsScript.type = 'text/javascript';
+	 			$('head').append(yaMapsScript);
+	 			yaMapsScript.addEventListener('load', function (e) {
+	 				ymaps.ready(function (){
+						map = new ymaps.Map(id, {
+			                center: [53.855727,27.451387], // Default city
+			                zoom: 16,
+			                behaviors: ['default', 'scrollZoom']
+			            });
+			            officePlacemark = new ymaps.Placemark([53.855727, 27.451387], { 
+	            			hintContent: 'ул. К. Крапивы, 34', 
+	            			balloonContent: 'офис HelloWorld' 
+	        			});
+						$('.ui.dimmer').hide();
+					});
+	 			}, false);
+	 			yaMapsScript.src = "https://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU";
+ 			}else{
+				$('.ui.dimmer').hide();
+ 				$('<a href="http://maps.yandex.ru/?text=%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C%2C%20%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D0%B0%20%D0%9A%D1%80%D0%B0%D0%BF%D0%B8%D0%B2%D1%8B%2C%2034&sll=27.451347%2C53.855728&ll=27.451996%2C53.855735&spn=0.016952%2C0.005804&z=17&l=map"><img image-src="http://helloworld.by/new/images/map.png" alt="Map"/></a>').appendTo('#'+id);
+ 				$('#'+id).height('auto');
+ 			}
 		},
 		renderForMobile: function ($header){
 			$header.addClass('mobile');
@@ -145,7 +155,7 @@ var HelloWorld = (function (){
 			$('.page-wrapper').addClass('mobile');
 			$header.remove();
 			$('html').addClass('mobile-ver');
-			$('.swipe-wrap').height(662);
+			$('.swipe-wrap').height(542);
 
 		},
 		initUrl: function (){
@@ -153,7 +163,7 @@ var HelloWorld = (function (){
 				window.location.href = '#';
 			}else if (isIE){
 			 	navigateToUrl(null, getCurrentURL());
-			}else if (getCurrentURL() == 'index'){
+			}else if (getCurrentURL() == 'index' || !getCurrentURL()){
 				window.history.pushState({url:"index", isFirstRender: true},null, "/");
 			}else{
 				navigateToUrl(null, getCurrentURL());
@@ -177,8 +187,8 @@ var HelloWorld = (function (){
 	};
 	var highlightMenuItem = function (item){
 		if (!isMobile) {
-			$('.inner-page-header nav ul').find('.active').removeClass('active');
-			$('.inner-page-header nav ul li').eq(item).addClass('active');
+			$('.top-header-i nav ul').find('.active').removeClass('active');
+			$('.top-header-i nav ul li').eq(item).addClass('active');
 		}
 	};
 	var navigateToUrl = function (e, url){
@@ -208,15 +218,16 @@ var HelloWorld = (function (){
 
 	return {
 		init: function (){
+			$('.ui.dimmer').show();
 			$('.top-header').addClass('show');
 			Init.initSwipe('#slider');
 			Init.initUrl();
-			RetinaImages.init('image-src');
 			if (isMobile) {
-				Init.renderForMobile($('#main-header'));
+				Init.renderForMobile($('.top-header'));
 			}
 			Init.events();
 			Init.initYandexMaps('maparea');
+			RetinaImages.init('image-src');
 		}
 	}
 })();

@@ -7,7 +7,7 @@ var RetinaImages = (function (){
 			for(var i=0; i < images.length; i++){
 				if(images[i].getAttribute(attr)){
 					images[i].src = images[i].getAttribute(attr)
-						.replace('.', '@2x.');
+						//.replace('.', '@2x.');
 					images[i].setAttribute('class', 'retina-image');
 					images[i].removeAttribute(attr);
 				}

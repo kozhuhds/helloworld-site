@@ -1,56 +1,65 @@
+@media screen and (max-width: 1600px) {
+	.mainpage-wrapper .header h1 {max-width: 80%}
+}
 @media screen and (max-width: 1280px) {
 	html{font-size: 8px;}
-	.mainpage-wrapper div.header h1 {max-width: 85%;}
+	.mainpage-wrapper .header h1 {max-width: 85%;}
+	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {min-height: 480px;}
 }
 @media screen and (max-width: 1024px) {
 	html{font-size: 7px;}
-	.mainpage-wrapper div.header h1{max-width: 100%;}
+	.mainpage-wrapper .header h1{max-width: 100%;}
 }
 @media screen and (max-width: 800px) {
-	.mainpage-wrapper div.footer .logo {width: 100%;}
+	.inner-page .footer.projects-footer{padding-left: 0}
+	.mainpage-wrapper .footer .logo {width: 100%;}
 	.info-item.social-item {float: none;text-align: left;}
-	.left-column h1 {font-size: 4.2rem;line-height: 5.2rem;}
-	.inner-page div.footer a {font-size: 4rem;margin-top: 7px;}
-	.inner-page div.footer h2 {font-size: 3rem;line-height: 4rem; margin-top: 14px;}
+	.twitter{margin-left: 13px;}
+	.left-col h1 {font-size: 4.2rem;line-height: 5.2rem;}
+	.inner-page .footer a {font-size: 4rem;margin-top: 7px; display: inline}
+	.inner-page .footer h2 {font-size: 3rem;line-height: 4rem; margin-top: 14px;}
 	.sign{margin-bottom: 34px;display: block; margin-left: 0}
 	.content-promo {padding-bottom: 10%;}
 	.promo-items .promo-item h2 {font-size: 4.2rem;}
 	.logo a img, .logo img{max-width: 84%;}
-	.inner-page-header nav{margin-top: 39px;}
-	.inner-page-header nav ul li a {font-size: 3.2rem;}
+	.top-header-i nav{margin-top: 39px;}
+	.top-header-i nav ul li a {font-size: 3.2rem;}
 	.info-items .info-item p.tel {margin-left: 0;}
-	.promo-items .promo-item p, .project-item a{font-size: 2.3rem;line-height: 3.8rem;}
-	.project-item p{font-size: 2rem;}
-	.project-item figure img {margin-left: 0}
-	.mainpage-wrapper div.header h1 {font-size: 5.4rem;line-height: 6.8rem;}
-	.mainpage-wrapper div.footer nav {position: absolute;left: 0;top: -160px;width: 100%;}
-		.mainpage-wrapper div.footer nav ul {text-align: left;}
-			.mainpage-wrapper div.footer nav ul li {display: block;margin-left: 4%;margin-bottom: 32px;}
-				.mainpage-wrapper div.footer nav ul li a {font-size: 2.4rem}
+	.promo-items .promo-item p, .projects-items li a{font-size: 2.3rem;line-height: 3.8rem;}
+	.projects-items li p{font-size: 2rem;}
+	.projects-items li figure img {margin-left: 0}
+	.mainpage-wrapper .header h1 {font-size: 5.4rem;line-height: 6.8rem;}
+	.mainpage-wrapper .footer nav {position: absolute;left: 0;top: -160px;width: 100%;}
+		.mainpage-wrapper .footer nav ul {text-align: left;}
+			.mainpage-wrapper .footer nav ul li {display: block;margin-left: 4%;margin-bottom: 32px;}
+				.mainpage-wrapper .footer nav ul li a {font-size: 2.4rem}
 	.page-wrapper{padding-top: 334px;}
 		.info-items .info-item {margin-bottom: 7%;margin-left:0;display: block;width: 100%;}
-		.left-column{width: 100%;padding: 0;word-wrap: break-word;}
-		.content-column{width: 100%}
-	.inner-page-header nav{margin-top: 37px;}
-		.inner-page-header nav ul {padding-left: 0; height: auto;text-align: left;}
-			.inner-page-header nav ul li{height: auto;margin-bottom: 25px;padding-bottom: 0;margin-left: 0; display: block;}
-			.inner-page-header nav ul li:last-child{margin-bottom: 32px;}
-				.inner-page-header nav ul li a{display: inline-block;padding-bottom: 0;font-size: 2.3rem;border-bottom: 1px solid transparent !important}
-	.content-promo, .page-wrapper div.footer {padding-right: 0; padding-left: 0}
+		.left-col{width: 100%;padding: 0;word-wrap: break-word;}
+		.right-col{width: 100%}
+	.top-header-i nav{margin-top: 37px;}
+		.top-header-i nav ul {padding-left: 0; height: auto;text-align: left;}
+			.top-header-i nav ul li{height: auto;margin-bottom: 25px;padding-bottom: 0;margin-left: 0; display: block;}
+			.top-header-i nav ul li:last-child{margin-bottom: 32px;}
+				.top-header-i nav ul li a{display: inline-block;padding-bottom: 0;font-size: 2.3rem;border-bottom: 1px solid transparent !important}
+	.content-promo, .page-wrapper .footer {padding-right: 0; padding-left: 0}
 	.promo-items .promo-item p{margin-left: 0;margin-right: 0;margin: 2.6% 0 25px 0}
 	.content-promo h1 {font-size: 2.4rem;line-height: 3.6rem;}
 }
 @media screen and (max-width: 768px) {
 }
 @media screen and (max-width: 600px) {
+	.page-wrapper {padding-top: 360px;}
+	.addthis_toolbox {width: 100%;padding-bottom: 15px}
+	.addthis_toolbox > a{float: right !important}
 }
 @media screen and (max-width: 480px) {
-
-	.mainpage-wrapper div.footer nav {top: -227px;}
-	.page-wrapper {padding-top: 309px;}
+	.twitter{margin-top: 0}
+	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {min-height: 542px;}
+	.mainpage-wrapper .footer nav {top: -150px;}
 }
 @media screen and (max-width: 320px) {
-
+	.page-wrapper {padding-top: 333px;}
 }
 
 
@@ -59,5 +68,5 @@
        only screen and (-o-min-device-pixel-ratio: 2/1),
        only screen and (min-device-pixel-ratio: 2) {
            .social-b{background: url(images/fb-tw-icons@2x.png) no-repeat -2px 5px; background-size: 39px;}
-           .twitter{background-position: -2px -23px !important;}
+           .twitter{background-position: -2px -28px !important;}
 }
