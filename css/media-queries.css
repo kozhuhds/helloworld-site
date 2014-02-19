@@ -40,7 +40,7 @@
 	.top-header-i nav{margin-top: 37px;}
 		.top-header-i nav ul {padding-left: 0; height: auto;text-align: left;}
 			.top-header-i nav ul li{height: auto;margin-bottom: 25px;padding-bottom: 0;margin-left: 0; display: block;}
-			.top-header-i nav ul li:last-child{margin-bottom: 32px;}
+			.top-header-i nav ul li:last-child{margin-bottom: 24px}
 				.top-header-i nav ul li a{display: inline-block;padding-bottom: 0;font-size: 2.3rem;border-bottom: 1px solid transparent !important}
 	.content-promo, .page-wrapper .footer {padding-right: 0; padding-left: 0}
 	.promo-items .promo-item p{margin-left: 0;margin-right: 0;margin: 2.6% 0 25px 0}
