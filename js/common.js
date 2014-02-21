@@ -8,8 +8,8 @@ var HelloWorld = (function (){
 		callFromPopState,
 		map,
 		officePlacemark,
-		yMapsReady = false,
-		socButsReady = false;
+		socButsFirstOpened = true,
+		mapFirstOpened = true;
 
 	var Init = {
 		events: function (){
@@ -83,6 +83,14 @@ var HelloWorld = (function (){
 					$(elem).addClass('active');
 					if (index) {
 						changePageHeight(elem);
+						if (socButsFirstOpened ) {
+							Init.initSocialButs();
+							socButsFirstOpened = false;
+						};
+						if (index == 3 && mapFirstOpened) {
+							Init.initYandexMaps('maparea');
+							mapFirstOpened = false;
+						};
 						if (!callFromPopState && !isIE) {
 							window.history.pushState({url: pages[index]},null, "/"+pages[index]);
 						}else if(isIE){
@@ -135,16 +143,12 @@ var HelloWorld = (function (){
 	            			hintContent: 'ул. К. Крапивы, 34', 
 	            			balloonContent: 'офис HelloWorld' 
 	        			});
-	        			yMapsReady = true;
-						if (socButsReady)
-							$('.ui.dimmer').hide();
+	        			map&&map.geoObjects.add(officePlacemark);
+	        			$('.dimmer').hide();
 					});
 	 			}, false);
 	 			yaMapsScript.src = "https://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU";
  			}else{
-	        	yMapsReady = true;
-				if (socButsReady)
-					$('.ui.dimmer').hide();
  				$('<a href="http://maps.yandex.ru/?text=%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C%2C%20%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D0%B0%20%D0%9A%D1%80%D0%B0%D0%BF%D0%B8%D0%B2%D1%8B%2C%2034&sll=27.451347%2C53.855728&ll=27.451996%2C53.855735&spn=0.016952%2C0.005804&z=17&l=map"><img image-src="http://helloworld.by/new/images/map.png" alt="Map"/></a>').appendTo('#'+id);
  				$('#'+id).height('auto');
  			}
@@ -154,11 +158,6 @@ var HelloWorld = (function (){
 			var script = document.createElement('script');
 			script.type = 'text/javascript';
 			$('head').append(script);
-			script.addEventListener('load', function (e){
-				socButsReady = true;
-				if (yMapsReady)
-					$('.ui.dimmer').hide();
-			});
 			script.src = "https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-524c09124504d34d";
 		},
 		renderForMobile: function ($header){
@@ -236,7 +235,6 @@ var HelloWorld = (function (){
 
 	return {
 		init: function (){
-			$('.ui.dimmer').show();
 			$('.top-header').addClass('show');
 			Init.initSwipe('#slider');
 			Init.initUrl();
@@ -244,8 +242,8 @@ var HelloWorld = (function (){
 				Init.renderForMobile($('.top-header'));
 			}
 			Init.events();
-			Init.initYandexMaps('maparea');
-			Init.initSocialButs();
+			//Init.initYandexMaps('maparea');
+			//Init.initSocialButs();
 			RetinaImages.init('image-src');
 		}
 	}
