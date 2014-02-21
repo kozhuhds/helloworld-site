@@ -48,7 +48,7 @@ var HelloWorld = (function (){
 					setTimeout(function(){
 						$slider.find('.page-item').css('visibility','visible'); 
 						$('.top-header').show();
-					}, 300)
+					}, 250)
 				}
 			});
 

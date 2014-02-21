@@ -26,8 +26,8 @@
 body {-webkit-text-size-adjust: 100%;-ms-text-size-adjust: none}
 #_atssh{display: none;}
 
-.addthis_toolbox{float: right}
-.addthis_toolbox a{width: 75px;margin-left: 22px}
+.addthis_toolbox{width: 40%; float: right}
+.addthis_toolbox a{width: 75px;margin-left: 22px; float: right!important}
 .apercu-regular{font-family: 'apercu_proregular'; font-weight: normal !important}
 .apercu-bold{font-family: 'apercu_probold'; font-weight: normal !important}
 .apercu-light{font-family: 'apercu_prolight'; font-weight: normal !important}
