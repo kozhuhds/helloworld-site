@@ -134,6 +134,7 @@ function Swipe(container, options) {
 
       to = circle(to);
 
+      options.beforeSlide && options.beforeSlide(to, slides[to]);
       move(index, width * direction, slideSpeed || speed);
       move(to, 0, slideSpeed || speed);
 
@@ -394,7 +395,7 @@ function Swipe(container, options) {
             index = circle(index-1);
 
           }
-
+          options.beforeSlide && options.beforeSlide(index, slides[index]);
           options.callback && options.callback(index, slides[index]);
 
         } else {
