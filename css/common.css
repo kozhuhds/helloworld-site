@@ -20,13 +20,23 @@
 	font-weight: normal;
 	font-style: normal
 }
+@font-face {
+	font-family: 'apercu_probold';
+	src: url('fonts/apercupro-bold-webfont.eot');
+	src: url('fonts/apercupro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/apercupro-bold-webfont.woff') format('woff'),
+		url('fonts/apercupro-bold-webfont.ttf') format('truetype'),
+		url('fonts/apercupro-bold-webfont.svg#apercu_probold') format('svg');
+	font-weight: normal;
+	font-style: normal
+}
 
 /*Structure
 *******************************************************************************************************************************/
 body {-webkit-text-size-adjust: 100%;-ms-text-size-adjust: none}
 
 /*Social buttons*/
-.social-buts{width: 40%;height:22px;float: right}
+.social-buts{width: 40%;height:22px;padding:50px 50px 0 0;float: right}
 	.stButton .stMainServices img, .stButton img{display:none}
 	.social-buts > span{float:right}
 	.social-buts .st_facebook_hcount{margin-left:20px;}
@@ -68,19 +78,19 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 /*Top header
 *******************************************************************************************************************************/
 .top-header{width: 100%;border-bottom: 1px solid #e3e3e3;position: absolute;display: none}
+.top-header .logo{padding:50px 0 0 50px}
 
 .top-header.mobile{position: static}
 
-.top-header.show{display: block}
-	.top-header-i{max-width: 1180px;margin-bottom: 5.2%;margin: 0 auto;padding:3.90625% 3.90625% 0 3.90625%;position:relative}
-		.top-header-i nav ul li:first-child, .info-items .info-item:first-child{margin-left: 0 !important}
-		.top-header-i nav{width: 100%; margin-top: -20px}
-	  		.top-header-i nav ul{height: 74px;text-align: right;font-size: 0}
-				.top-header-i nav ul li{margin-left: 5%;display:inline-block}
-				.top-header-i nav ul li:hover a, .top-header-i nav ul li.active a{border-bottom: 1px solid black;cursor: pointer;text-decoration: none !important}
-					.mobile .top-header-i nav ul li.active a{border-bottom: 0 !important}
-		  			.top-header-i nav ul li a{height: 20px;padding-bottom: 54px;display: block;color: #ca3535;letter-spacing: 1px; font-size: 2rem;text-transform: uppercase}
-		  			.top-header-i nav ul li:hover a, .top-header-i nav ul li.active a{color:black}
+.top-header.show{display:block}
+	.top-header-i{max-width:1180px;margin:0 auto;position:relative}
+		.top-navigation{height:74px;margin-top:-20px;padding:0 50px 0 0;text-align:right;font-size:0}
+			.info-items .info-item:first-child{margin-left:0 !important}
+				.top-navigation li{margin-left:55px;float:right}
+				.top-navigation li.active a{border-bottom:1px solid #000;cursor:pointer;text-decoration: none !important}
+					.mobile .top-navigation li.active a{border-bottom: 0 !important}
+		  			.top-navigation li a{height:20px;padding-bottom:54px;display:block;color:#ca3535;letter-spacing:1px;font-size:20px;text-transform:uppercase}
+		  			.top-navigation li:hover a, .top-navigation li.active a{color:#000}
 
 /*Page-wrapper
 *******************************************************************************************************************************/
@@ -115,10 +125,10 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		.projects-items li.with-figure a{text-decoration: none}
 		.projects-items li *{font-family:'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		.projects-items li figure{margin-bottom: 7.1%}
-		.projects-items li a,.projects-items li span{font-size: 2.4rem; color: black;line-height: 1.4rem}
+		.projects-items li a,.projects-items li span{font-size:2.4rem; color:#000;line-height:1.4rem}
 		.projects-items li small{padding-top: 1%; display: block;color: #b2b2b2;font-size: 1.8rem;line-height: 1.8rem}
 		.projects-items li.with-figure small{padding-top: 1.6%}
-		.projects-items li.with-figure a span:hover{border-bottom: 2px solid black}
+		.projects-items li.with-figure a span:hover{border-bottom:2px solid #000}
 		  .projects-items li figure img{max-width: 100%;margin-left: -2.7%}
 		  .projects-items li figure figcaption{margin: 1.2% 0 0 -2.1%;padding: 0 0 1% 2.3%;border-left: 1px solid #ca3535}
 	  	.right-col .footer{padding: 0;border: 0;}
@@ -134,7 +144,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		  .info-items .info-item p strong{font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		  .info-items .info-item p strong span{font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		.info-item.phone-item{width: 28%; margin-left: 4.8%;}
-	.social-b{width: 34px;height: 34px;display: inline-block;-webkit-border-radius: 99px;-moz-border-radius: 99px;border-radius: 99px; border: 2px solid black; background: url(images/fb-tw-icons.png) no-repeat 0 6px;}
+	.social-b{width: 34px;height: 34px;display: inline-block;-webkit-border-radius: 99px;-moz-border-radius: 99px;border-radius: 99px; border: 2px solid #000; background: url(images/fb-tw-icons.png) no-repeat 0 6px;}
 	.twitter{margin-left: 8%;margin-top: 13px;background-position: 0 -23px !important}
 	.info-item.social-item{width: 10%;margin-left: 0;margin-top: 1.7%;float: right;text-align: right}
 
@@ -144,20 +154,86 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 			#maparea a img{width: 100%}
 
 		/*Mainpage wrapper*/
-	.mainpage-wrapper{padding: 0 4%;background: #ca3535}
-	  .mainpage-wrapper .header{margin: 0;padding-top: 3%}
-		.mainpage-wrapper .header h1{max-width: 60%;color: white;font-size: 8.5rem;line-height: 10.1rem}
+	.mainpage-wrapper{padding:50px;background: #ca3535}
+		.mainpage-wrapper h1{max-width: 60%;font-family:'apercu_probold', Arial, "Helvetica Neue", Helvetica, sans-serif;color:#fff;font-size: 85px;line-height: 101px}
 
-	.mainpage-wrapper  .footer{height: 109px;padding: 0 4% 4% 4%;position: absolute;text-align: justify;right: 0;left: 0;bottom: 0}
 	.mainpage-wrapper  .footer:after{width: 100%;height: 0;content: '';display: inline-block;font-size:0;line-height:0}
 	.mainpage-wrapper .footer{border-top: 0}
-		.mainpage-wrapper .footer nav, .mainpage-wrapper  .footer .logo{display: inline-block; vertical-align: bottom}
-		.mainpage-wrapper .footer nav{width: 76%; text-transform: uppercase;} 
-			.mainpage-wrapper  .footer .logo{width: 19%;margin-bottom: 4px}
-			.mainpage-wrapper .footer a{font-size: 2rem; line-height: 2rem}
-			.mainpage-wrapper .footer nav ul{text-align: right;line-height: 2rem}
-				.mainpage-wrapper .footer nav ul li{margin-left: 7%;display: inline-block}
-				.mainpage-wrapper .footer nav ul li a{color: #ffa8a8}
+		.mainpage-wrapper .logo{position:absolute;bottom:50px;left:50px}
+		.mainpage-wrapper .bottom-navigation{position:absolute;right:50px;bottom:50px}
+			.mainpage-wrapper .bottom-navigation li{margin-left:55px;float:left;font-size:20px;text-transform:uppercase}
+			.mainpage-wrapper .bottom-navigation li:first-child{margin-left:0}
+			.mainpage-wrapper .bottom-navigation li a{color: #ffa8a8}
+
+/*Media-queries
+*******************************************************************************************************************************/
+@media screen and (max-width: 1600px) {
+	.mainpage-wrapper .header h1 {max-width: 80%}
+}
+@media screen and (max-width: 1280px) {
+	html{font-size: 8px;}
+	.mainpage-wrapper .header h1 {max-width: 85%;}
+}
+@media screen and (max-width: 1024px) {
+	.mainpage-wrapper .header h1{max-width: 100%;}
+}
+@media screen and (max-width: 800px) {
+	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {min-height:0}
+	.inner-page .footer.projects-footer{padding-left: 0}
+	.info-item.social-item {float: none;text-align: left;}
+	.twitter{margin-left: 13px;}
+	.left-col h1 {font-size: 4.2rem;line-height: 5.2rem;}
+	.inner-page .footer a {font-size: 4rem;margin-top: 7px; display: inline}
+	.inner-page .footer h2 {font-size: 3rem;line-height: 4rem; margin-top: 14px;}
+	.sign{margin-bottom: 34px;display: block; margin-left: 0}
+	.content-promo {padding-bottom: 10%;}
+	.promo-items .promo-item h2 {font-size: 4.2rem;}
+	.logo a img, .logo img{max-width: 84%;}
+	.top-header-i nav{margin-top: 39px;}
+	.top-header-i nav ul li a {font-size: 3.2rem;}
+	.info-items .info-item p.tel {margin-left: 0;}
+	.promo-items .promo-item p, .projects-items li a{font-size: 2.3rem;line-height: 3.8rem;}
+	.projects-items li p{font-size: 2rem;}
+	.projects-items li figure img {margin-left: 0}
+
+	.mainpage-wrapper h1 {font-size: 40px;line-height:50px}
+	.mainpage-wrapper .bottom-navigation{margin-top:116px;position:static;text-align: left}
+		.mainpage-wrapper .bottom-navigation li {margin-bottom: 34px;margin-left:0;display: block;float:none;font-size:16px}
+	.page-wrapper{padding-top: 334px;}
+		.info-items .info-item {margin-bottom: 7%;margin-left:0;display: block;width: 100%;}
+		.left-col{width: 100%;padding: 0;word-wrap: break-word;}
+		.right-col{width: 100%}
+	.top-header-i nav{margin-top: 37px;}
+		.top-header-i nav ul {padding-left: 0; height: auto;text-align: left;}
+			.top-header-i nav ul li{height: auto;margin-bottom: 25px;padding-bottom: 0;margin-left: 0; display: block;}
+			.top-header-i nav ul li:last-child{margin-bottom: 24px}
+				.top-header-i nav ul li a{display: inline-block;padding-bottom: 0;font-size: 2.3rem;border-bottom: 1px solid transparent !important}
+	.content-promo, .page-wrapper .footer {padding-right: 0; padding-left: 0}
+	.promo-items .promo-item p{margin-left: 0;margin-right: 0;margin: 2.6% 0 25px 0}
+	.content-promo h1 {font-size: 2.4rem;line-height: 3.6rem;}
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 600px) {
+	.page-wrapper {padding-top: 360px;}
+	.social-buts{width: 100%;padding-bottom: 15px}
+}
+@media screen and (max-width: 480px) {
+	.twitter{margin-top: 0}
+	.mainpage-wrapper .footer nav {top: -150px;}
+}
+@media screen and (max-width: 320px) {
+	.page-wrapper {padding-top: 333px;}
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (-moz-min-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2) {
+           .social-b{background: url(images/fb-tw-icons@2x.png) no-repeat -2px 5px; background-size: 39px;}
+           .twitter{background-position: -2px -28px !important;}
+}
 
 
 

@@ -12,7 +12,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="css/media-queries.css">
 		<link href="new/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 		<link rel="apple-touch-icon" sizes="114×114" href="new/touch-icon-114×114.png" />
 		<link rel="apple-touch-icon" sizes="72×72" href="new/touch-icon-72×72.png" />
@@ -25,8 +24,8 @@
 		<![endif]-->
 	</head>
 	<body>
-		<!--top-header-->
-		<div class="header top-header">
+		<!--Top-header-->
+		<header class="top-header">
 			<div class="top-header-i">
 				<div class="social-buts"></div>
 				<div class="logo">
@@ -34,89 +33,81 @@
 						<img src="http://helloworld.by/new/images/logo-black.svg" onerror="this.onerror=null; this.src='images/logo-black.png'" alt=""/>
 					</a>
 				</div>
-				<nav>
-					<ul>
-						<li><a href="/company">Компания</a></li>
-						<li><a href="/projects">Проекты</a></li>
-						<li><a href="/contacts">Контактная информация</a></li>
-					</ul>
-				</nav>
+				<ul class="top-navigation">
+					<li><a href="/contacts">Контактная информация</a></li>
+					<li><a href="/projects">Проекты</a></li>
+					<li><a href="/company">Компания</a></li>
+				</ul>
 			</div>
-		</div>
-		<!--/top-header-->
-		<!--slider-->
+		</header>
+		<!--/Top-header-->
+		<!--Slider-->
 		 <article id="slider" class="swipe inner-page">
-		 	<!--swipe-wrap-->
+		 	<!--Swipe-wrap-->
 			<div class="swipe-wrap">
 				<section class="page-item mainpage-item active">
 					<div class="mainpage-wrapper">
-						<!--header-->
-						<div class="header">
-							<h1>Разработка и&nbsp;поддержка больших и&nbsp;сложных проектов</h1>
+						<h1>Разработка и&nbsp;поддержка больших и&nbsp;сложных проектов</h1>
+						<!-- Bottom-navigation -->
+						<ul class="bottom-navigation apercu-regular">
+							<li><a href="/company">Компания</a></li>
+							<li><a href="/projects">Проекты</a></li>
+							<li><a href="/contacts">Контактная информация</a></li>
+						</ul>
+						<!-- /Bottom-navigation -->
+						<!-- Logo -->
+						<div class="logo">
+							<img src="http://helloworld.by/new/images/logo-white.svg" onerror="this.onerror=null; this.src='images/logo-white.png'" alt="HELLO WORLD"/>
 						</div>
-						<!--/header-->
-						<!--footer-->
-						<div class="footer">
-							<div class="logo">
-									<img src="http://helloworld.by/new/images/logo-white.svg" onerror="this.onerror=null; this.src='images/logo-white.png'" alt=""/>
-							</div>
-							<nav class="menu-bottom">
-								<ul class="apercu-regular">
-									<li><a href="/company">Компания</a></li>
-									<li><a href="/projects">Проекты</a></li>
-									<li><a href="/contacts">Контактная информация</a></li>
-								</ul>
-							</nav>
-						</div>
-						<!--/footer-->
+						<!-- /Logo -->
 					</div>
 				</section>
-				<!--//page-item-->
+				<!--//Page-item-->
 				<section class="page-item">
 					<div class="page-wrapper">
-						<!--content-promo-->
+						<!--Content-promo-->
 						<section class="content-promo">
 							<h1><mark>Более четырёх лет</mark> мы занимаемся решением технических задач при создании интернет-проектов, не размениваясь на дизайн, юзабилити и информационную архитектуру.</h1>
 						</section>
-						<!--/content-promo-->
-						<!--promo-items-->
+						<!--/Content-promo-->
+						<!--Promo-items-->
 						<section class="promo-items">
 							<article class="promo-item">
 								<h2>Фронт-энд</h2>
 								<p>К нам обращаются, потому что хотят, чтобы их проекты сверстали профессионалы. Профессионалы предусмотрительны и аккуратны, используют HTML5, разбираются в адаптивной верстке и обожают модные штуки вроде SASS и Retina-дисплеев.</p>
 								<span class="sign">+</span>
 							</article>
-							<!--//promo-item-->
+							<!--//Promo-item-->
 							<article class="promo-item">
 								<h2>Программирование</h2>
 								<p>Мы программируем на PHP5. В зависимости от масштабов, жизненного цикла проекта и имплементированных бизнес-процессов мы используем Symfony, «Битрикс» или свою систему управления.</p>
 								<span class="sign">+</span>
 							</article>
-							<!--//promo-item-->
+							<!--//Promo-item-->
 							<article class="promo-item">
 								<h2>Поддержка</h2>
 								<p>Многие из разработанных нами проектов постоянно развиваются и эволюционируют. Поддержка таких проектов включает в себя не только полное техническое сопровождение, но и их поэтапное развитие.</p>
 							</article>
-							<!--//promo-item-->
+							<!--//Promo-item-->
 						</section>
-						<!--/promo-items-->
-						<!--footer-->
-						<div class="footer">
+						<!--/Promo-items-->
+						<!--Footer-->
+						<footer class="footer">
 							<h3>Мы открыты для любых идей и предложений</h3>
 							<a href="mailto:say@helloworld.by">say@helloworld.by</a>
-						</div>
-						<!--/footer-->
+						</footer>
+						<!--/Footer-->
 					</div>
 				</section> 
-				<!--//page-item-->
+				<!--//Page-item-->
 				<section class="page-item">
 					<div class="page-wrapper cfix">
-						<!--left-col-->
+						<!--Left-col-->
 						<aside class="left-col">
 							<h1 class="apercu-regular">За четыре года <mark>более 60&nbsp;проектов</mark></h1>
 						</aside>
-						<!--/left-col-->
-						<!--right-col-->
+						<!--/Left-col-->
+						<!--Right-col-->
 						<section class="right-col">
 							<ul class="projects-items">
 								<li>
@@ -163,57 +154,57 @@
 								</li>
 							</ul>
 						</section>
-						<!--/right-col-->
-						<!--footer-->
-						<div class="footer projects-footer">
+						<!--/Right-col-->
+						<!--Footer-->
+						<footer class="footer projects-footer">
 							<h3>Мы открыты для любых идей и предложений</h3>
 							<a href="mailto:say@helloworld.by">say@helloworld.by</a>
-						</div>
-						<!--/footer-->
+						</footer>
+						<!--/Footer-->
 					</div>
 				</section>
-				<!--//page-item-->
+				<!--//Page-item-->
 				<section class="page-item">
 					<div class="page-wrapper">
-						<!--info-items-->
+						<!--Info-items-->
 						<section class="info-items cfix">
 							<div class="info-item">
 								<p class="accent">Пишите:</p>
 								<p><a href="mailto:say@helloworld.by">say@helloworld.by</a></p>
 							</div>
-							<!--//info-item-->
+							<!--//Info-item-->
 							<div class="info-item phone-item">
 								<p class="accent">Звоните:</p>
 								<p class="tel"><strong><span>+375 (29) </span> 144-50-90</strong></p>
 							</div>
-							<!--//info-item-->
+							<!--//Info-item-->
 							<div class="info-item">
 								<p class="accent">Адрес:</p>
 								<p class="address">ул. К. Крапивы, 34<br/>Минск, Беларусь</p>
 							</div>
-							<!--//info-item-->
+							<!--//Info-item-->
 							<div class="info-item social-item">
 								<a href="https://www.facebook.com/pages/HELLO-WORLD/195382380490910" class="social-b facebook"></a>
 								<a href="https://twitter.com/helloworldlive" class="social-b twitter"></a>
 							</div>
-							<!--//info-item-->
+							<!--//Info-item-->
 						</section>
-						<!--/info-items-->
-						<!--maparea-->
+						<!--/Info-items-->
+						<!--Maparea-->
 						<div id="maparea">
 							<div class="ui active dimmer">
 			<div class="ui large text loader">
 			</div>
 		</div>
 						</div>
-						<!--/maparea-->
+						<!--/Maparea-->
 					</div>
 				</section>
-				<!--//page-item-->
+				<!--//Page-item-->
 			</div>
-		 	<!--/swipe-wrap-->
+		 	<!--/Swipe-wrap-->
 		</article> 
-		<!--/slider-->
+		<!--/Slider-->
 		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
 		<script type="text/javascript" src="js/lib/ismobile.js"></script>
 		<script type="text/javascript" src="js/lib/swipe.js"></script>

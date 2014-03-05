@@ -15,7 +15,7 @@ var HelloWorld = (function (){
 	var Init = {
 		events: function (){
 			$('.logo a').on('click', navigateToUrl);
-			$('nav a').on('click', navigateToUrl);
+			$('.bottom-navigation a, .top-navigation a').on('click', navigateToUrl);
 
 			window.onpopstate = function (e){
 				if (window.history.state) {
@@ -182,7 +182,7 @@ var HelloWorld = (function (){
 				if(!$(el).hasClass('mainpage-item')){
 					$header.clone()
 						.insertBefore($(el).find('.page-wrapper'))
-						.find('div nav ul li').eq(key-1).addClass('active');
+						.find('.top-navigation li').eq(key-1).addClass('active');
 				}
 			});
 			$('.page-wrapper').addClass('mobile');
@@ -228,8 +228,9 @@ var HelloWorld = (function (){
 
 	var highlightMenuItem = function (item){
 		if (!isMobile) {
-			$('.top-header-i nav ul').find('.active').removeClass('active');
-			$('.top-header-i nav ul li').eq(item).addClass('active');
+			var length = $('.top-header-i .top-navigation li').length;
+			$('.top-header-i .top-navigation').find('.active').removeClass('active');
+			$('.top-header-i .top-navigation li').eq(length-item-1).addClass('active');
 		}
 	};
 	var navigateToUrl = function (e, url){
