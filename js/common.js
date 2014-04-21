@@ -36,6 +36,7 @@ var HelloWorld = (function (){
 				};
 			}
 			$(window).on('resize', function (e){
+				!isMobile && pageItemsHandler();
 				$slider.find('.page-item').css('visibility','hidden');
 				if (getCurrentURL() != 'index'){ 
 					setTimeout(function(){
@@ -120,6 +121,7 @@ var HelloWorld = (function (){
 					callFromPopState = false;
 				},
 				transitionEnd: function(index, elem) {
+					!isMobile && pageItemsHandler();
 					if(index){
 						$('.top-header').css('z-index',3);
 						$slider.css('height', 'auto');
@@ -127,6 +129,7 @@ var HelloWorld = (function (){
         			map&&map.geoObjects.add(officePlacemark);
 				}
 			});
+setTimeout(function (){hwSwipe.slide(2);}, 1000)
 		},
 		initYandexMaps: function (id){
 			if (!isMobile) {
@@ -162,7 +165,7 @@ var HelloWorld = (function (){
 			$('head').append(script);
 			script.addEventListener('load', function (e) {
 				stLight.options({publisher: "1af3a253-f828-450c-b546-b1732ccadb68", doNotHash: false, doNotCopy: false, hashAddressBar: false});
- 				var $buts = $("<span class='st_facebook_hcount' displayText='Facebook'></span><span class='st_twitter_hcount' displayText='Tweet'></span>");
+ 				var $buts = $('<span class="facebook-like-btn"><iframe src="http://www.facebook.com/plugins/like.php?locale=en_US&app_id=101025366657087&amp;href=http%3A%2F%2Fhelloworld.by&amp;send=false&amp;layout=button_count&amp;width=160&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:160px; height:21px;" allowTransparency="true"></iframe></span></span><span class="st_twitter_hcount" displayText="Tweet"></span>');
  				if (!isMobile) {
 	 				$buts.appendTo('.social-buts');
  				}else{
@@ -182,7 +185,7 @@ var HelloWorld = (function (){
 				if(!$(el).hasClass('mainpage-item')){
 					$header.clone()
 						.insertBefore($(el).find('.page-wrapper'))
-						.find('.top-navigation li').eq(key-1).addClass('active');
+						.find('.top-navigation li').eq(3-key).addClass('active');
 				}
 			});
 			$('.page-wrapper').addClass('mobile');
@@ -220,7 +223,7 @@ var HelloWorld = (function (){
 
 	var fitMainpageHeight = function () {
 		if (window.screen.height <= 480) {
-			$swipewrap.height(540);
+			$swipewrap.height(608);
 		}else{
 			$swipewrap.height(window.screen.height);
 		}
@@ -228,9 +231,8 @@ var HelloWorld = (function (){
 
 	var highlightMenuItem = function (item){
 		if (!isMobile) {
-			var length = $('.top-header-i .top-navigation li').length;
 			$('.top-header-i .top-navigation').find('.active').removeClass('active');
-			$('.top-header-i .top-navigation li').eq(length-item-1).addClass('active');
+			$('.top-header-i .top-navigation li').eq(item).addClass('active');
 		}
 	};
 	var navigateToUrl = function (e, url){
@@ -250,12 +252,29 @@ var HelloWorld = (function (){
 			$('html').removeAttr('style');
 			setTimeout(function(){$('body').removeAttr('style');}, 300);
 		}else{
-			highlightMenuItem(pages.indexOf(toURL)-1);
+			!isMobile && highlightMenuItem(pages.indexOf(toURL)-1);
 		}
 		hwSwipe.slide(pages.indexOf(toURL));
 		if (e)
 			e.preventDefault();
 		
+	};
+
+	var pageItemsHandler = function () {
+		var items = $('.project-items').children(),
+			countInRow = Math.round($('.project-items').width()/items.eq(0).width());
+			items.height('auto');
+			if ($(window).width() <= 480) {return};
+			//console.log($('.project-items').width(),"/",items.eq(0).width(),"=",Math.round($('.project-items').width()/items.eq(0).width()));
+			for (var i = 0; i < items.length; i += countInRow) {
+				var row = items.get().slice(i, i+countInRow),
+					heights = [];
+				$.each(row, function (key, item) {
+					heights.push($(item).height());
+				});
+				$(row).height(Math.max.apply(Math, heights));
+			};
+
 	};
 
 	return {
