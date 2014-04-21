@@ -41,6 +41,8 @@ body {-webkit-text-size-adjust: 100%;-ms-text-size-adjust: none;-webkit-transfor
 	.facebook-like-btn{width:76px;overflow:hidden}
 	.stButton .stMainServices img, .stButton img{display:none}
 	.social-buts > span{margin-left:20px;float:right}
+	.project-social-buts{margin-top:26px;text-align:center}
+		.project-social-buts > span{margin-left:22px;display:inline-block;vertical-align:top}
 	.social-buts .st_facebook_hcount{margin-left:20px;}
 		.social-buts > span span{margin:0;z-index:auto}
 
@@ -131,7 +133,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 					.project-item figcaption{margin-top:20px;text-align:left}
 				.project-item .project-name{display:block;font-size:32px;line-height:35px;color:#000}
 				.project-item .project-name strong{color:#ca3535}
-				.project-item .work-type{margin-top:19px;margin-right:8px;padding:3px 14px 6px 14px;border:1px solid #000;-webkit-border-radius: 50px;-moz-border-radius: 50px;border-radius: 50px;display:inline-block;font-size:18px;color:#000}
+				.work-type{margin-top:19px;margin-right:8px;padding:3px 14px 6px 14px;border:1px solid #000;-webkit-border-radius: 50px;-moz-border-radius: 50px;border-radius: 50px;display:inline-block;font-size:18px;color:#000}
 
 
 	/*Info items*/
@@ -155,7 +157,30 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		#maparea a{display: block}
 			#maparea a img{width: 100%}
 
-		/*Mainpage wrapper*/
+	/*Project*/
+
+		/*Top-panel*/
+		.top-panel .work-type{margin-top:0;}
+		.top-panel .back{font-size:18px;color:#818181}
+			.top-panel .back .back-i{width:14px;height:27px;margin-right:13px;display:inline-block;vertical-align:middle;background:url(images/back-i.png) no-repeat center}
+		.work-types{margin-left:153px}
+		.top-panel .site-link{float:right;line-height: 29px}
+		.site-link{color:#ca3535;font-size:18px}
+
+		/*Project-descr*/
+		.project-descr h1{padding:10px 200px;text-align:center;font-size:72px}
+		.project-descr h1 strong{font-size:72px;color:#ca3535}
+		.project-descr .descr{width: 655px;margin: 0 auto;font-size:22px}
+
+		/*Project-middle*/
+		.project-middle-item{}
+			.project-middle-item > .inline{display:inline-block;vertical-align:middle}
+			.project-middle-item .project-content{width:705px;margin:0 auto;font-size:18px}
+			.project-middle-item.center{text-align:center}
+		.project-img{margin:20px;-webkit-box-shadow: 1px 1px 20px #000;-moz-box-shadow: 1px 1px 20px #000;box-shadow: 1px 1px 20px #000}
+		.project-middle .over-img-descr{width:360px;margin-left:40px;font-size:18px}
+
+	/*Mainpage wrapper*/
 	.mainpage-wrapper{padding:50px;background: #ca3535}
 		.mainpage-wrapper h1{max-width: 60%;font-family:'apercu_probold', Arial, "Helvetica Neue", Helvetica, sans-serif;color:#fff;font-size: 85px;line-height: 101px}
 
@@ -190,7 +215,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.page-wrapper {padding:42px}
 	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {min-height:0}
 	.page-item .mainpage-wrapper{padding:30px}
-	.info-item.social-item {float: none;text-align: left;}
+	.info-item.social-item{float: none;text-align: left;}
 	.twitter{margin-left: 13px;}
 	.left-col h1 {font-size:24px;line-height:normal}
 	.inner-page .footer h2 {font-size: 30px;line-height: 40px; margin-top: 14px;}

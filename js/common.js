@@ -1,7 +1,7 @@
 var HelloWorld = (function (){
 	var hwSwipe = null,
-		pages = ["index","company","projects","contacts"],
-		pagesNames = ["Главная", "Компания", "Проекты", "Контакты"],
+		pages = ["index","company","projects","contacts", "loyalbill"],
+		pagesNames = ["Главная", "Компания", "Проекты", "Контакты", "Loyalbill"],
 		isMobile = jQuery.browser.mobile,
 		isIE = navigator.appVersion.indexOf('MSIE') != -1,
 		$slider,
@@ -129,7 +129,7 @@ var HelloWorld = (function (){
         			map&&map.geoObjects.add(officePlacemark);
 				}
 			});
-setTimeout(function (){hwSwipe.slide(2);}, 1000)
+setTimeout(function (){hwSwipe.slide(4);}, 1000)
 		},
 		initYandexMaps: function (id){
 			if (!isMobile) {
@@ -168,6 +168,7 @@ setTimeout(function (){hwSwipe.slide(2);}, 1000)
  				var $buts = $('<span class="facebook-like-btn"><iframe src="http://www.facebook.com/plugins/like.php?locale=en_US&app_id=101025366657087&amp;href=http%3A%2F%2Fhelloworld.by&amp;send=false&amp;layout=button_count&amp;width=160&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:160px; height:21px;" allowTransparency="true"></iframe></span></span><span class="st_twitter_hcount" displayText="Tweet"></span>');
  				if (!isMobile) {
 	 				$buts.appendTo('.social-buts');
+	 				$buts.appendTo('.project-social-buts');
  				}else{
 					$.each($slider.find('.page-item'), function (key, el){
 						if(!$(el).hasClass('mainpage-item')){
