@@ -180,11 +180,13 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.mainpage-wrapper h1{max-width: 100%;}
 }
 @media screen and (max-width: 960px) {
+	.top-navigation li a{padding-bottom:36px}
 	.top-navigation{margin-top:47px;height:56px;padding-right:0;text-align:left}
-	.top-navigation li:first-child{margin-left:4.4%}
+	.top-navigation li:first-child{margin-left:5.3%!important}
+	.top-navigation li{margin-left:6.1%}
 	.project-item{width: 45%}
-	.top-header .logo{padding: 4.4% 0 0 4.4%}
-	.social-buts{padding: 4.4% 4.4% 0 0}
+	.top-header .logo{padding:5% 0 0 5.3%}
+	.social-buts{padding:5.2% 4.7% 0 0}
 	.page-wrapper {padding:42px}
 	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {min-height:0}
 	.page-item .mainpage-wrapper{padding:30px}
@@ -201,7 +203,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.mainpage-wrapper .logo {bottom:30px;left:30px}
 	.mainpage-wrapper .bottom-navigation{margin-top:27px;position:static;text-align: left}
 		.mainpage-wrapper .bottom-navigation li {margin-bottom: 34px;margin-left:0;display: block;float:none;font-size:16px}
-	.page-wrapper{padding-top:291px}
+	.page-wrapper{padding-top:299px}
 		
 	.content-promo{padding-right: 0; padding-left: 0}
 	.promo-items .promo-item p{margin-left: 0;margin-right: 0;margin: 2.6% 0 25px 0}
@@ -210,6 +212,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	/*.inner-page .footer h3 {padding-top:32px;width:auto;font-size:36px;line-height:40px}*/
 }
 @media screen and (max-width: 700px) {
+	.top-navigation li:first-child{margin-left:0!important}
 	.top-header .logo {padding:6.9% 0 0 7.3%}
 	.inner-page .footer a{font-size:60px}
 	.inner-page .footer h3 {padding-top:32px;font-size:43px;line-height:40px}
@@ -235,10 +238,14 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 }
 
 @media screen and (max-width: 480px) {
+	.social-buts {position:absolute;left:23px;top:104%}
+		.social-buts > span{float:left}
+	.top-header-i .top-navigation {margin-bottom:97px;padding-left:42px}
+	.top-header .logo {padding:42px 0 0 42px}
 	.info-items .info-item {margin-bottom:7%;margin-left:0;display:block;width: 100%;}
 	.top-header-i .top-navigation li{margin-bottom:34px}
 		.top-header-i .top-navigation li a {font-size:16px}
-	.page-wrapper{padding-top:419px}
+	.page-wrapper{padding-top:453px}
 	.twitter{margin-top: 0}
 	.project-items{margin:16px auto}
 	.project-item{width:100%}
@@ -251,11 +258,15 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.inner-page .footer h3 {width:290px;font-size:22px}
 }
 @media screen and (max-width: 320px) {
+	.inner-page .footer h3{width:auto}
+	.top-header .logo {padding:24px 0 0 24px}
+	.social-buts {width:80%;left:1.1%;top:104%}
 	.inner-page .footer h3{padding-bottom:7px}
-	.page-wrapper {padding:327px 0 0}
+	.page-wrapper {padding:340px 24px 24px}
 	.logo a img, .logo img{max-width:70%}
 	.top-header-i .top-navigation li{margin-bottom:18px}
-		.top-header-i .top-navigation{margin-top:38px}
+		.top-header-i .top-navigation{margin-top:29px;margin-bottom:78px;padding-left:24px}
+		
 	.project-item{width: 100%}
 	.projects-topic{padding:0 21px;font-size:27px;line-height:32px}
 	.project-items{margin: 30px auto}
