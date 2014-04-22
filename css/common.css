@@ -41,7 +41,7 @@ body {-webkit-text-size-adjust: 100%;-ms-text-size-adjust: none;-webkit-transfor
 	.facebook-like-btn{width:76px;overflow:hidden}
 	.stButton .stMainServices img, .stButton img{display:none}
 	.social-buts > span{margin-left:20px;float:right}
-	.project-social-buts{margin-top:26px;text-align:center}
+	.project-social-buts{margin:19px 0 27px 0;text-align:center}
 		.project-social-buts > span{margin-left:22px;display:inline-block;vertical-align:top}
 	.social-buts .st_facebook_hcount{margin-left:20px;}
 		.social-buts > span span{margin:0;z-index:auto}
@@ -123,7 +123,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	
 	/*Projects*/
 	.projects-topic{font-size: 72px;line-height: 82px;text-align:center}
-	.project-items{margin:56px auto;font-size:0;text-align:center}
+	.project-items{margin:56px auto 40px auto;font-size:0;text-align:center}
 		.project-item{width: 33.33421%;display:inline-block;vertical-align:top}
 		.project-item:hover{background:#ca3535}
 			.project-item:hover .project-name strong, .project-item:hover .project-name, .project-item:hover .work-type{color:#fff;border-color:#fff}
@@ -158,7 +158,9 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 			#maparea a img{width: 100%}
 
 	/*Project*/
-
+		.page-item.project p, .page-item.project cite, .page-item.project .sim-proj-title{font-family:'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif}
+		.sim-proj-title{margin-top:44px;text-align:center;font-size:43px}
+		.sim-proj-title + .project-items{margin-top:34px}
 		/*Top-panel*/
 		.top-panel .work-type{margin-top:0;}
 		.top-panel .back{font-size:18px;color:#818181}
@@ -168,17 +170,25 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		.site-link{color:#ca3535;font-size:18px}
 
 		/*Project-descr*/
-		.project-descr h1{padding:10px 200px;text-align:center;font-size:72px}
-		.project-descr h1 strong{font-size:72px;color:#ca3535}
-		.project-descr .descr{width: 655px;margin: 0 auto;font-size:22px}
+		.project-descr h1{padding:10px 200px;text-align:center;font-size:72px;line-height:82px}
+		.project-descr h1 strong{font-size:72px;color:#ca3535;font-weight:normal}
+		.project-descr .descr{width: 655px;margin: 0 auto;font-size:22px;line-height:30px}
 
 		/*Project-middle*/
-		.project-middle-item{}
-			.project-middle-item > .inline{display:inline-block;vertical-align:middle}
-			.project-middle-item .project-content{width:705px;margin:0 auto;font-size:18px}
-			.project-middle-item.center{text-align:center}
-		.project-img{margin:20px;-webkit-box-shadow: 1px 1px 20px #000;-moz-box-shadow: 1px 1px 20px #000;box-shadow: 1px 1px 20px #000}
-		.project-middle .over-img-descr{width:360px;margin-left:40px;font-size:18px}
+		.project-middle{padding:25px 0 51px 50px;border-bottom:1px solid #e3e3e3}
+			.project-middle-item{}
+				.project-middle-item.center{text-align:center}
+				.project-middle-item > .inline{display:inline-block;vertical-align:middle}
+				.project-middle-item .project-content{width:705px;margin:0 auto;font-size:18px;line-height:24px}
+				.project-middle-item .project-content.quote{margin-top:49px;position:relative;display:block;font-style:normal;text-transform:uppercase;color:#ca3535;font-size:20px;line-height:35px}
+				.project-middle-item .project-content.quote:before{content:" ";width:48px;height:45px;position:absolute;left:-75px;top:8px;background:url(images/d-arrow.png) no-repeat center}
+					.project-middle-item .project-content.quote .author{margin-right:24px;margin-top:11px;display:block;float:right;color:#000}
+						.project-middle-item .project-content.quote .author .author-accent{color:#a4a4a4}
+				.project-middle-item .project-content.img-accent{color:#a3a3a3;font-size:16px;text-align:left;line-height:21px}
+
+		.project-img{margin:20px;margin-bottom:57px;-webkit-box-shadow: 1px 1px 20px #000;-moz-box-shadow: 1px 1px 20px #000;box-shadow: 1px 1px 20px #000}
+		.project-img.centered{margin:54px 20px 50px -12px}
+		.project-middle .over-img-descr{width:360px;margin-left:36px;font-size:18px;line-height:24px}
 
 	/*Mainpage wrapper*/
 	.mainpage-wrapper{padding:50px;background: #ca3535}
