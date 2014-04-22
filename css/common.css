@@ -159,6 +159,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 
 	/*Project*/
 		.page-item.project p, .page-item.project cite, .page-item.project .sim-proj-title{font-family:'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif}
+		.page-item.project .page-wrapper{padding-top:256px}
 		.sim-proj-title{margin-top:44px;text-align:center;font-size:43px}
 		.sim-proj-title + .project-items{margin-top:34px}
 		/*Top-panel*/
@@ -215,6 +216,15 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.mainpage-wrapper h1{max-width: 100%;}
 }
 @media screen and (max-width: 960px) {
+	.project-img{margin:2.3%}
+	.project-img.centered{margin:36px 20px 50px -12px;width:71%}
+	.project-middle-item .project-content.quote{margin-top: 32px}
+	.project-middle .over-img-descr{width: 39%;margin-left:2%}
+	.project-middle {padding:25px 0 51px 0}
+	.project-middle-item > .inline.project-img{width:54%}
+	.project-descr h1{padding:10px 50px}
+	.work-types {margin-left:55px}
+	.page-item.project .page-wrapper{padding-top:297px}
 	.top-navigation li a{padding-bottom:36px}
 	.top-navigation{margin-top:47px;height:56px;padding-right:0;text-align:left}
 	.top-navigation li:first-child{margin-left:5.3%!important}
@@ -247,6 +257,20 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	/*.inner-page .footer h3 {padding-top:32px;width:auto;font-size:36px;line-height:40px}*/
 }
 @media screen and (max-width: 700px) {
+	.sim-proj-title{margin-top:36px}
+	.project-img.centered{margin:36px 0 45px 0;width:99%}
+	.project-middle-item .project-content.quote .author{margin-right:0px;margin-top:22px}
+	.project-middle-item .project-content.quote:before{left:-66px;top:1px;-webkit-transform:scale(0.7);-moz-transform:scale(0.7);-ms-transform:scale(0.7);-o-transform:scale(0.7);transform:scale(0.7)}
+	.project-middle-item .project-content.quote{margin-top:32px;width:80%;line-height:29px;font-size:18px}
+	.project-middle-item .project-content{width:auto;font-size:15px;line-height:22px}
+	.project-middle-item > .inline.project-img{width:78%;margin:0 auto}
+	.project-middle-item > .inline{display:block;width:100%;margin:31px 0 0 0;font-size:15px;line-height:22px}
+	.project-descr .descr{font-size:18px;width:auto}
+	.project-descr h1{font-size:60px;padding:10px 0px;line-height:75px}
+	.project-descr h1 strong{font-size:60px}
+	.top-panel {height:78px;position:relative}
+	.work-types{margin-left:0;position:absolute;left:22%;top:56px}
+	.page-item.project .page-wrapper{padding-top:435px}
 	.top-navigation li:first-child{margin-left:0!important}
 	.top-header .logo {padding:6.9% 0 0 7.3%}
 	.inner-page .footer a{font-size:60px}
@@ -273,6 +297,15 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 }
 
 @media screen and (max-width: 480px) {
+	.sim-proj-title{margin-top:39px;font-size:40px}
+	.project-middle-item .project-content.quote, .project-middle-item .project-content.quote .author{font-size:16px}
+	.project-middle-item > .inline.project-img{width:100%}
+	.project-descr .descr{line-height:24px}
+	.project-descr h1 strong{font-size:40px}
+	.project-descr h1{font-size:40px;line-height:48px;padding-top:20px}
+	.top-panel .back{font-size:15px}
+	.work-types{left:9%;top:54px}
+	.page-item.project .page-wrapper{padding-top:465px}
 	.social-buts {position:absolute;left:23px;top:104%}
 		.social-buts > span{float:left}
 	.top-header-i .top-navigation {margin-bottom:97px;padding-left:42px}
@@ -293,6 +326,16 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.inner-page .footer h3 {width:290px;font-size:22px}
 }
 @media screen and (max-width: 320px) {
+	.sim-proj-title + .project-items{margin-top:12px}
+	.project-middle{padding:25px 0 27px}
+	.sim-proj-title{margin-top:20px;font-size:22px}
+	.project-middle-item .project-content.quote:before{left:-50px;-webkit-transform:scale(0.5);-moz-transform:scale(0.5);-ms-transform:scale(0.5);-o-transform:scale(0.5);transform:scale(0.5)}
+	.project-middle-item > .inline, .project-middle-item .project-content, .project-middle-item .project-content.quote, .project-middle-item .project-content.quote .author{font-size:14px}
+	.project-descr .descr{font-size:16px}
+	.project-descr h1{padding-top:30px;font-size:28px;line-height:35px}
+	.project-descr h1 strong{font-size:28px}
+	.work-types{left:4%;top:70px}
+	.page-item.project .page-wrapper{padding-top:340px}
 	.inner-page .footer h3{width:auto}
 	.top-header .logo {padding:24px 0 0 24px}
 	.social-buts {width:80%;left:1.1%;top:104%}
@@ -306,7 +349,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.projects-topic{padding:0 21px;font-size:27px;line-height:32px}
 	.project-items{margin: 30px auto}
 	.project-item .project-name{font-size: 22px}
-	.project-item .work-type{font-size:14px}
+	.work-type{font-size:14px}
 	.top-header-i .top-navigation li a{font-size:16px}
 }
 
