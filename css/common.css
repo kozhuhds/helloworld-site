@@ -130,7 +130,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		.project-item{width: 33.33421%;display:inline-block;vertical-align:top}
 		.project-item:hover{background:#ca3535}
 			.project-item:hover .project-name strong, .project-item:hover .project-name, .project-item:hover .work-type{color:#fff;border-color:#fff}
-			.project-item a{text-decoration:none}
+			.project-item a{display:block;text-decoration:none}
 				.project-item img{width:100%;-webkit-box-shadow: 1px 1px 20px #000;-moz-box-shadow: 1px 1px 20px #000;box-shadow: 1px 1px 20px #000}
 				.project-item figure{padding:20px}
 					.project-item figcaption{margin-top:20px;text-align:left}
@@ -397,8 +397,12 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 }
 
 @media screen and (max-width: 380px) {
+	.info-items .info-item p{font-size:27px}
 	.inner-page .footer a{font-size:28px}
 	.inner-page .footer h3 {width:290px;font-size:22px}
+	.mainpage-wrapper h1{font-size:35px;line-height:43px}
+	.mainpage-wrapper .bottom-navigation li{font-size:15px}
+	.mainpage-wrapper .bottom-navigation{margin-top:38px}
 }
 @media screen and (max-width: 320px) {
 	.content-promo h1{font-size:20px;line-height:31px}

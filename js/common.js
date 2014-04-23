@@ -15,7 +15,7 @@ var HelloWorld = (function (){
 	var Init = {
 		events: function (){
 			$('.logo a').on('click', navigateToUrl);
-			$('.bottom-navigation a, .top-navigation a').on('click', navigateToUrl);
+			$('.bottom-navigation a, .top-navigation a, .project-items .project-item a, .back, .back-960, .back-320').on('click', navigateToUrl);
 
 			window.onpopstate = function (e){
 				if (window.history.state) {
@@ -68,7 +68,7 @@ var HelloWorld = (function (){
 						$('html').css('height', 'auto');
 					}
 				}
-				else if(e.keyCode == 39 && pageNum < pages.length-1){
+				else if(e.keyCode == 39 && pageNum < 3){
 					hwSwipe.next();
 					highlightMenuItem(pages.indexOf(getCurrentURL())-1);
 				}
@@ -129,7 +129,7 @@ var HelloWorld = (function (){
         			map&&map.geoObjects.add(officePlacemark);
 				}
 			});
-setTimeout(function (){hwSwipe.slide(3);}, 1000)
+//setTimeout(function (){hwSwipe.slide(3);}, 1000)
 		},
 		initYandexMaps: function (id){
 			if (!isMobile) {
@@ -186,7 +186,7 @@ setTimeout(function (){hwSwipe.slide(3);}, 1000)
 				if(!$(el).hasClass('mainpage-item')){
 					$header.clone()
 						.insertBefore($(el).find('.page-wrapper'))
-						.find('.top-navigation li').eq(3-key).addClass('active');
+						.find('.top-navigation li').eq(key-1).addClass('active');
 				}
 			});
 			$('.page-wrapper').addClass('mobile');
@@ -237,14 +237,15 @@ setTimeout(function (){hwSwipe.slide(3);}, 1000)
 		}
 	};
 	var navigateToUrl = function (e, url){
+
 		var toURL;
 		if (url) {
 			toURL = !isIE ? url.split('/').pop():url;
 		}else{
-			if (!e.target.getAttribute('href')){
-				toURL = e.target.parentNode.getAttribute('href').split('/').pop();
+			if (!this.getAttribute('href')){
+				toURL = this.parentNode.getAttribute('href').split('/').pop();
 			}else{
-				toURL = e.target.getAttribute('href').split('/').pop();
+				toURL = this.getAttribute('href').split('/').pop();
 			}
 		}
 
@@ -253,7 +254,7 @@ setTimeout(function (){hwSwipe.slide(3);}, 1000)
 			$('html').removeAttr('style');
 			setTimeout(function(){$('body').removeAttr('style');}, 300);
 		}else{
-			!isMobile && highlightMenuItem(pages.indexOf(toURL)-1);
+			(!isMobile && pages.indexOf(toURL) <= 3) && highlightMenuItem(pages.indexOf(toURL)-1);
 		}
 		hwSwipe.slide(pages.indexOf(toURL));
 		if (e)
