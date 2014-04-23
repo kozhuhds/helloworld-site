@@ -37,7 +37,7 @@ body {-webkit-text-size-adjust: 100%;-ms-text-size-adjust: none;-webkit-transfor
 
 .fixed{width: 430px;position:fixed;top:10%}
 /*Social buttons*/
-.social-buts{width: 40%;height:22px;padding:50px 50px 0 0;float: right}
+.social-buts{height:22px;padding:50px 50px 0 0;float: right}
 	.facebook-like-btn{width:76px;overflow:hidden}
 	.stButton .stMainServices img, .stButton img{display:none}
 	.social-buts > span{margin-left:20px;float:right}
@@ -98,7 +98,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 
 /*Page-wrapper
 *******************************************************************************************************************************/
-.page-wrapper{max-width:1280px;padding:50px;margin:0 auto;padding-top:271px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;z-index:1}
+.page-wrapper{max-width:1280px;padding:50px;margin:0 auto;padding-top:262px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;z-index:1}
 .page-wrapper.mobile{padding-top: 20px !important;}
 
 	/*Page item*/
@@ -114,6 +114,9 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		.inner-page .page-wrapper .footer a:hover{border-bottom: 3px solid #ca3535}
 
 	/*Company page*/
+	.company .footer{text-align:left}
+	.company .footer > *{margin-left:23.7%!important}
+	.company .footer h3{margin:0}
 	.content-promo{padding: 0 10.2% 3.64% 23.43%} 
 	.content-promo h1{font-size: 48px;line-height: 58px;font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif} 
 	.promo-items{margin-bottom: 5.6%;}
@@ -137,20 +140,21 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 
 
 	/*Info items*/
-	.info-items{margin-bottom: 5.9%;}
+	.info-item-960{display:none}
+	.info-items{margin-bottom:4.3%}
 	  .info-items .info-item{width: 25.66%;margin-left:4.2373%;margin-top: 0.8%;float: left}
 		.info-items .info-item p.accent{color: #797979; font-size: 23px}
 		.info-items .info-item p{font-size: 34px; white-space: nowrap; font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;line-height: 40px}
 		.info-items .info-item p.address{white-space: normal}
 		.info-items .info-item p.tel{margin-left: -5.8%;letter-spacing: -0.8px}
-		.info-items .info-item a{color: #ca3535; word-wrap:break-word;letter-spacing: 0.4px;font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif}
+		.info-items .info-item a{color: #ca3535; word-wrap:break-word;letter-spacing:0px;font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		.info-items .info-item .social-b:hover{background-image:url(images/fb-tw-icons-red.png);border-color:#ca3535}
 		  .info-items .info-item p strong{font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		  .info-items .info-item p strong span{font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		.info-item.phone-item{width: 28%; margin-left: 4.8%}
 	.social-b{width: 34px;height: 34px;display: inline-block;-webkit-border-radius: 99px;-moz-border-radius: 99px;border-radius: 99px; border: 2px solid #000; background: url(images/fb-tw-icons.png) no-repeat 0 6px;}
 	.twitter{margin-left: 8%;margin-top: 13px;background-position: 0 -23px !important}
-	.info-item.social-item{width: 10%;margin-left: 0;margin-top: 1.7%;float: right;text-align: right}
+	.info-item.social-item{width: 10%;margin-top:5px;margin-left:0;float:right;text-align:right}
 
 	.projects-items li figure img.retina-image{width: 84.827586%}
 	#maparea{height: 694px; position: relative}
@@ -158,20 +162,21 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 			#maparea a img{width: 100%}
 
 	/*Project*/
+		.back-960, .back-320{display:none}
 		.page-item.project p, .page-item.project cite, .page-item.project .sim-proj-title{font-family:'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		.page-item.project .page-wrapper{padding-top:256px}
 		.sim-proj-title{margin-top:44px;text-align:center;font-size:43px}
 		.sim-proj-title + .project-items{margin-top:34px}
 		/*Top-panel*/
 		.top-panel .work-type{margin-top:0;}
-		.top-panel .back{font-size:18px;color:#818181}
-			.top-panel .back .back-i{width:14px;height:27px;margin-right:13px;display:inline-block;vertical-align:middle;background:url(images/back-i.png) no-repeat center}
-		.work-types{margin-left:153px}
+		.top-panel .back, .top-panel .back-960, .top-panel .back-320{font-size:18px;color:#818181}
+			.top-panel .back .back-i, .top-panel .back-960 .back-i, .top-panel .back-320 .back-i{width:14px;height:27px;margin-right:13px;display:inline-block;vertical-align:middle;background:url(images/back-i.png) no-repeat center}
+		.work-types{margin-left:13%}
 		.top-panel .site-link{float:right;line-height: 29px}
 		.site-link{color:#ca3535;font-size:18px}
 
 		/*Project-descr*/
-		.project-descr h1{padding:10px 200px;text-align:center;font-size:72px;line-height:82px}
+		.project-descr h1{padding:10px 14%;text-align:center;font-size:72px;line-height:82px}
 		.project-descr h1 strong{font-size:72px;color:#ca3535;font-weight:normal}
 		.project-descr .descr{width: 655px;margin: 0 auto;font-size:22px;line-height:30px}
 
@@ -187,9 +192,9 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 						.project-middle-item .project-content.quote .author .author-accent{color:#a4a4a4}
 				.project-middle-item .project-content.img-accent{color:#a3a3a3;font-size:16px;text-align:left;line-height:21px}
 
-		.project-img{margin:20px;margin-bottom:57px;-webkit-box-shadow: 1px 1px 20px #000;-moz-box-shadow: 1px 1px 20px #000;box-shadow: 1px 1px 20px #000}
+		.project-img{width:51.99%;margin:20px;margin-bottom:57px;-webkit-box-shadow: 1px 1px 20px #000;-moz-box-shadow: 1px 1px 20px #000;box-shadow: 1px 1px 20px #000}
 		.project-img.centered{margin:54px 20px 50px -12px}
-		.project-middle .over-img-descr{width:360px;margin-left:36px;font-size:18px;line-height:24px}
+		.project-middle .over-img-descr{width:32%;margin-left:3.1%;font-size:18px;line-height:24px}
 
 	/*Mainpage wrapper*/
 	.mainpage-wrapper{padding:50px;background: #ca3535}
@@ -212,10 +217,30 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	html{font-size: 8px;}
 	.mainpage-wrapper h1 {max-width: 85%;}
 }
+@media screen and (max-width: 1170px) {
+	.info-item-1280{display:none}
+	.info-item-960{display:block}
+	.contact .info-items .info-item:nth-child(5){width:50%;margin-left:0;margin-top:32px}
+	.contact .info-items .info-item:nth-child(2){clear:right}
+	.contact .info-items .info-item{width:40%}
+	.info-item.social-item{width:11%!important;margin-top:-124px}
+
+}
 @media screen and (max-width: 1024px) {
 	.mainpage-wrapper h1{max-width: 100%;}
 }
+@media screen and (max-width: 915px) {
+	.contact .info-items .info-item, .contact .info-items .info-item:nth-child(5){width:45.2%}
+	.info-item.social-item{width:20%!important;margin-top:34px;margin-left:4.8%;float:left;text-align:left}
+}
 @media screen and (max-width: 960px) {
+	.info-items .info-item{margin-left:6.8%}
+	.company .footer > *{margin-left:15.5%!important}
+	.promo-items .promo-item p{line-height: 26px;margin:3.6% 7.2% 3% 15.5%}
+	.content-promo{padding:0 2.2% 2.3% 15.8%}
+	.content-promo h1{font-size:44px}
+	.back{display:none}
+	.back-960{display:inline}
 	.project-img{margin:2.3%}
 	.project-img.centered{margin:36px 20px 50px -12px;width:71%}
 	.project-middle-item .project-content.quote{margin-top: 32px}
@@ -234,69 +259,111 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.social-buts{padding:5.2% 4.7% 0 0}
 	.page-wrapper {padding:42px}
 	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {min-height:0}
-	.page-item .mainpage-wrapper{padding:30px}
-	.info-item.social-item{float: none;text-align: left;}
+	.page-item .mainpage-wrapper{padding-right:0}
 	.twitter{margin-left: 13px;}
 	.left-col h1 {font-size:24px;line-height:normal}
 	.inner-page .footer h2 {font-size: 30px;line-height: 40px; margin-top: 14px;}
-	.sign{margin-bottom: 34px;display: block; margin-left: 0}
-	.promo-items .promo-item h2 {font-size: 28px;}
-	.logo a img, .logo img{max-width: 84%;}
+	.sign{margin-left:13.88%;line-height:33%}
+	/*.promo-items .promo-item h2 {font-size: 28px;}*/
 	.info-items .info-item p.tel {margin-left: 0;}
 
-	.mainpage-wrapper h1 {font-size: 40px;line-height:50px}
-	.mainpage-wrapper .logo {bottom:30px;left:30px}
-	.mainpage-wrapper .bottom-navigation{margin-top:27px;position:static;text-align: left}
-		.mainpage-wrapper .bottom-navigation li {margin-bottom: 34px;margin-left:0;display: block;float:none;font-size:16px}
+	.mainpage-wrapper h1{font-size:74px;line-height:89px}
+	.mainpage-wrapper .bottom-navigation{margin-top:95px;position:static;text-align:left}
+		.mainpage-wrapper .bottom-navigation li{margin-bottom:39px;margin-left:0;display:block;float:none;font-size:20px}
 	.page-wrapper{padding-top:299px}
 		
-	.content-promo{padding-right: 0; padding-left: 0}
-	.promo-items .promo-item p{margin-left: 0;margin-right: 0;margin: 2.6% 0 25px 0}
-	.content-promo h1 {font-size: 24px;line-height: 36px;}
+	/*.content-promo{padding-right: 0; padding-left: 0}*/
+	/*.promo-items .promo-item p{margin-left: 0;margin-right: 0;margin: 2.6% 0 25px 0}*/
+	/*.content-promo h1 {font-size: 24px;line-height: 36px;}*/
 	/*.inner-page .footer a{font-size:40px}*/
 	/*.inner-page .footer h3 {padding-top:32px;width:auto;font-size:36px;line-height:40px}*/
 }
+@media screen and (max-width: 885px) {
+	.top-panel{height:78px;position:relative}
+	.work-types{margin-left:0;position:absolute;left:22%;top:56px}
+	.project-middle-item .project-content{width:100%}
+	.project-middle-item .project-content.quote:before{left:-66px;top:1px;-webkit-transform:scale(0.7);-moz-transform:scale(0.7);-ms-transform:scale(0.7);-o-transform:scale(0.7);transform:scale(0.7)}
+	.project-middle-item .project-content.quote{margin-top:32px;width:80%;line-height:29px;font-size:18px}
+
+}
+@media screen and (max-width: 850px) {
+	.mainpage-wrapper h1{font-size:60px;line-height:78px}
+}
+@media screen and (max-width: 720px) {
+	.info-items .info-item p{font-size:27px}
+}
+
 @media screen and (max-width: 700px) {
+	.info-items .info-item{margin-left:3.6%}
+	.contact .info-items .info-item:nth-child(5),.contact .info-items .info-item{width:48%}
+	.social-buts{padding:50px 33px 0 0}
+	.company .footer > *{margin-left:0%!important}
+	.sign {margin-left:0;display:block;padding:13px 0 49px 0px}
+	.promo-items .promo-item p{margin:3.6% 0 3% 0%;font-size:18px}
+	.promo-items .promo-item h2{font-size:60px}
+	.content-promo{padding: 0 0 5.6% 0%}
+	.content-promo h1{font-size:37px;line-height:51px}
 	.sim-proj-title{margin-top:36px}
 	.project-img.centered{margin:36px 0 45px 0;width:99%}
 	.project-middle-item .project-content.quote .author{margin-right:0px;margin-top:22px}
-	.project-middle-item .project-content.quote:before{left:-66px;top:1px;-webkit-transform:scale(0.7);-moz-transform:scale(0.7);-ms-transform:scale(0.7);-o-transform:scale(0.7);transform:scale(0.7)}
-	.project-middle-item .project-content.quote{margin-top:32px;width:80%;line-height:29px;font-size:18px}
+
 	.project-middle-item .project-content{width:auto;font-size:15px;line-height:22px}
 	.project-middle-item > .inline.project-img{width:78%;margin:0 auto}
 	.project-middle-item > .inline{display:block;width:100%;margin:31px 0 0 0;font-size:15px;line-height:22px}
 	.project-descr .descr{font-size:18px;width:auto}
 	.project-descr h1{font-size:60px;padding:10px 0px;line-height:75px}
 	.project-descr h1 strong{font-size:60px}
-	.top-panel {height:78px;position:relative}
-	.work-types{margin-left:0;position:absolute;left:22%;top:56px}
 	.page-item.project .page-wrapper{padding-top:435px}
 	.top-navigation li:first-child{margin-left:0!important}
-	.top-header .logo {padding:6.9% 0 0 7.3%}
+	.top-header .logo {padding:50px 0 0 50px}
 	.inner-page .footer a{font-size:60px}
 	.inner-page .footer h3 {padding-top:32px;font-size:43px;line-height:40px}
 	.projects-topic {font-size:60px;line-height:67px}
 	.project-item {width:63%}
-	.top-header-i .top-navigation{margin-top:48px;padding-left:7%;height:auto;text-align:left;}
+	.top-header-i .top-navigation{height:auto;margin-top:48px;padding-left:50px;text-align:left}
 			.top-header-i .top-navigation li{height:auto;margin-bottom:38px;padding-bottom:0;margin-left:0;float:none;display:block}
 			.top-header-i .top-navigation li:last-child{margin-bottom:46px}
 				.top-header-i .top-navigation li a{display:inline-block;padding-bottom:0;border-bottom:1px solid transparent!important;font-size:18px;letter-spacing:2.1px}
-	.page-wrapper {padding-top:439px}
+	.page-wrapper {padding:50px;padding-top:439px}
 
 }
 @media screen and (max-width: 650px) {
+	.promo-items .promo-item h2{font-size:50px}
 	.inner-page .footer a{font-size:50px}
 	.inner-page .footer h3 {font-size:33px}
+	.mainpage-wrapper h1{font-size:54px;line-height:65px}
 }
+@media screen and (max-width: 630px) {
+	.contact .info-items .info-item{width:100%;margin-left:0;margin-top:0!important;float:none}
+	.info-items .info-item p{font-size:30px}
+	.info-item.social-item{width: 100%!important}
+}
+
 @media screen and (max-width: 600px) {
-	.social-buts{width: 100%;padding-bottom: 15px}
+	.social-buts{padding-bottom: 15px}
 	.page-wrapper{padding-top: 451px}
 	.top-navigation li a{font-size:16px}
 	.inner-page .footer h3{font-size:30px;line-height:normal;width:auto}
 	.inner-page .footer a{font-size:40px;margin-top:7px}
+	.promo-items .promo-item h2{font-size:40px}
 }
 
+@media screen and (max-width: 490px) {
+	.work-types{left:10%}
+}
+
+
 @media screen and (max-width: 480px) {
+	.info-item-1280{display:block}
+	.info-item-960{display:none}
+	.company .promo-items .promo-item:last-child p{margin-bottom:38px}
+	.sign{font-size:61px}
+	.promo-items .promo-item p{margin:3.6% 0 3% 0%;font-size:16px}
+	.promo-items .promo-item h2{font-size:40px}
+	.content-promo{padding: 0 2.2% 5.6% 0%}
+	.content-promo h1{font-size:24px;line-height:37px}
+	.page-item .mainpage-wrapper{padding:40px 0 40px 40px}
+	.mainpage-wrapper .logo{bottom:40px;left:40px}
 	.sim-proj-title{margin-top:39px;font-size:40px}
 	.project-middle-item .project-content.quote, .project-middle-item .project-content.quote .author{font-size:16px}
 	.project-middle-item > .inline.project-img{width:100%}
@@ -306,26 +373,35 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.top-panel .back{font-size:15px}
 	.work-types{left:9%;top:54px}
 	.page-item.project .page-wrapper{padding-top:465px}
-	.social-buts {position:absolute;left:23px;top:104%}
+	.social-buts {padding-top:5.2%;position:absolute;left:23px;top:104%}
 		.social-buts > span{float:left}
 	.top-header-i .top-navigation {margin-bottom:97px;padding-left:42px}
 	.top-header .logo {padding:42px 0 0 42px}
-	.info-items .info-item {margin-bottom:7%;margin-left:0;display:block;width: 100%;}
+	.info-items .info-item {margin-bottom:5.3%;margin-left:0;width:100%;}
 	.top-header-i .top-navigation li{margin-bottom:34px}
 		.top-header-i .top-navigation li a {font-size:16px}
-	.page-wrapper{padding-top:453px}
+	.page-wrapper{padding:42px;padding-top:453px}
 	.twitter{margin-top: 0}
 	.project-items{margin:16px auto}
 	.project-item{width:100%}
 	.projects-topic{font-size:40px;line-height:50px}
-	.project-item .project-name {font-size: 28px}
-	
+	.project-item .project-name {font-size: 28px}	
 }
+
+@media screen and (max-width: 430px) {
+	.work-types{left:0%}
+	.back-960{display:none}
+	.back-320{display:inline}
+	.work-type{font-size:13px}
+	.promo-items .promo-item h2{font-size: 27px}
+}
+
 @media screen and (max-width: 380px) {
 	.inner-page .footer a{font-size:28px}
 	.inner-page .footer h3 {width:290px;font-size:22px}
 }
 @media screen and (max-width: 320px) {
+	.content-promo h1{font-size:20px;line-height:31px}
 	.sim-proj-title + .project-items{margin-top:12px}
 	.project-middle{padding:25px 0 27px}
 	.sim-proj-title{margin-top:20px;font-size:22px}
@@ -338,7 +414,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.page-item.project .page-wrapper{padding-top:340px}
 	.inner-page .footer h3{width:auto}
 	.top-header .logo {padding:24px 0 0 24px}
-	.social-buts {width:80%;left:1.1%;top:104%}
+	.social-buts {left:1.1%;top:104%}
 	.inner-page .footer h3{padding-bottom:7px}
 	.page-wrapper {padding:340px 24px 24px}
 	.logo a img, .logo img{max-width:70%}
@@ -349,7 +425,6 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.projects-topic{padding:0 21px;font-size:27px;line-height:32px}
 	.project-items{margin: 30px auto}
 	.project-item .project-name{font-size: 22px}
-	.work-type{font-size:14px}
 	.top-header-i .top-navigation li a{font-size:16px}
 }
 
