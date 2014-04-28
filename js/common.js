@@ -97,7 +97,7 @@ var HelloWorld = (function (){
 						if (index == 3 && mapFirstOpened) {
 							Init.initYandexMaps('maparea');
 							mapFirstOpened = false;
-							isMobile && $swipewrap.height(857);
+							isMobile && $swipewrap.height(890);
 						};
 						if (!callFromPopState && !isIE) {
 							window.history.pushState({url: pages[index]},null, "/"+pages[index]);
@@ -117,9 +117,8 @@ var HelloWorld = (function (){
 						if (!callFromPopState && !isIE) {
 							window.history.pushState({url: pages[index]},null, "/");
 						}else if(isIE){
-							window.location.href = "#" + pages[index];
+							window.location.href = "#";
 						}
-
 					}
 					callFromPopState = false;
 				},
@@ -198,22 +197,34 @@ var HelloWorld = (function (){
 			fitMainpageHeight();
 		},
 		initUrl: function (){
-			var path = "/" + getCurrentURL(),
-				url = getCurrentURL(),
+			var url = getCurrentURL(),
+				path = url == 'index' ? "/" : "/" + url,
 				pageNum = pages.indexOf(url);
 			Init.initSwipe('#slider', '.swipe-wrap', pageNum);
-			window.history.pushState({url:url, isFirstRender: true}, null, path);
+			if(isIE){
+ 				window.location.href = url == 'index' ? '#' : '#'+url;
+ 			}else{
+ 				window.history.pushState({url:url, isFirstRender: true}, null, path);
+ 			}
 			if (path != '/') {
 				$('.top-header').css('z-index',3);
 				highlightMenuItem(pages.indexOf(url)-1);
 				$slider.css('height', 'auto');
 				setTimeout(function () {changePageHeight($slider.find('.page-item').eq(pageNum))}, 1000);
 			};
+			if (url == 'contacts') {
+				Init.initYandexMaps('maparea');
+				mapFirstOpened = false;
+			};
 		}
 	};
 	var	getCurrentURL = function (){
-
-		return window.location.pathname.split('/')[1] == '' ? 'index' : window.location.pathname.split('/')[1];
+		if (isIE) {
+			var hash = window.location.href.toString().split(window.location.host)[1].split('#')[1];
+			return !hash ? 'index' : hash;
+		}else{
+			return window.location.pathname.split('/')[1] == '' ? 'index' : window.location.pathname.split('/')[1];
+		}
 	};
 	var changePageHeight = function (page){
 		if(!$(page).hasClass('mainpage-item')){
@@ -238,7 +249,7 @@ var HelloWorld = (function (){
 	var navigateToUrl = function (e, url){
 		var toURL;
 		if (url) {
-			toURL = !isIE ? url.split('/').pop():url;
+			toURL = !isIE ? url.split('/').pop() : url;
 		}else{
 			if (!this.getAttribute('href')){
 				toURL = this.parentNode.getAttribute('href').split('/').pop();
@@ -286,6 +297,5 @@ var HelloWorld = (function (){
 	}
 })();
 
-window.onload = function (){
-	HelloWorld.init();
-}
+HelloWorld.init();
+

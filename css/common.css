@@ -56,7 +56,7 @@
 
 /*Structure
 *******************************************************************************************************************************/
-body {-webkit-text-size-adjust: 100%;-ms-text-size-adjust: none;-webkit-transform: translate3d(0, 0, 0);}
+body{-webkit-text-size-adjust: 100%;-ms-text-size-adjust: none;-webkit-transform: translate3d(0, 0, 0)}
 
 .fixed{width: 430px;position:fixed;top:10%}
 /*Social buttons*/
@@ -383,7 +383,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {	
 	.info-item-1280{display:block}
 	.info-item-960{display:none}
 	.company .promo-items .promo-item:last-child p{margin-bottom:38px}
@@ -435,6 +435,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.mainpage-wrapper .bottom-navigation{margin-top:38px}
 }
 @media screen and (max-width: 320px) {
+	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper{min-height:0}	
 	.content-promo h1{font-size:20px;line-height:31px}
 	.sim-proj-title + .project-items{margin-top:12px}
 	.project-middle{padding:25px 0 27px}
