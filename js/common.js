@@ -2,6 +2,7 @@ var HelloWorld = (function (){
 	var hwSwipe = null,
 		pages = ["index","company","projects","contacts", "loyalbill"],
 		pagesNames = ["Главная", "Компания", "Проекты", "Контакты", "Loyalbill"],
+
 		isMobile = jQuery.browser.mobile,
 		isIE = navigator.appVersion.indexOf('MSIE') != -1,
 		$slider,
@@ -74,13 +75,15 @@ var HelloWorld = (function (){
 				}
 			});
 		},
-		initSwipe: function (id, wrap){
+		initSwipe: function (id, wrap, startSlide){
 			$slider = $(id);
 			$swipewrap = $(wrap);
+
 			hwSwipe = new Swipe($slider[0], {
 				speed: 400,
 				stopPropagation: false,
 				continuous: false,
+				startSlide: startSlide,
 				callback: function(index, elem) {
 					map && map.geoObjects.remove(officePlacemark);
 					$slider.find('.page-item.active').removeClass('active');
@@ -101,7 +104,7 @@ var HelloWorld = (function (){
 						}else if(isIE){
 							window.location.href = "#" + pages[index];
 						}
-						$('body').css('overflow-y','scroll');
+						//$('body').css('overflow-y','scroll');
 						document.title = "HELLO WORLD - " + pagesNames[index];
 					}else {
 						document.title = "HELLO WORLD";
@@ -156,7 +159,7 @@ var HelloWorld = (function (){
  				$('<a href="http://maps.yandex.ru/?text=%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C%2C%20%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D0%B0%20%D0%9A%D1%80%D0%B0%D0%BF%D0%B8%D0%B2%D1%8B%2C%2034&sll=27.451347%2C53.855728&ll=27.451996%2C53.855735&spn=0.016952%2C0.005804&z=17&l=map"><img src="http://helloworld.by/new/images/map.png" alt="Map"/></a>').appendTo('#'+id);
  				$('#'+id).height('auto');
 	        	$('.dimmer').hide();
-	        	changePageHeight($slider.find('.page-item').eq(3));
+	        	//changePageHeight($slider.find('.page-item').eq(3));
  			}
 		},
 		initSocialButs: function (){
@@ -195,26 +198,22 @@ var HelloWorld = (function (){
 			fitMainpageHeight();
 		},
 		initUrl: function (){
-			if (isIE && !getCurrentURL()){
-				window.location.href = '#';
-			}else if (isIE){
-			 	navigateToUrl(null, getCurrentURL());
-			}else if (getCurrentURL() == 'index' || !getCurrentURL()){
-				window.history.pushState({url:"index", isFirstRender: true},null, "/");
-			}else{
-				navigateToUrl(null, getCurrentURL());
-			}
+			var path = "/" + getCurrentURL(),
+				url = getCurrentURL(),
+				pageNum = pages.indexOf(url);
+			Init.initSwipe('#slider', '.swipe-wrap', pageNum);
+			window.history.pushState({url:url, isFirstRender: true}, null, path);
+			if (path != '/') {
+				$('.top-header').css('z-index',3);
+				highlightMenuItem(pages.indexOf(url)-1);
+				$slider.css('height', 'auto');
+				setTimeout(function () {changePageHeight($slider.find('.page-item').eq(pageNum))}, 1000);
+			};
 		}
 	};
 	var	getCurrentURL = function (){
-		var activeURL;
-		if (!window.history.state && !isIE) {
-			activeURL = 'index';
-		}else{
-			activeURL = isIE?window.location.href.toString().split(window.location.host)[1].split('#')[1]:window.history.state.url;
-		}
-		activeURL = activeURL == ''? 'index':activeURL;
-		return activeURL;
+
+		return window.location.pathname.split('/')[1] == '' ? 'index' : window.location.pathname.split('/')[1];
 	};
 	var changePageHeight = function (page){
 		if(!$(page).hasClass('mainpage-item')){
@@ -237,7 +236,6 @@ var HelloWorld = (function (){
 		}
 	};
 	var navigateToUrl = function (e, url){
-
 		var toURL;
 		if (url) {
 			toURL = !isIE ? url.split('/').pop():url;
@@ -248,7 +246,6 @@ var HelloWorld = (function (){
 				toURL = this.getAttribute('href').split('/').pop();
 			}
 		}
-
 		if (toURL == 'index') {
 			$('.top-header').removeAttr('style');
 			$('html').removeAttr('style');
@@ -257,9 +254,7 @@ var HelloWorld = (function (){
 			(!isMobile && pages.indexOf(toURL) <= 3) && highlightMenuItem(pages.indexOf(toURL)-1);
 		}
 		hwSwipe.slide(pages.indexOf(toURL));
-		if (e)
-			e.preventDefault();
-		
+		e && e.preventDefault();
 	};
 
 	var pageItemsHandler = function () {
@@ -267,7 +262,6 @@ var HelloWorld = (function (){
 			countInRow = Math.round($('.project-items').width()/items.eq(0).width());
 			items.height('auto');
 			if ($(window).width() <= 480) {return};
-			//console.log($('.project-items').width(),"/",items.eq(0).width(),"=",Math.round($('.project-items').width()/items.eq(0).width()));
 			for (var i = 0; i < items.length; i += countInRow) {
 				var row = items.get().slice(i, i+countInRow),
 					heights = [];
@@ -282,7 +276,6 @@ var HelloWorld = (function (){
 	return {
 		init: function (){
 			$('.top-header').addClass('show');
-			Init.initSwipe('#slider', '.swipe-wrap');
 			Init.initUrl();
 			if (isMobile) {
 				Init.renderForMobile($('.top-header'));

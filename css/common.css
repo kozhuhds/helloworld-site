@@ -30,6 +30,29 @@
 	font-weight: normal;
 	font-style: normal
 }
+@font-face {
+  font-family: 'fontello';
+  src: url('fonts/fontello.eot?90344513');
+  src: url('fonts/fontello.eot?90344513#iefix') format('embedded-opentype'),
+       url('fonts/fontello.woff?90344513') format('woff'),
+       url('fonts/fontello.ttf?90344513') format('truetype'),
+       url('fonts/fontello.svg?90344513#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('fonts/fontello.svg?90344513#fontello') format('svg');
+  }
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before{font-family:"fontello";font-style:normal;font-weight:normal}
+.icon-twitter:before{content:'\e801'} 
+.icon-facebook:before{content:'\e800'}
 
 /*Structure
 *******************************************************************************************************************************/
@@ -148,11 +171,11 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		.info-items .info-item p.address{white-space: normal}
 		.info-items .info-item p.tel{margin-left: -5.8%;letter-spacing: -0.8px}
 		.info-items .info-item a{color: #ca3535; word-wrap:break-word;letter-spacing:0px;font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif}
-		.info-items .info-item .social-b:hover{background-image:url(images/fb-tw-icons-red.png);border-color:#ca3535}
+		.info-items .info-item .social-b:hover{border-color:#ca3535;color:#ca3535!important;text-decoration:none}
 		  .info-items .info-item p strong{font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		  .info-items .info-item p strong span{font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		.info-item.phone-item{width: 28%; margin-left: 4.8%}
-	.social-b{width: 34px;height: 34px;display: inline-block;-webkit-border-radius: 99px;-moz-border-radius: 99px;border-radius: 99px; border: 2px solid #000; background: url(images/fb-tw-icons.png) no-repeat 0 6px;}
+	.social-b{width:34px;height:34px;display:inline-block;-webkit-border-radius:99px;-moz-border-radius:99px;border-radius:99px;border:2px solid #000;text-align:center;font-size:18px;line-height:31px;color:#000!important}
 	.twitter{margin-left: 8%;margin-top: 13px;background-position: 0 -23px !important}
 	.info-item.social-item{width: 10%;margin-top:5px;margin-left:0;float:right;text-align:right}
 
@@ -198,7 +221,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 
 	/*Mainpage wrapper*/
 	.mainpage-wrapper{padding:50px;background: #ca3535}
-		.mainpage-wrapper h1{max-width: 60%;font-family:'apercu_probold', Arial, "Helvetica Neue", Helvetica, sans-serif;color:#fff;font-size: 85px;line-height: 101px}
+		.mainpage-wrapper h1{max-width: 60%;color:#fff;font-size: 85px;line-height: 101px}
 
 	.mainpage-wrapper  .footer:after{width: 100%;height: 0;content: '';display: inline-block;font-size:0;line-height:0}
 	.mainpage-wrapper .footer{border-top: 0}
@@ -226,6 +249,10 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.info-item.social-item{width:11%!important;margin-top:-124px}
 
 }
+@media screen and (max-width: 1150px) {
+	.mainpage-wrapper h1{font-size:76px;line-height:92px}
+}
+
 @media screen and (max-width: 1024px) {
 	.mainpage-wrapper h1{max-width: 100%;}
 }
@@ -258,7 +285,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.top-header .logo{padding:5% 0 0 5.3%}
 	.social-buts{padding:5.2% 4.7% 0 0}
 	.page-wrapper {padding:42px}
-	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper {min-height:0}
+	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper{min-height:830px}
 	.page-item .mainpage-wrapper{padding-right:0}
 	.twitter{margin-left: 13px;}
 	.left-col h1 {font-size:24px;line-height:normal}
@@ -287,6 +314,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 
 }
 @media screen and (max-width: 850px) {
+	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper{min-height:777px}
 	.mainpage-wrapper h1{font-size:60px;line-height:78px}
 }
 @media screen and (max-width: 720px) {
@@ -347,7 +375,9 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.inner-page .footer a{font-size:40px;margin-top:7px}
 	.promo-items .promo-item h2{font-size:40px}
 }
-
+@media screen and (max-width: 564px){
+	.mainpage-wrapper .bottom-navigation{margin-top:44px}
+}
 @media screen and (max-width: 490px) {
 	.work-types{left:10%}
 }
@@ -430,16 +460,6 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.project-items{margin: 30px auto}
 	.project-item .project-name{font-size: 22px}
 	.top-header-i .top-navigation li a{font-size:16px}
-}
-
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-       only screen and (-moz-min-device-pixel-ratio: 2),
-       only screen and (-o-min-device-pixel-ratio: 2/1),
-       only screen and (min-device-pixel-ratio: 2) {
-        	.social-b{background: url(images/fb-tw-icons@2x.png) no-repeat -2px 5px; background-size: 39px;}
-			.social-b:hover{background-image:url(images/fb-tw-icons-red@2x.png)}
-        	.twitter{background-position: -2px -28px !important;}
 }
 
 
