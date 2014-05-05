@@ -1,6 +1,6 @@
 var HelloWorld = (function (){
 	var hwSwipe = null,
-		pages = ["index","company","projects","contacts", "loyalbill"],
+		pages = ["index","company","projects","contacts", "projects/loyalbill"],
 		pagesNames = ["Главная", "Компания", "Проекты", "Контакты", "Loyalbill"],
 
 		isMobile = jQuery.browser.mobile,
@@ -97,14 +97,14 @@ var HelloWorld = (function (){
 						if (index == 3 && mapFirstOpened) {
 							Init.initYandexMaps('maparea');
 							mapFirstOpened = false;
-							isMobile && $swipewrap.height(890);
+							isMobile && $swipewrap.height(750);
 						};
 						if (!callFromPopState && !isIE) {
 							window.history.pushState({url: pages[index]},null, "/"+pages[index]);
 						}else if(isIE){
 							window.location.href = "#" + pages[index];
 						}
-						//$('body').css('overflow-y','scroll');
+						$('html').css('overflow-y','scroll');
 						document.title = "HELLO WORLD - " + pagesNames[index];
 					}else {
 						document.title = "HELLO WORLD";
@@ -143,8 +143,9 @@ var HelloWorld = (function (){
 						map = new ymaps.Map(id, {
 			                center: [53.855727,27.451387], // Default city
 			                zoom: 16,
-			                behaviors: ['default', 'scrollZoom']
+			                //behaviors: ['default', 'scrollZoom']
 			            });
+			            //map.behaviors.get('scrollZoom')
 			            officePlacemark = new ymaps.Placemark([53.855727, 27.451387], { 
 	            			hintContent: 'ул. К. Крапивы, 34', 
 	            			balloonContent: 'офис HelloWorld' 
@@ -155,7 +156,7 @@ var HelloWorld = (function (){
 	 			}, false);
 	 			yaMapsScript.src = "https://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU";
  			}else{
- 				$('<a href="http://maps.yandex.ru/?text=%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C%2C%20%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D0%B0%20%D0%9A%D1%80%D0%B0%D0%BF%D0%B8%D0%B2%D1%8B%2C%2034&sll=27.451347%2C53.855728&ll=27.451996%2C53.855735&spn=0.016952%2C0.005804&z=17&l=map"><img src="http://helloworld.by/new/images/map.png" alt="Map"/></a>').appendTo('#'+id);
+ 				//$('<a href="http://maps.yandex.ru/?text=%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C%2C%20%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D0%B0%20%D0%9A%D1%80%D0%B0%D0%BF%D0%B8%D0%B2%D1%8B%2C%2034&sll=27.451347%2C53.855728&ll=27.451996%2C53.855735&spn=0.016952%2C0.005804&z=17&l=map"><img src="http://helloworld.by/new/images/map.png" alt="Map"/></a>').appendTo('#'+id);
  				$('#'+id).height('auto');
 	        	$('.dimmer').hide();
 	        	//changePageHeight($slider.find('.page-item').eq(3));
@@ -186,9 +187,15 @@ var HelloWorld = (function (){
 			$header.addClass('mobile');
 			$.each($slider.find('.page-item'), function (key, el){
 				if(!$(el).hasClass('mainpage-item')){
-					$header.clone()
-						.insertBefore($(el).find('.page-wrapper'))
-						.find('.top-navigation li').eq(key-1).addClass('active');
+					var $new_elem = $header.clone();
+					$new_elem.insertBefore($(el).find('.page-wrapper'));
+					if (key >=4) {
+						$new_elem.find('.top-navigation li').eq(1).addClass('active');
+					}else{
+						$new_elem.find('.top-navigation li').eq(key-1).addClass('active');
+					}
+						
+
 				}
 			});
 			$('.page-wrapper').addClass('mobile');
@@ -196,26 +203,40 @@ var HelloWorld = (function (){
 			$('html').addClass('mobile-ver');
 			fitMainpageHeight();
 		},
-		initUrl: function (){
+		initByUrl: function (){
 			var url = getCurrentURL(),
 				path = url == 'index' ? "/" : "/" + url,
 				pageNum = pages.indexOf(url);
+
 			Init.initSwipe('#slider', '.swipe-wrap', pageNum);
+			var $page = $slider.find('.page-item').eq(pageNum);
+
 			if(isIE){
  				window.location.href = url == 'index' ? '#' : '#'+url;
  			}else{
  				window.history.pushState({url:url, isFirstRender: true}, null, path);
  			}
 			if (path != '/') {
+				if (socButsFirstOpened ) {
+					Init.initSocialButs();
+					socButsFirstOpened = false;
+				};
 				$('.top-header').css('z-index',3);
 				highlightMenuItem(pages.indexOf(url)-1);
 				$slider.css('height', 'auto');
-				setTimeout(function () {changePageHeight($slider.find('.page-item').eq(pageNum))}, 1000);
+				setTimeout(function () {
+					changePageHeight($page);
+					!isMobile && pageItemsHandler();
+				}, 1000);
 			};
 			if (url == 'contacts') {
 				Init.initYandexMaps('maparea');
 				mapFirstOpened = false;
 			};
+			$slider.find('.page-item.active').removeClass('active');
+			$page.addClass('active');
+			$('.mainpage-item').show();
+			
 		}
 	};
 	var	getCurrentURL = function (){
@@ -223,7 +244,7 @@ var HelloWorld = (function (){
 			var hash = window.location.href.toString().split(window.location.host)[1].split('#')[1];
 			return !hash ? 'index' : hash;
 		}else{
-			return window.location.pathname.split('/')[1] == '' ? 'index' : window.location.pathname.split('/')[1];
+			return window.location.pathname.split('/')[1] == '' ? 'index' : window.location.pathname.replace('/','');
 		}
 	};
 	var changePageHeight = function (page){
@@ -254,7 +275,8 @@ var HelloWorld = (function (){
 			if (!this.getAttribute('href')){
 				toURL = this.parentNode.getAttribute('href').split('/').pop();
 			}else{
-				toURL = this.getAttribute('href').split('/').pop();
+				toURL = this.getAttribute('href').split('/').length == 2 ? this.getAttribute('href').split('/').pop() : this.getAttribute('href').replace("/","");
+
 			}
 		}
 		if (toURL == 'index') {
@@ -287,7 +309,7 @@ var HelloWorld = (function (){
 	return {
 		init: function (){
 			$('.top-header').addClass('show');
-			Init.initUrl();
+			Init.initByUrl();
 			if (isMobile) {
 				Init.renderForMobile($('.top-header'));
 			}

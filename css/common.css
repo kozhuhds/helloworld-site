@@ -57,11 +57,11 @@
 /*Structure
 *******************************************************************************************************************************/
 body{-webkit-text-size-adjust: 100%;-ms-text-size-adjust: none;-webkit-transform: translate3d(0, 0, 0)}
-
+.mainpage-item{display:none}
 .fixed{width: 430px;position:fixed;top:10%}
 /*Social buttons*/
-.social-buts{height:22px;padding:50px 50px 0 0;float: right}
-	.facebook-like-btn{width:76px;overflow:hidden}
+.social-buts{height:22px;padding:50px 50px 0 0;float:right;overflow:hidden}
+	.facebook-like-btn{width:76px}
 	.stButton .stMainServices img, .stButton img{display:none}
 	.social-buts > span{margin-left:20px;float:right}
 	.project-social-buts{margin:19px 0 27px 0;text-align:center}
@@ -111,12 +111,12 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 
 .top-header.show{display:block}
 	.top-header-i{max-width:1280px;margin:0 auto;position:relative}
-		.top-navigation{height:74px;margin-top:-20px;padding:0 50px 0 0;text-align: right;font-size: 0}
+		.top-navigation{height:76px;margin-top:-20px;padding:0 50px 0 0;text-align: right;font-size: 0}
 			.info-items .info-item:first-child{margin-left:0 !important}
 				.top-navigation li{margin-left:4.8%;display:inline-block}
 				.top-navigation li.active a{border-bottom:1px solid #000;cursor:pointer;text-decoration: none !important}
 					.mobile .top-navigation li.active a{border-bottom: 0 !important}
-		  			.top-navigation li a{height:20px;padding-bottom:54px;display:block;color:#ca3535;letter-spacing:1px;font-size:20px;text-transform:uppercase}
+		  			.top-navigation li a{padding-bottom:56px;display:block;color:#ca3535;letter-spacing:1px;font-size:20px;text-transform:uppercase}
 		  			.top-navigation li.active a{color:#000}
 
 /*Page-wrapper
@@ -148,7 +148,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.sign{margin-left:21.88%;color:#ca3535;font-family:'apercu_prolight',Arial, "Helvetica Neue",Helvetica,sans-serif;font-size:90px;line-height: 15%}
 	
 	/*Projects*/
-	.projects-topic{font-size: 72px;line-height: 82px;text-align:center}
+	.projects-topic{padding-top:11px;font-size:72px;line-height:82px;text-align:center}
 	.project-items{margin:56px auto 40px auto;font-size:0;text-align:center}
 		.project-item{width: 33.33421%;display:inline-block;vertical-align:top}
 		.project-item:hover{background:#ca3535}
@@ -170,14 +170,16 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		.info-items .info-item p{font-size: 34px; white-space: nowrap; font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif;line-height: 40px}
 		.info-items .info-item p.address{white-space: normal}
 		.info-items .info-item p.tel{margin-left: -5.8%;letter-spacing: -0.8px}
-		.info-items .info-item a{color: #ca3535; word-wrap:break-word;letter-spacing:0px;font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif}
+		.info-items .info-item .email{color: #ca3535; word-wrap:break-word;letter-spacing:0px;font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif}
+		.info-items .info-item a{color:#000}
 		.info-items .info-item .social-b:hover{border-color:#ca3535;color:#ca3535!important;text-decoration:none}
 		  .info-items .info-item p strong{font-family: 'apercu_proregular', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		  .info-items .info-item p strong span{font-family: 'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		.info-item.phone-item{width: 28%; margin-left: 4.8%}
 	.social-b{width:34px;height:34px;display:inline-block;-webkit-border-radius:99px;-moz-border-radius:99px;border-radius:99px;border:2px solid #000;text-align:center;font-size:18px;line-height:31px;color:#000!important}
+	.social-b:first-child{margin-right:12px}
 	.twitter{margin-left: 8%;margin-top: 13px;background-position: 0 -23px !important}
-	.info-item.social-item{width: 10%;margin-top:5px;margin-left:0;float:right;text-align:right}
+	.info-item.social-item{width: 10%;margin-top:5px;margin-left:0;float:right;text-align:right;font-size:0}
 
 	.projects-items li figure img.retina-image{width: 84.827586%}
 	#maparea{height: 694px; position: relative}
@@ -185,6 +187,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 			#maparea a img{width: 100%}
 
 	/*Project*/
+		/*.project{display:none;visibility:hidden;}*/
 		.back-960, .back-320{display:none}
 		.page-item.project p, .page-item.project cite, .page-item.project .sim-proj-title{font-family:'apercu_prolight', Arial, "Helvetica Neue", Helvetica, sans-serif}
 		.page-item.project .page-wrapper{padding-top:256px}
@@ -199,7 +202,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		.site-link{color:#ca3535;font-size:18px}
 
 		/*Project-descr*/
-		.project-descr h1{padding:10px 14%;text-align:center;font-size:72px;line-height:82px}
+		.project-descr h1{padding:10px 14%;text-align:center;font-size:71px;line-height:87px}
 		.project-descr h1 strong{font-size:72px;color:#ca3535;font-weight:normal}
 		.project-descr .descr{width: 655px;margin: 0 auto;font-size:22px;line-height:30px}
 
@@ -220,16 +223,16 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 		.project-middle .over-img-descr{width:32%;margin-left:3.1%;font-size:18px;line-height:24px}
 
 	/*Mainpage wrapper*/
-	.mainpage-wrapper{padding:50px;background: #ca3535}
-		.mainpage-wrapper h1{max-width: 60%;color:#fff;font-size: 85px;line-height: 101px}
+	.mainpage-wrapper{padding:30px 43px;background: #ca3535}
+		.mainpage-wrapper h1{max-width: 60%;color:#fff;font-size:85px;line-height:102px}
 
 	.mainpage-wrapper  .footer:after{width: 100%;height: 0;content: '';display: inline-block;font-size:0;line-height:0}
 	.mainpage-wrapper .footer{border-top: 0}
 		.mainpage-wrapper .logo{position:absolute;bottom:50px;left:50px}
-		.mainpage-wrapper .bottom-navigation{position:absolute;right:50px;bottom:50px}
+		.mainpage-wrapper .bottom-navigation{position:absolute;right:52px;bottom:48px}
 			.mainpage-wrapper .bottom-navigation li{margin-left:59px;float:left;font-size:20px;text-transform:uppercase}
 			.mainpage-wrapper .bottom-navigation li:first-child{margin-left:0}
-			.mainpage-wrapper .bottom-navigation li a{color: #ffa8a8}
+			.mainpage-wrapper .bottom-navigation li a{color: #ffa8a8;letter-spacing:1px}
 
 /*Media-queries
 *******************************************************************************************************************************/
@@ -249,16 +252,20 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.info-item.social-item{width:11%!important;margin-top:-124px}
 
 }
+
 @media screen and (max-width: 1150px) {
 	.mainpage-wrapper h1{font-size:76px;line-height:92px}
 }
+@media screen and (max-width: 1046px) {
+	.mainpage-wrapper .bottom-navigation li{margin-left:25px}
+}
 
 @media screen and (max-width: 1024px) {
-	.mainpage-wrapper h1{max-width: 100%;}
+	.mainpage-wrapper h1{max-width:100%}
 }
 @media screen and (max-width: 915px) {
 	.contact .info-items .info-item, .contact .info-items .info-item:nth-child(5){width:45.2%}
-	.info-item.social-item{width:20%!important;margin-top:34px;margin-left:4.8%;float:left;text-align:left}
+	.info-item.social-item{width:20%!important;margin-top:46px;margin-left:4.8%;float:left;text-align:left}
 }
 @media screen and (max-width: 960px) {
 	.info-items .info-item{margin-left:6.8%}
@@ -375,6 +382,10 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.inner-page .footer a{font-size:40px;margin-top:7px}
 	.promo-items .promo-item h2{font-size:40px}
 }
+@media screen and (max-width: 579px){
+	.top-panel{margin-top:42px}
+	.work-types{left:12%}
+}
 @media screen and (max-width: 564px){
 	.mainpage-wrapper .bottom-navigation{margin-top:44px}
 }
@@ -384,6 +395,12 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 
 
 @media screen and (max-width: 480px) {	
+	.project-item:hover{background:none}
+	/*.project-item:active{background:#ca3535}*/
+	.project-item:hover .project-name strong, .project-item:hover .project-name, .project-item:hover .work-type{color:#000;border-color:#000}
+	.project-item:hover .project-name strong{color:#ca3535}
+	/*.project-item:active .project-name strong, .project-item:active .project-name, .project-item:active .work-type{color:#fff;border-color:#fff}*/
+	.info-items .info-item p{line-height:35px}
 	.info-item-1280{display:block}
 	.info-item-960{display:none}
 	.company .promo-items .promo-item:last-child p{margin-bottom:38px}
@@ -435,6 +452,7 @@ html, body, .swipe, .swipe-wrap,.mainpage-item.page-item.active, .mainpage-item.
 	.mainpage-wrapper .bottom-navigation{margin-top:38px}
 }
 @media screen and (max-width: 320px) {
+	.mainpage-wrapper .bottom-navigation li{margin-bottom:25px;font-size:16px}
 	html, body, .swipe, .swipe-wrap, .mainpage-item.page-item.active, .mainpage-item.page-item, .page-item .mainpage-wrapper{min-height:0}	
 	.content-promo h1{font-size:20px;line-height:31px}
 	.sim-proj-title + .project-items{margin-top:12px}
