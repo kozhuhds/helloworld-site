@@ -222,7 +222,11 @@ var HelloWorld = (function (){
 					socButsFirstOpened = false;
 				};
 				$('.top-header').css('z-index',3);
-				highlightMenuItem(pages.indexOf(url)-1);
+				if (pages.indexOf(url) > 3) {
+					highlightMenuItem(1);
+				}else{
+					highlightMenuItem(pages.indexOf(url)-1);
+				}
 				$slider.css('height', 'auto');
 				setTimeout(function () {
 					changePageHeight($page);

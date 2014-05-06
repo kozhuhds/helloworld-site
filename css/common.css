@@ -60,6 +60,7 @@ body{-webkit-text-size-adjust: 100%;-ms-text-size-adjust: none;-webkit-transform
 .mainpage-item{display:none}
 .fixed{width: 430px;position:fixed;top:10%}
 /*Social buttons*/
+.stwrapper{display:none}
 .social-buts{height:22px;padding:50px 50px 0 0;float:right;overflow:hidden}
 	.facebook-like-btn{width:76px}
 	.stButton .stMainServices img, .stButton img{display:none}
