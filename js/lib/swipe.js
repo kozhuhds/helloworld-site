@@ -305,6 +305,9 @@ function Swipe(container, options) {
 
       // if user is not trying to scroll vertically
       if (!isScrolling) {
+        if (index == 3 && delta.x < 0 ) {
+          return false;
+        };
 
         // prevent native scrolling
         event.preventDefault();
@@ -340,7 +343,9 @@ function Swipe(container, options) {
 
     },
     end: function(event) {
-
+      if (index == 3 && delta.x < 0 ) {
+        return false;
+      };
       // measure duration
       var duration = +new Date - start.time;
 

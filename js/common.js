@@ -15,6 +15,8 @@ var HelloWorld = (function (){
 
 	var Init = {
 		events: function (){
+			$('.menu-hider').on('click', this.openMenu);
+			$('.top-menu-hider').on('click', this.openMenu);
 			$('.logo a').on('click', navigateToUrl);
 			$('.bottom-navigation a, .top-navigation a, .project-items .project-item a, .back, .back-960, .back-320').on('click', navigateToUrl);
 
@@ -75,6 +77,17 @@ var HelloWorld = (function (){
 				}
 			});
 		},
+
+		openMenu: function (e) {
+			$('.menu-hider').next().toggleClass('active');
+			$('.menu-hider').toggleClass('active');
+			$('.top-navigation').toggleClass('active');
+			$('.top-menu-hider').toggleClass('active');
+			$('.top-header-i .social-buts').toggleClass('active');
+			$('.top-header').toggleClass('active');
+			$('.page-wrapper').toggleClass('active');
+			e.preventDefault();
+		},
 		initSwipe: function (id, wrap, startSlide){
 			$slider = $(id);
 			$swipewrap = $(wrap);
@@ -97,7 +110,7 @@ var HelloWorld = (function (){
 						if (index == 3 && mapFirstOpened) {
 							Init.initYandexMaps('maparea');
 							mapFirstOpened = false;
-							isMobile && $swipewrap.height(750);
+							isMobile && $swipewrap.height(663);
 						};
 						if (!callFromPopState && !isIE) {
 							window.history.pushState({url: pages[index]},null, "/"+pages[index]);
@@ -131,7 +144,6 @@ var HelloWorld = (function (){
         			map&&map.geoObjects.add(officePlacemark);
 				}
 			});
-//setTimeout(function (){hwSwipe.slide(3);}, 1000)
 		},
 		initYandexMaps: function (id){
 			if (!isMobile) {
@@ -259,7 +271,7 @@ var HelloWorld = (function (){
 
 	var fitMainpageHeight = function () {
 		if (window.screen.height <= 480) {
-			$swipewrap.height(608);
+			$swipewrap.height(558);
 		}else{
 			$swipewrap.height(window.screen.height);
 		}
