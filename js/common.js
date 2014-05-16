@@ -49,7 +49,7 @@ var HelloWorld = (function (){
 						$('.top-header').show();
 					},250);
 				}else{
-					isMobile && fitMainpageHeight();
+					changePageHeight($slider.find('.page-item').eq(pages.indexOf(getCurrentURL())));
 					$('.top-header').hide();
 					setTimeout(function(){
 						$slider.find('.page-item').css('visibility','visible'); 
@@ -86,6 +86,7 @@ var HelloWorld = (function (){
 			$('.top-header-i .social-buts').toggleClass('active');
 			$('.top-header').toggleClass('active');
 			$('.page-wrapper').toggleClass('active');
+			changePageHeight($('.page-item.active'));
 			e.preventDefault();
 		},
 		initSwipe: function (id, wrap, startSlide){
@@ -102,6 +103,7 @@ var HelloWorld = (function (){
 					$slider.find('.page-item.active').removeClass('active');
 					$(elem).addClass('active');
 					if (index) {
+						$swipewrap.css('max-height', 'none');
 						changePageHeight(elem);
 						if (socButsFirstOpened ) {
 							Init.initSocialButs();
@@ -110,7 +112,8 @@ var HelloWorld = (function (){
 						if (index == 3 && mapFirstOpened) {
 							Init.initYandexMaps('maparea');
 							mapFirstOpened = false;
-							isMobile && $swipewrap.height(663);
+							changePageHeight(elem);
+							//isMobile && $swipewrap.height(663);
 						};
 						if (!callFromPopState && !isIE) {
 							window.history.pushState({url: pages[index]},null, "/"+pages[index]);
@@ -121,12 +124,7 @@ var HelloWorld = (function (){
 						document.title = "HELLO WORLD - " + pagesNames[index];
 					}else {
 						document.title = "HELLO WORLD";
-						if (isMobile) {
-							fitMainpageHeight();
-						}else{
-							$swipewrap.height('100%');
-							$slider.height('100%');
-						}
+						changePageHeight(elem);
 						if (!callFromPopState && !isIE) {
 							window.history.pushState({url: pages[index]},null, "/");
 						}else if(isIE){
@@ -168,7 +166,6 @@ var HelloWorld = (function (){
 	 			}, false);
 	 			yaMapsScript.src = "https://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU";
  			}else{
- 				//$('<a href="http://maps.yandex.ru/?text=%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C%2C%20%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D0%B0%20%D0%9A%D1%80%D0%B0%D0%BF%D0%B8%D0%B2%D1%8B%2C%2034&sll=27.451347%2C53.855728&ll=27.451996%2C53.855735&spn=0.016952%2C0.005804&z=17&l=map"><img src="http://helloworld.by/new/images/map.png" alt="Map"/></a>').appendTo('#'+id);
  				$('#'+id).height('auto');
 	        	$('.dimmer').hide();
 	        	//changePageHeight($slider.find('.page-item').eq(3));
@@ -213,7 +210,6 @@ var HelloWorld = (function (){
 			$('.page-wrapper').addClass('mobile');
 			$header.remove();
 			$('html').addClass('mobile-ver');
-			fitMainpageHeight();
 		},
 		initByUrl: function (){
 			var url = getCurrentURL(),
@@ -245,6 +241,7 @@ var HelloWorld = (function (){
 					!isMobile && pageItemsHandler();
 				}, 1000);
 			};
+			changePageHeight($page);
 			if (url == 'contacts') {
 				Init.initYandexMaps('maparea');
 				mapFirstOpened = false;
@@ -264,16 +261,16 @@ var HelloWorld = (function (){
 		}
 	};
 	var changePageHeight = function (page){
-		if(!$(page).hasClass('mainpage-item')){
-			$swipewrap.height($(page).height());
-		}
-	};
-
-	var fitMainpageHeight = function () {
-		if (window.screen.height <= 480) {
-			$swipewrap.height(558);
+		if ($(page).hasClass('mainpage-item')) {
+			setTimeout(function () {
+				$(page).css('min-height', $(window).height())
+				if ($(page).height() < $(window).height()) {
+					$swipewrap.css('max-height', $(window).height());
+				}else{
+					$swipewrap.css('max-height', $(page).height());
+			}}, 0);
 		}else{
-			$swipewrap.height(window.screen.height);
+			$swipewrap.height($(page).height());
 		}
 	};
 
@@ -330,7 +327,6 @@ var HelloWorld = (function (){
 				Init.renderForMobile($('.top-header'));
 			}
 			Init.events();
-			RetinaImages.init('image-src');
 		}
 	}
 })();
